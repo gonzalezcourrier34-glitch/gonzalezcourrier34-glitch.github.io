@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Stéphane Gonzalez | AI Engineer</title>
+    <meta name="description" content="Portfolio de Stéphane Gonzalez, AI Engineer : fine-tuning de LLM, RAG, agents, déploiement sur Azure et MLOps.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<header class="header">
+    <nav class="nav container" aria-label="Navigation principale">
+        <a href="#home" class="logo" aria-label="Stéphane Gonzalez, retour en haut">SG<span>.</span></a>
+
+        <ul class="nav-links">
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#journey">Parcours</a></li>
+            <li><a href="#reflection">Réflexion</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <details class="mobile-nav">
+            <summary>Menu</summary>
+            <ul>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#journey">Parcours</a></li>
+                <li><a href="#reflection">Réflexion</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </details>
+    </nav>
+</header>
+
+
+<main id="main">
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+
+            <p class="eyebrow">PORTFOLIO • AI ENGINEER</p>
+
+            <h1>
+                Stéphane Gonzalez
+                <span>AI Engineer</span>
+            </h1>
+
+            <p class="hero-text">
+                Je conçois des solutions d'intelligence artificielle de la donnée
+                jusqu'au service en production : fine-tuning de LLM, RAG, agents,
+                API, CI/CD, cloud et monitoring.
+            </p>
+
+            <ul class="hero-tags" aria-label="Domaines">
+                <li>Machine Learning</li>
+                <li>Deep Learning</li>
+                <li>LLM &amp; fine-tuning</li>
+                <li>RAG &amp; agents</li>
+                <li>MLOps</li>
+                <li>Cloud Azure</li>
+            </ul>
+
+            <div class="hero-actions">
+                <a href="#projects" class="button primary">Découvrir mes projets</a>
+                <a href="#personal-project" class="button secondary">Projet personnel : SortirIA</a>
+                <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" class="button secondary" target="_blank" rel="noopener">Rapport de conduite de projet</a>
+                <a href="https://github.com/gonzalezcourrier34-glitch" class="button secondary" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/st%C3%A9phane-gonzalez-682123341/" class="button secondary" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+
+            <dl class="hero-stats">
+                <div><dt>Projets IA menés</dt><dd>11</dd></div>
+                <div><dt>Projets avec CI/CD</dt><dd>6</dd></div>
+                <div><dt>SortirIA en production</dt><dd>Azure</dd></div>
+                <div><dt>Triage médical : cas bien classés</dt><dd>90,6&nbsp;%</dd></div>
+            </dl>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section" aria-labelledby="about-title">
+        <div class="container">
+
+            <p class="section-label">Profil</p>
+            <h2 id="about-title">À propos</h2>
+
+            <div class="about-grid">
+
+                <p class="large-text">
+                    De l'informatique et de la relation client
+                    à la conception de systèmes d'intelligence artificielle.
+                </p>
+
+                <div class="about-body">
+                    <p>
+                        Après une longue expérience professionnelle dans l'informatique
+                        et l'électronique, j'ai choisi de me spécialiser dans
+                        l'intelligence artificielle avec la formation Ingénieur IA
+                        d'OpenClassrooms.
+                    </p>
+                    <p>
+                        Mes projets m'ont conduit du Machine Learning classique au
+                        déploiement d'API, puis au RAG, aux agents et au fine-tuning
+                        de LLM, toujours avec la même exigence : un système testé,
+                        reproductible et mesuré.
+                    </p>
+                    <p class="goal">
+                        <strong>Objectif professionnel :</strong> rejoindre une équipe
+                        comme AI Engineer pour concevoir et mettre en production des
+                        solutions à base de LLM, avec une attention particulière à
+                        l'évaluation et au monitoring.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects" class="section section-alt" aria-labelledby="projects-title">
+        <div class="container">
+
+            <p class="section-label">Réalisations</p>
+            <h2 id="projects-title">Projets</h2>
+
+            <p class="section-intro">
+                Onze projets menés pendant ma formation, du plus récent au plus ancien.
+                Chacun est livré avec son code ou ses livrables, et chaque carte y renvoie.
+                Le dernier, SortirIA, est mon projet personnel : il réunit les briques des
+                précédents dans un service en ligne.
+            </p>
+
+            <!-- Projet personnel (projet final) -->
+            <article id="personal-project" class="project-card featured" aria-labelledby="sortiria-title">
+
+                <div class="project-top">
+                    <span class="project-type">Projet personnel • RAG • Agent • Production sur Azure</span>
+                    <span class="project-status">Oct.-nov. 2026 · en ligne</span>
+                </div>
+
+                <h3 id="sortiria-title">SortirIA</h3>
+
+                <p>
+                    Un assistant de sorties pour Montpellier et le bassin de Thau : on écrit
+                    sa demande comme on la dirait (« un concert gratuit ce week-end à Sète »),
+                    SortirIA répond avec des sorties qui respectent la date, le lieu, le
+                    public et le budget. Chaque nuit, un agent LangGraph collecte et vérifie
+                    les agendas ouverts (OpenAgenda, DATAtourisme, programmes en PDF) ; la
+                    recherche combine filtres SQL, mots et vecteurs (pgvector) et Mistral
+                    rédige la réponse. Le service est en ligne sur Azure, déployé à chaque
+                    push et surveillé.
+                </p>
+
+                <dl class="metrics">
+                    <div><dt>Contraintes respectées</dt><dd>98,7&nbsp;%</dd></div>
+                    <div><dt>Pertinence des 3 premières sorties</dt><dd>97,8&nbsp;%</dd></div>
+                    <div><dt>Accord du juge LLM avec l'humain</dt><dd>98,6&nbsp;%</dd></div>
+                    <div><dt>Temps de réponse P95</dt><dd>6,4&nbsp;s</dd></div>
+                    <div><dt>Coût Mistral pour 1&nbsp;000 questions</dt><dd>0,12&nbsp;$</dd></div>
+                </dl>
+
+                <div class="axes">
+                    <h4>Conduite de projet</h4>
+                    <ol>
+                        <li><strong>Besoin</strong> Trouver une sortie qui convient vraiment (date, lieu, public, budget), sans parcourir dix agendas.</li>
+                        <li><strong>Audit des données</strong> Sources ouvertes et autorisées seulement ; chaque fiche vérifiée, dédoublonnée, attribuée à sa source.</li>
+                        <li><strong>Solution</strong> Agent LangGraph la nuit, PostgreSQL + pgvector, FastAPI, Angular, Mistral ; code repris de mes projets précédents et adapté.</li>
+                        <li><strong>Aide à la décision</strong> Seuils fixés avant de mesurer (95&nbsp;% de contraintes, 70&nbsp;% de pertinence) ; juge calibré sur l'humain ; limites assumées.</li>
+                        <li><strong>Contrôle</strong> Environ 10&nbsp;$ par mois ; évaluation rejouée en CI (déploiement bloqué sous 95&nbsp;%) ; Grafana, MLflow, suivi de la dérive, alertes et budget Azure.</li>
+                    </ol>
+                </div>
+
+                <div class="mlops" aria-labelledby="mlops-title">
+                    <h4 id="mlops-title">Thèmes MLOps du projet final</h4>
+                    <p class="mlops-intro">
+                        La consigne propose quatre thèmes. Voici ce que SortirIA en couvre, et
+                        comment, pour un service qui appelle Mistral au lieu d'entraîner son
+                        propre modèle.
+                    </p>
+                    <dl class="mlops-list">
+                        <div class="mlops-row">
+                            <dt>Cycle de vie des modèles <span class="status done">Couvert</span></dt>
+                            <dd>CI à chaque push : tests sur un vrai PostgreSQL et évaluation de la
+                                recherche rejouée, déploiement bloqué sous 95&nbsp;%. CD vers Azure,
+                                contrôle du service en ligne toutes les 3&nbsp;h, MLflow pour chaque
+                                collecte et chaque évaluation.</dd>
+                        </div>
+                        <div class="mlops-row">
+                            <dt>Suivi de la dérive <span class="status done">Couvert</span></dt>
+                            <dd>Chaque nuit, les 7 derniers jours comparés aux 28 précédents (PSI) :
+                                ce que les visiteurs demandent (zone, public, type de sortie), ce que
+                                SortirIA répond (exacte, élargie, introuvable ; latence, avis) et ce
+                                que les sources apportent (volumes, rejets, juge de qualité). Rapport
+                                le lundi, alerte si la dérive est forte, suivi dans Grafana et MLflow.</dd>
+                        </div>
+                        <div class="mlops-row">
+                            <dt>Réentraînement automatique <span class="status adapted">Adapté</span></dt>
+                            <dd>Pas de modèle à réentraîner : SortirIA appelle Mistral. La boucle
+                                d'amélioration est l'agent du lundi : il lit les recherches ratées et
+                                les pouces bas, puis ouvre une pull request par correction (synonyme,
+                                agenda à lire). Elle est testée en CI, je la valide, puis elle est
+                                déployée. Un fine-tuning est prévu quand les avis réels suffiront.</dd>
+                        </div>
+                        <div class="mlops-row">
+                            <dt>Versionnage des données et des modèles <span class="status partial">Partiel</span></dt>
+                            <dd>Chaque réponse garde la version de sa consigne, et MLflow celle du
+                                juge (v7) et de la lecture des PDF. Les jeux d'évaluation et la
+                                configuration des sources sont versionnés dans Git. Pas de DVC ni de
+                                Model Registry : aucun modèle entraîné à enregistrer.</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <ul class="tags" aria-label="Technologies">
+                    <li>LangGraph</li><li>Mistral</li><li>PostgreSQL / pgvector</li><li>FastAPI</li><li>Angular</li>
+                    <li>Azure Container Apps</li><li>GitHub Actions</li><li>Grafana</li><li>MLflow</li><li>Airflow</li>
+                </ul>
+
+                <div class="project-links">
+                    <a href="https://www.sortiria-montpellier.fr" target="_blank" rel="noopener" aria-label="Site en ligne : SortirIA">Site en ligne →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener" aria-label="Code : SortirIA">Code →</a>
+                    <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener" aria-label="Rapport de conduite de projet : SortirIA">Rapport de conduite de projet →</a>
+                    <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/SortirIA_rapport_conduite_projet.pdf" target="_blank" rel="noopener" aria-label="Rapport de conduite de projet en PDF : SortirIA">Rapport en PDF →</a>
+                    <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/" target="_blank" rel="noopener" aria-label="Dossier du projet : SortirIA">Dossier du projet →</a>
+                    <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/" target="_blank" rel="noopener" aria-label="Documentation technique : SortirIA">Documentation →</a>
+                </div>
+
+            </article>
+
+            <!-- Projet phare -->
+            <article class="project-card featured" aria-labelledby="p14-title">
+
+                <div class="project-top">
+                    <span class="project-type">LLM • Fine-tuning • Production</span>
+                    <span class="project-status">Sept.-oct. 2026</span>
+                </div>
+
+                <h3 id="p14-title">Agent IA de triage médical</h3>
+
+                <p>
+                    Un petit modèle de langage (Qwen3-1.7B) spécialisé pour classer un
+                    patient des urgences en P1, P2 ou P3 et justifier sa décision, en
+                    français et en anglais. Entraîné par SFT puis DPO avec QLoRA sur une
+                    carte graphique de 6&nbsp;Go, servi par vLLM derrière une API FastAPI
+                    journalisée et surveillée.
+                </p>
+
+                <dl class="metrics">
+                    <div><dt>Cas du test gelé bien classés</dt><dd>453 / 500</dd></div>
+                    <div><dt>F1 macro</dt><dd>90,6&nbsp;%</dd></div>
+                    <div><dt>Urgences P1 reconnues</dt><dd>93,4&nbsp;%</dd></div>
+                    <div><dt>Sous-triage</dt><dd>5,4&nbsp;%</dd></div>
+                    <div><dt>Latence P95</dt><dd>1,13&nbsp;s</dd></div>
+                </dl>
+
+                <div class="axes">
+                    <h4>Conduite de projet</h4>
+                    <ol>
+                        <li><strong>Besoin</strong> Aider les infirmiers d'accueil à trier les patients, avec une explication.</li>
+                        <li><strong>Audit des données</strong> 164&nbsp;477 lignes publiques auditées, anonymisées (Presidio), réduites à 5&nbsp;000 cas équilibrés.</li>
+                        <li><strong>Solution</strong> QLoRA, SFT puis DPO, modèle fusionné et servi par vLLM.</li>
+                        <li><strong>Aide à la décision</strong> Grille go / no-go et pilote en quatre phases, le modèle en second avis.</li>
+                        <li><strong>Contrôle</strong> 4 semaines, 6&nbsp;Go de GPU, CI avec 40 tests, test gelé rejoué sur le modèle servi.</li>
+                    </ol>
+                </div>
+
+                <ul class="tags" aria-label="Technologies">
+                    <li>Qwen3</li><li>PyTorch</li><li>QLoRA</li><li>SFT / DPO</li><li>vLLM</li>
+                    <li>FastAPI</li><li>Prometheus / Grafana</li><li>W&amp;B</li><li>GitHub Actions</li>
+                </ul>
+
+                <div class="project-links">
+                    <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener" aria-label="Code : Agent IA de triage médical">Code →</a>
+                    <a href="https://gonzalezcourrier34-glitch.github.io/medical_triage_agent/" target="_blank" rel="noopener" aria-label="Documentation : Agent IA de triage médical">Documentation →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent/blob/master/docs/rapport_technique.md" target="_blank" rel="noopener" aria-label="Rapport technique : Agent IA de triage médical">Rapport technique →</a>
+                </div>
+
+            </article>
+
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">Agent IA • RAG</span>
+                        <span class="project-status">Août 2026</span>
+                    </div>
+                    <h3>Chess Agent</h3>
+                    <p>
+                        Aide à l'apprentissage des ouvertures d'échecs. Un agent LangGraph
+                        combine Stockfish, Lichess, un RAG sur Wikichess et un LLM local
+                        pour expliquer une position en français.
+                    </p>
+                    <dl class="metrics small">
+                        <div><dt>Tests automatisés</dt><dd>1&nbsp;029</dd></div>
+                        <div><dt>Couverture exigée par la CI</dt><dd>≥&nbsp;86&nbsp;%</dd></div>
+                    </dl>
+                    <ul class="tags" aria-label="Technologies">
+                        <li>LangGraph</li><li>Milvus</li><li>Ollama</li><li>FastAPI</li><li>MongoDB</li><li>Angular</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener" aria-label="Code : Chess Agent">Code →</a>
+                        <a href="https://gonzalezcourrier34-glitch.github.io/chess_agent/" target="_blank" rel="noopener" aria-label="Documentation : Chess Agent">Documentation →</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">Data engineering</span>
+                        <span class="project-status">Juillet 2026</span>
+                    </div>
+                    <h3>CheckIt.AI</h3>
+                    <p>
+                        Moteur de collecte multi-sources réutilisable : un moteur par type
+                        de source, un adaptateur et une configuration YAML par fournisseur.
+                        Validation, déduplication et contrôle qualité, orchestrés par Airflow.
+                        Premier cas d'usage : le fact-checking. SortirIA le réutilise.
+                    </p>
+                    <dl class="metrics small">
+                        <div><dt>Sources branchées (RSS, API, web, réseaux sociaux, datasets)</dt><dd>21</dd></div>
+                    </dl>
+                    <ul class="tags" aria-label="Technologies">
+                        <li>Airflow</li><li>PostgreSQL</li><li>YAML</li><li>Docker</li><li>Streamlit</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener" aria-label="Code : CheckIt.AI">Code →</a>
+                        <a href="https://gonzalezcourrier34-glitch.github.io/checkit_ai/" target="_blank" rel="noopener" aria-label="Documentation : CheckIt.AI">Documentation →</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">Reinforcement Learning</span>
+                        <span class="project-status">Juillet 2026</span>
+                    </div>
+                    <h3>Atterrissage LunarLander</h3>
+                    <p>
+                        Entraînement d'agents DQN et PPO pour poser un module lunaire,
+                        optimisation des hyperparamètres et restitution dans une API
+                        et un tableau de bord.
+                    </p>
+                    <ul class="tags" aria-label="Technologies">
+                        <li>Stable-Baselines3</li><li>Gymnasium</li><li>Optuna</li><li>FastAPI</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener" aria-label="Code : Atterrissage LunarLander">Code →</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">Vision • Semi-supervisé</span>
+                        <span class="project-status">Juin 2026</span>
+                    </div>
+                    <h3>CurelyticsIA · BrainScanAI</h3>
+                    <p>
+                        Détection de tumeurs sur des IRM cérébrales avec peu d'images annotées :
+                        caractéristiques extraites par ResNet50, ACP et clustering,
+                        pseudo-étiquettes, puis entraînement d'un ResNet18. Étude de coût
+                        pour un budget de 5&nbsp;000&nbsp;€.
+                    </p>
+                    <dl class="metrics small">
+                        <div><dt>Rappel (tumeurs détectées)</dt><dd>1,00</dd></div>
+                        <div><dt>F2-score</dt><dd>0,98</dd></div>
+                        <div><dt>Accuracy, contre 0,90 en supervisé seul</dt><dd>0,95</dd></div>
+                    </dl>
+                    <ul class="tags" aria-label="Technologies">
+                        <li>PyTorch</li><li>ResNet</li><li>Clustering</li><li>Pseudo-labels</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener" aria-label="Code : CurelyticsIA · BrainScanAI">Code →</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">Cadrage • Gestion de projet</span>
+                        <span class="project-status">Mai 2026</span>
+                    </div>
+                    <h3>Cadrage du POC Fashion-Insta</h3>
+                    <p>
+                        Cadrage d'un système de recommandation de vêtements par la vision
+                        pour une enseigne de mode : besoin métier, choix de l'approche
+                        (CLIP + recherche vectorielle), planning de 3 semaines, budget de
+                        13 à 15&nbsp;k€, KPI de succès, architecture cible sur Azure, ROI et RGPD.
+                    </p>
+                    <ul class="tags" aria-label="Compétences">
+                        <li>Cadrage</li><li>Budget &amp; ROI</li><li>Architecture Azure</li><li>RGPD</li><li>CLIP</li>
+                    </ul>
+                    <div class="project-links">
+                        <span class="muted">Livrable : présentation de 52 diapositives</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">ML • MLOps</span>
+                        <span class="project-status">Avril-mai 2026</span>
+                    </div>
+                    <h3>Scoring crédit Prêt à dépenser</h3>
+                    <p>
+                        Modèle de scoring mis en production : API, suivi des expériences
+                        MLflow, monitoring de la dérive avec Evidently, optimisation de
+                        l'inférence avec ONNX.
+                    </p>
+                    <dl class="metrics small">
+                        <div><dt>Latence API moyenne</dt><dd>11,8&nbsp;ms</dd></div>
+                        <div><dt>Latence API P95</dt><dd>15,7&nbsp;ms</dd></div>
+                        <div><dt>Temps de traitement après optimisation</dt><dd>−18,6&nbsp;%</dd></div>
+                    </dl>
+                    <ul class="tags" aria-label="Technologies">
+                        <li>LightGBM</li><li>MLflow</li><li>Evidently</li><li>ONNX</li><li>GitHub Actions</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener" aria-label="Code : Scoring crédit Prêt à dépenser">Code →</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">LLM • RAG</span>
+                        <span class="project-status">Mars-avril 2026</span>
+                    </div>
+                    <h3>Assistant RAG OpenAgenda</h3>
+                    <p>
+                        Recommandation d'événements culturels : préfiltrage structuré (ville,
+                        date, type), recherche sémantique FAISS, classement explicable et
+                        réponse générée par Mistral. Évaluation RAGAS sur des questions
+                        claires, ambiguës et hors corpus.
+                    </p>
+                    <ul class="tags" aria-label="Technologies">
+                        <li>LangChain</li><li>FAISS</li><li>Mistral</li><li>RAGAS</li><li>Docker</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener" aria-label="Code : Assistant RAG OpenAgenda">Code →</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">ML • Déploiement</span>
+                        <span class="project-status">Février 2026</span>
+                    </div>
+                    <h3>TechNova Partners</h3>
+                    <p>
+                        Prédiction du départ des employés, déployée en API FastAPI
+                        sécurisée avec base PostgreSQL et traçabilité des prédictions.
+                        L'API est en ligne.
+                    </p>
+                    <ul class="tags" aria-label="Technologies">
+                        <li>scikit-learn</li><li>FastAPI</li><li>PostgreSQL</li><li>Hugging Face Spaces</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener" aria-label="Code : TechNova Partners">Code →</a>
+                        <a href="https://stegonzalez-technova-api.hf.space/docs" target="_blank" rel="noopener" aria-label="API en ligne : TechNova Partners">API en ligne →</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-top">
+                        <span class="project-type">Vision • Segmentation</span>
+                        <span class="project-status">Oct.-nov. 2025</span>
+                    </div>
+                    <h3>ModeTrends</h3>
+                    <p>
+                        Segmentation de vêtements dans des photos d'influenceurs via un
+                        modèle Hugging Face appelé par API, puis analyse des tendances
+                        par catégorie de vêtement.
+                    </p>
+                    <ul class="tags" aria-label="Technologies">
+                        <li>Hugging Face API</li><li>pandas</li><li>Matplotlib</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/gonzalezcourrier34-glitch/ModeTrends" target="_blank" rel="noopener" aria-label="Code : ModeTrends">Code →</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills" class="section" aria-labelledby="skills-title">
+        <div class="container">
+
+            <p class="section-label">Auto-évaluation</p>
+            <h2 id="skills-title">Compétences</h2>
+
+            <p class="section-intro">
+                Chaque niveau est une auto-évaluation de mon autonomie, et chaque
+                compétence renvoie aux projets où je l'ai mise en œuvre.
+            </p>
+
+            <ul class="legend" aria-label="Échelle des niveaux">
+                <li><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Notions</li>
+                <li><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span> En progression</li>
+                <li><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Opérationnel</li>
+                <li><span class="meter" data-level="4" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Autonome</li>
+            </ul>
+
+            <div class="skills-grid" id="skills-grid">
+                <div class="skill-group">
+                    <h3>Machine Learning & données</h3>
+                    <ul class="skill-list">
+                        <li class="skill"><span class="skill-name">Python</span><span class="skill-level"><span class="meter" data-level="4" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Autonome</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">pandas / NumPy</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a></span></li>
+                        <li class="skill"><span class="skill-name">scikit-learn, LightGBM, XGBoost</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a></span></li>
+                        <li class="skill"><span class="skill-name">SQL, PostgreSQL, pgvector</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Optuna, SHAP</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a></span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Deep Learning & LLM</h3>
+                    <ul class="skill-list">
+                        <li class="skill"><span class="skill-name">PyTorch</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                        <li class="skill"><span class="skill-name">Hugging Face Transformers, PEFT</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                        <li class="skill"><span class="skill-name">Fine-tuning LoRA / QLoRA, SFT, DPO</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                        <li class="skill"><span class="skill-name">RAG : LangChain, FAISS, Milvus, pgvector, RAGAS</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener">RAG OpenAgenda</a><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Évaluation des LLM : juge LLM calibré sur l'humain, kappa, AC1</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener">RAG OpenAgenda</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Agents : LangGraph</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Vision : CNN, OpenCV, segmentation</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a><a href="https://github.com/gonzalezcourrier34-glitch/ModeTrends" target="_blank" rel="noopener">ModeTrends</a></span></li>
+                        <li class="skill"><span class="skill-name">Reinforcement Learning : Stable-Baselines3</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener">LunarLander</a></span></li>
+                        <li class="skill"><span class="skill-name">Anonymisation : Presidio</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                        <li class="skill"><span class="skill-name">TensorFlow</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">À acquérir</span></span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Développement & déploiement</h3>
+                    <ul class="skill-list">
+                        <li class="skill"><span class="skill-name">FastAPI</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener">RAG OpenAgenda</a><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Docker, Docker Compose</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener">RAG OpenAgenda</a><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Tests et qualité : pytest, ruff, pyright, mypy</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Streamlit</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener">RAG OpenAgenda</a></span></li>
+                        <li class="skill"><span class="skill-name">vLLM</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                        <li class="skill"><span class="skill-name">Angular</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>MLOps & cloud</h3>
+                    <ul class="skill-list">
+                        <li class="skill"><span class="skill-name">CI/CD : GitHub Actions</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener">RAG OpenAgenda</a><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">MLflow</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Weights & Biases</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                        <li class="skill"><span class="skill-name">Airflow</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Monitoring et dérive : Evidently, PSI, Prometheus, Grafana</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">ONNX Runtime</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a></span></li>
+                        <li class="skill"><span class="skill-name">GPU cloud (RunPod), Hugging Face Spaces</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                        <li class="skill"><span class="skill-name">Cloud IA managé : Azure ML, SageMaker, Vertex AI</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">À acquérir</span></span></li>
+                        <li class="skill"><span class="skill-name">DVC, Kubernetes</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">À acquérir</span></span></li>
+                        <li class="skill"><span class="skill-name">Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a><span class="note">Fashion-Insta : architecture conçue</span></span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Conduite de projet</h3>
+                    <ul class="skill-list">
+                        <li class="skill"><span class="skill-name">Cadrage et étude de faisabilité</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="note">Fashion-Insta</span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                        <li class="skill"><span class="skill-name">Planning et budget, ROI</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="note">Fashion-Insta</span><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">Critères de succès, grille go / no-go</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
+                        <li class="skill"><span class="skill-name">RGPD et cadre réglementaire (AI Act)</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">En progression</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="note">Fashion-Insta</span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Langues</h3>
+                    <ul class="skill-list">
+                        <li class="skill"><span class="skill-name">Français</span><span class="skill-level"><span class="meter" data-level="4" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Langue maternelle</span></span></li>
+                        <li class="skill"><span class="skill-name">Anglais</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Intermédiaire</span></span></li>
+                        <li class="skill"><span class="skill-name">Espagnol</span><span class="skill-level"><span class="meter" data-level="2" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Intermédiaire</span></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="market">
+                <h3>Ce que demande le marché, et ce que je vais acquérir</h3>
+                <p>
+                    Les offres d'AI Engineer en France demandent, en plus de Python et des
+                    LLM : Docker, Kubernetes, CI/CD, MLflow et Airflow, un cloud (AWS, GCP
+                    ou Azure) et une attention aux coûts et à la latence. Mes projets couvrent
+                    déjà la plupart de ces points, et SortirIA tourne sur Azure ; mes
+                    priorités sont les suivantes.
+                </p>
+                <ol>
+                    <li><strong>Un cloud IA managé</strong> (Azure ML ou AWS SageMaker) : après un service déployé sur Azure Container Apps, entraîner et servir un modèle sur une plateforme dédiée.</li>
+                    <li><strong>Kubernetes</strong> : passer de Docker Compose à un déploiement orchestré.</li>
+                    <li><strong>Versionnement des données</strong> (DVC) et infrastructure en code (Terraform).</li>
+                    <li><strong>Évaluation des LLM en production</strong> : SortirIA suit déjà coûts, versions de consigne, avis et dérive ; reste la qualité mesurée dans la durée, sur un vrai trafic.</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- JOURNEY -->
+
+    <section id="journey" class="section section-alt" aria-labelledby="journey-title">
+        <div class="container">
+
+            <p class="section-label">Chronologie</p>
+            <h2 id="journey-title">Mon parcours</h2>
+
+            <ol class="timeline">
+                <li class="timeline-item">
+                    <span>Expérience professionnelle</span>
+                    <h3>Informatique &amp; électronique</h3>
+                    <p>Relation client, compréhension des besoins, conseil et expérience du secteur informatique.</p>
+                </li>
+                <li class="timeline-item">
+                    <span>Évolution professionnelle</span>
+                    <h3>Gestion de projet informatique</h3>
+                    <p>Organisation, autonomie et approche orientée résolution de problèmes.</p>
+                </li>
+                <li class="timeline-item">
+                    <span>Formation Ingénieur IA · OpenClassrooms</span>
+                    <h3>Du modèle au système</h3>
+                    <p>
+                        Octobre 2025 à novembre 2026 : vision, Machine Learning et déploiement,
+                        RAG, MLOps, cadrage de projet, apprentissage semi-supervisé,
+                        renforcement, ingénierie des données, agents, fine-tuning de LLM,
+                        puis SortirIA, mon projet personnel, mis en production sur Azure.
+                    </p>
+                </li>
+                <li class="timeline-item">
+                    <span>Aujourd'hui</span>
+                    <h3>AI Engineer</h3>
+                    <p>Concevoir des solutions IA complètes, évaluables, reproductibles et déployables.</p>
+                </li>
+            </ol>
+
+        </div>
+    </section>
+
+
+    <!-- REFLECTION -->
+
+    <section id="reflection" class="section" aria-labelledby="reflection-title">
+        <div class="container">
+
+            <p class="section-label">Bilan</p>
+            <h2 id="reflection-title">Prendre du recul</h2>
+
+            <div class="reflection-grid">
+
+                <div class="reflection-card">
+                    <h3>Ce que j'ai appris</h3>
+                    <ul>
+                        <li>La qualité des données prime sur leur quantité.</li>
+                        <li>Une métrique seule ne suffit pas à juger un modèle : sur le triage, le sous-triage compte autant que le F1.</li>
+                        <li>L'analyse des erreurs complète l'évaluation chiffrée.</li>
+                        <li>La reproductibilité doit être pensée dès le début.</li>
+                        <li>Un juge LLM se calibre sur un humain : chaque version de SortirIA lui a retiré ce que le code vérifie mieux que lui.</li>
+                    </ul>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>Ce que je ferais différemment</h3>
+                    <ul>
+                        <li>Figer plus tôt les jeux de données.</li>
+                        <li>Définir les critères de succès avant l'entraînement.</li>
+                        <li>Automatiser davantage les audits.</li>
+                        <li>Mieux cibler les expériences réellement informatives.</li>
+                        <li>Mettre en ligne et surveiller plus tôt, pour mesurer sur de vrais usages.</li>
+                    </ul>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>Les progrès que je constate</h3>
+                    <ul>
+                        <li>Mes premiers projets s'arrêtaient au notebook ; les derniers sont livrés avec API, tests, CI/CD et documentation.</li>
+                        <li>Je sais diagnostiquer un échec d'entraînement et le corriger, au lieu de relancer au hasard.</li>
+                        <li>Je présente mes résultats avec leurs limites.</li>
+                        <li>Je réutilise mon propre code : SortirIA assemble et adapte des briques de quatre projets précédents.</li>
+                        <li>Un service en ligne, déployé à chaque push, avec évaluation en CI, tableaux de bord, alertes et budget.</li>
+                    </ul>
+                </div>
+
+                <div class="reflection-card">
+                    <h3>Les défis qui restent</h3>
+                    <ul>
+                        <li>Tenir une charge réelle, au-delà d'un service à faible trafic.</li>
+                        <li>Orchestrer avec Kubernetes.</li>
+                        <li>Mesurer la qualité des réponses d'un LLM dans la durée, avec de vrais utilisateurs.</li>
+                        <li>Travailler en équipe sur un produit IA déjà en production.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="vision">
+                <p class="eyebrow">ÉVOLUTION DE MA VISION DU MÉTIER</p>
+
+                <div class="vision-flow">
+                    <div>
+                        <small>Au début de la formation</small>
+                        <strong>Entraîner un bon modèle</strong>
+                    </div>
+                    <span aria-hidden="true">→</span>
+                    <div>
+                        <small>Aujourd'hui</small>
+                        <strong>Construire un système IA fiable</strong>
+                    </div>
+                </div>
+
+                <p>
+                    Je voyais l'AI Engineer comme quelqu'un qui choisit et entraîne des
+                    modèles. Je le vois aujourd'hui comme quelqu'un qui part d'un besoin
+                    métier, fixe des critères de réussite, construit toute la chaîne
+                    (données, modèle, évaluation, service, monitoring) et aide à décider
+                    s'il faut déployer ou non.
+                </p>
+                <p>
+                    La formation m'a surtout appris à mener un projet IA comme en entreprise :
+                    cadrer le besoin, chiffrer, mesurer, documenter et rendre compte des limites.
+                </p>
+                <p class="flow-line">
+                    Données → expérimentation → modèle → évaluation →
+                    déploiement → monitoring → amélioration continue
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SOFT SKILLS -->
+
+    <section class="section section-alt" aria-labelledby="soft-title">
+        <div class="container">
+
+            <p class="section-label">Savoir-être</p>
+            <h2 id="soft-title">Soft skills</h2>
+
+            <div class="soft-grid">
+                <div>
+                    <h3>Esprit d'analyse</h3>
+                    <p>Diagnostic de l'échec du premier entraînement sur Qwen3-Base, mesuré puis corrigé (triage médical).</p>
+                </div>
+                <div>
+                    <h3>Curiosité et apprentissage continu</h3>
+                    <p>Onze projets dans des domaines différents, du scoring crédit au renforcement, aux LLM et au cloud.</p>
+                </div>
+                <div>
+                    <h3>Communication et vulgarisation</h3>
+                    <p>Documentation publiée pour chaque projet, rapport technique de 20 pages qui s'ouvre sur une synthèse pour les décideurs.</p>
+                </div>
+                <div>
+                    <h3>Gestion de projet et autonomie</h3>
+                    <p>POC de triage livré en 4 semaines avec une grille go / no-go ; SortirIA en ligne trois jours après son démarrage, avec une feuille de route jusqu'au gel du code.</p>
+                </div>
+                <div>
+                    <h3>Relation client</h3>
+                    <p>Des années passées à traduire un besoin client en solution concrète ; pour SortirIA, des partenaires mis en avant et des demandes d'autorisation avant toute collecte.</p>
+                </div>
+                <div>
+                    <h3>Créativité</h3>
+                    <p>Un agent d'échecs qui combine moteur, RAG et LLM, chacun avec un rôle précis.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+        <div class="container">
+
+            <p class="section-label">Contact</p>
+            <h2 id="contact-title">Construisons quelque chose d'utile.</h2>
+
+            <p>
+                Vous souhaitez échanger autour d'un projet IA, d'une opportunité
+                ou simplement parler technologie ?
+            </p>
+
+            <p class="email">
+                <a href="mailto:gonzalezcourrier34@gmail.com">gonzalezcourrier34@gmail.com</a>
+            </p>
+
+            <div class="hero-actions">
+                <a href="mailto:gonzalezcourrier34@gmail.com" class="button primary">Me contacter</a>
+                <a href="https://github.com/gonzalezcourrier34-glitch" class="button secondary" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/st%C3%A9phane-gonzalez-682123341/" class="button secondary" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<footer>
+    <div class="container footer-content">
+        <span>© 2026 Stéphane Gonzalez</span>
+        <span>AI Engineer</span>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

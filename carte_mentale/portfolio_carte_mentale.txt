@@ -1,0 +1,242 @@
+Stéphane Gonzalez – AI Engineer
+	1. Profil
+		Parcours
+			Informatique & électronique : relation client, conseil
+			Gestion de projet informatique
+			Reconversion : formation Ingénieur IA OpenClassrooms
+		Objectif professionnel
+			AI Engineer : concevoir et mettre en production des solutions LLM
+			Spécialité visée : évaluation et monitoring en production
+		Contact
+			gonzalezcourrier34@gmail.com
+			GitHub (https://github.com/gonzalezcourrier34-glitch/)
+			LinkedIn (https://www.linkedin.com/in/st%C3%A9phane-gonzalez-682123341/)
+	2. Projets
+		Projet personnel – SortirIA (oct.-nov. 2026, en ligne sur Azure)
+			Domaine : RAG, agent, mise en production
+			Réalisation : assistant de sorties Montpellier et bassin de Thau. Agent LangGraph la nuit (OpenAgenda, DATAtourisme, PDF), recherche SQL + mots + pgvector, réponse Mistral. Contraintes respectées 98,7 %, pertinence@3 97,8 %, juge LLM d'accord à 98,6 % avec l'humain (AC1 0,985), P95 6,4 s, 0,12 $ pour 1 000 questions, environ 10 $ par mois
+			Stack : LangGraph, Mistral, PostgreSQL/pgvector, FastAPI, Angular, Azure Container Apps, GitHub Actions, Grafana, MLflow, Airflow
+			Code repris de P6, P12, P13 et P14, puis adapté
+			Site (https://www.sortiria-montpellier.fr)
+			Code (https://github.com/gonzalezcourrier34-glitch/SortirIA)
+			Rapport de conduite de projet
+				Rapport complet (https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html)
+				1. Besoin : une sortie qui respecte date, lieu, public et budget
+				2. Audit des données : sources ouvertes et autorisées, fiches vérifiées et attribuées
+				3. Solution : agent de collecte, recherche hybride, API, interface, Azure
+				4. Appui à la décision : seuils fixés avant de mesurer, juge calibré, limites assumées
+				5. Contrôle : coût, évaluation en CI, Grafana, MLflow, suivi de la dérive (PSI), alertes, budget Azure
+			Thèmes MLOps du projet final
+				Cycle de vie des modèles : couvert (CI/CD, évaluation bloquante, MLflow)
+				Suivi de la dérive : couvert (questions, réponses, collecte ; PSI chaque nuit)
+				Réentraînement automatique : adapté (agent du lundi, pull requests validées)
+				Versionnage données et modèles : partiel (versions de consigne, jeux d'évaluation dans Git)
+		Projets de formation
+			P14 – Agent IA de triage médical (sept.-oct. 2026)
+				Domaine : LLM, fine-tuning, production
+				Réalisation : Qwen3-1.7B, SFT + DPO en QLoRA sur 6 Go, servi par vLLM. 453/500 bien classés, F1 90,6 %, sous-triage 5,4 %, P95 1,13 s
+				Stack : PyTorch, PEFT, Unsloth, vLLM, FastAPI, Prometheus/Grafana, W&B, GitHub Actions
+				Code (https://github.com/gonzalezcourrier34-glitch/medical_triage_agent)
+				Documentation (https://gonzalezcourrier34-glitch.github.io/medical_triage_agent/)
+				Rapport technique (https://github.com/gonzalezcourrier34-glitch/medical_triage_agent/blob/master/docs/rapport_technique.md)
+			P13 – Chess Agent (août 2026)
+				Domaine : Agent IA, RAG
+				Réalisation : Agent LangGraph : Stockfish + Lichess + RAG Wikichess + LLM local. 1 029 tests, couverture CI ≥ 86 %
+				Stack : LangGraph, Milvus, Ollama, FastAPI, MongoDB, Angular, Docker
+				Code (https://github.com/gonzalezcourrier34-glitch/chess_agent)
+				Documentation (https://gonzalezcourrier34-glitch.github.io/chess_agent/)
+			P12 – CheckIt.AI (juillet 2026)
+				Domaine : Data engineering, moteur réutilisable
+				Réalisation : Moteur de collecte multi-sources réutilisable : un moteur par type de source, un adaptateur + config YAML par fournisseur. 21 sources (RSS, API, web, réseaux sociaux, datasets). 1er cas d'usage : fact-checking
+				Stack : Airflow, PostgreSQL, YAML, Docker, Streamlit
+				Code (https://github.com/gonzalezcourrier34-glitch/checkit_ai)
+				Documentation (https://gonzalezcourrier34-glitch.github.io/checkit_ai/)
+			P6 – Assistant RAG OpenAgenda (mars-avril 2026)
+				Domaine : LLM, RAG
+				Réalisation : Préfiltrage structuré + FAISS + classement explicable + Mistral. Évaluation RAGAS (questions claires, ambiguës, hors corpus)
+				Stack : LangChain, FAISS, Mistral, FastAPI, Docker, CI/CD
+				Code (https://github.com/gonzalezcourrier34-glitch/rag-openagenda)
+			P5 – Scoring crédit Prêt à dépenser (avril-mai 2026)
+				Domaine : ML, MLOps
+				Réalisation : Modèle en production, monitoring de dérive, ONNX. Latence API 11,8 ms (P95 15,7 ms), −18,6 % après optimisation
+				Stack : LightGBM, MLflow, Evidently, ONNX, GitHub Actions
+				Code (https://github.com/gonzalezcourrier34-glitch/pret_a_depenser)
+		Autres projets (sur GitHub, preuves de compétences)
+			P4 TechNova : déploiement d'un modèle ML en API (https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners)
+			P8 Fashion-Insta : cadrage, budget, architecture Azure
+			P9-10 BrainScanAI : semi-supervisé sur IRM (https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA)
+			P11 LunarLander : reinforcement learning (https://github.com/gonzalezcourrier34-glitch/Renforcement_learning)
+			ModeTrends : segmentation par API (https://github.com/gonzalezcourrier34-glitch/ModeTrends)
+	3. Compétences techniques
+		Échelle : ●○○○ Notions · ●●○○ En progression · ●●●○ Opérationnel · ●●●● Autonome
+		Machine Learning & données
+			Python  ●●●● Autonome
+				Preuve : P5
+				Preuve : P13
+				Preuve : P14
+				Preuve : SortirIA
+			pandas / NumPy  ●●●○ Opérationnel
+				Preuve : P5
+				Preuve : P9
+				Preuve : P12
+			scikit-learn, LightGBM, XGBoost  ●●●○ Opérationnel
+				Preuve : P4
+				Preuve : P5
+			SQL, PostgreSQL, SQLAlchemy  ●●●○ Opérationnel
+				Preuve : P4
+				Preuve : P5
+				Preuve : P12
+				Preuve : SortirIA
+			Optuna, SHAP  ●●●○ Opérationnel
+				Preuve : P4
+				Preuve : P5
+		Deep Learning & LLM
+			PyTorch  ●●●○ Opérationnel
+				Preuve : P9
+				Preuve : P14
+			Hugging Face Transformers, PEFT  ●●●○ Opérationnel
+				Preuve : P14
+			LoRA / QLoRA, SFT, DPO  ●●●○ Opérationnel
+				Preuve : P14
+			RAG : LangChain, FAISS, Milvus, pgvector, RAGAS  ●●●○ Opérationnel
+				Preuve : P6
+				Preuve : P13
+				Preuve : SortirIA
+			Évaluation des LLM : juge calibré sur l'humain, kappa, AC1  ●●●○ Opérationnel
+				Preuve : P6
+				Preuve : SortirIA
+			Agents : LangGraph  ●●●○ Opérationnel
+				Preuve : P13
+				Preuve : SortirIA
+			Vision : CNN, OpenCV, segmentation  ●●○○ En progression
+				Preuve : P9
+				Preuve : MT
+			RL : Stable-Baselines3  ●●○○ En progression
+				Preuve : P11
+			Anonymisation : Presidio  ●●○○ En progression
+				Preuve : P14
+			TensorFlow  ●○○○ Notions
+				À acquérir
+		Développement & déploiement
+			FastAPI  ●●●○ Opérationnel
+				Preuve : P4
+				Preuve : P5
+				Preuve : P6
+				Preuve : P13
+				Preuve : P14
+				Preuve : SortirIA
+			Docker, Docker Compose  ●●●○ Opérationnel
+				Preuve : P4
+				Preuve : P5
+				Preuve : P6
+				Preuve : P12
+				Preuve : P13
+				Preuve : P14
+				Preuve : SortirIA
+			Tests et qualité : pytest, ruff, pyright, mypy  ●●●○ Opérationnel
+				Preuve : P5
+				Preuve : P12
+				Preuve : P13
+				Preuve : P14
+				Preuve : SortirIA
+			Streamlit  ●●●○ Opérationnel
+				Preuve : P4
+				Preuve : P5
+				Preuve : P6
+			vLLM  ●●○○ En progression
+				Preuve : P14
+			Angular  ●●○○ En progression
+				Preuve : P13
+				Preuve : SortirIA
+		MLOps & cloud
+			CI/CD GitHub Actions  ●●●○ Opérationnel
+				Preuve : P4
+				Preuve : P5
+				Preuve : P6
+				Preuve : P13
+				Preuve : P14
+				Preuve : SortirIA
+			MLflow  ●●●○ Opérationnel
+				Preuve : P5
+				Preuve : SortirIA
+			Weights & Biases  ●●●○ Opérationnel
+				Preuve : P14
+			Airflow  ●●○○ En progression
+				Preuve : P12
+				Preuve : SortirIA
+			Monitoring et dérive : Evidently, PSI, Prometheus, Grafana  ●●●○ Opérationnel
+				Preuve : P5
+				Preuve : P14
+				Preuve : SortirIA
+			ONNX Runtime  ●●○○ En progression
+				Preuve : P5
+			GPU cloud RunPod, Hugging Face Spaces  ●●○○ En progression
+				Preuve : P4
+				Preuve : P14
+			DVC, Kubernetes  ●○○○ Notions
+				À acquérir
+			Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)  ●●○○ En progression
+				Preuve : SortirIA (en production)
+				Preuve : P8 (architecture conçue)
+			Cloud IA managé : Azure ML, SageMaker, Vertex AI  ●○○○ Notions
+				À acquérir
+		Conduite de projet
+			Cadrage et étude de faisabilité  ●●●○ Opérationnel
+				Preuve : P8
+				Preuve : P14
+			Planning, budget, ROI  ●●○○ En progression
+				Preuve : P8
+				Preuve : SortirIA
+			Critères de succès, grille go / no-go  ●●●○ Opérationnel
+				Preuve : P14
+				Preuve : SortirIA
+			RGPD et AI Act  ●●○○ En progression
+				Preuve : P8
+				Preuve : P14
+		Langues
+			Français  ●●●● Langue maternelle
+			Anglais  ●●○○ Intermédiaire
+			Espagnol  ●●○○ Intermédiaire
+	4. Capacité réflexive
+		Ce que j'ai appris
+			La qualité des données prime sur la quantité
+			Une métrique seule ne suffit pas (F1 + sous-triage)
+			L'analyse des erreurs complète les chiffres
+			Penser la reproductibilité dès le début
+		Ce que je ferais différemment
+			Figer plus tôt les datasets
+			Définir les critères de succès avant l'entraînement
+			Automatiser les audits
+			Mieux cibler les expériences
+		Progrès constatés
+			Du notebook au service livré : API, tests, CI/CD, doc
+			Diagnostiquer un échec d'entraînement au lieu de relancer
+			Présenter les résultats avec leurs limites
+		Défis restants
+			Montée en charge réelle
+			Kubernetes
+			Évaluer un LLM dans la durée
+			Travailler en équipe sur un produit en production
+		Évolution de ma vision du métier
+			Avant : entraîner un bon modèle
+			Ce que la formation m'a apporté : mener un projet IA comme en entreprise (cadrer, chiffrer, mesurer, documenter)
+			Aujourd'hui : construire un système IA fiable, du besoin au monitoring
+			Données → expérimentation → modèle → évaluation → déploiement → monitoring → amélioration
+		Compétences à acquérir (marché)
+			Cloud IA managé : Azure ML ou SageMaker
+			Kubernetes
+			DVC, Terraform
+			Évaluation des LLM en production
+	5. Soft skills
+		Esprit d'analyse
+			Diagnostic et correction de l'échec Qwen3-Base (P14)
+		Curiosité et apprentissage continu
+			11 projets dans des domaines différents
+		Communication et vulgarisation
+			Documentation publiée, rapport avec synthèse décideurs
+		Gestion de projet et autonomie
+			POC livré en 4 semaines avec grille go / no-go
+		Relation client
+			Traduire un besoin en solution concrète
+		Créativité
+			Agent d'échecs : moteur + RAG + LLM
