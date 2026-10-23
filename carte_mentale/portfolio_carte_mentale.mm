@@ -69,6 +69,8 @@
 </node>
 </node>
 <node TEXT="Projets de formation" COLOR="#1b7f6e">
+<node TEXT="Tous validés par OpenClassrooms" COLOR="#1b7f6e">
+</node>
 <node TEXT="P14 – Agent IA de triage médical (sept.-oct. 2026)" COLOR="#1b7f6e" FOLDED="true">
 <node TEXT="Domaine : LLM, fine-tuning, production" COLOR="#1b7f6e">
 </node>
@@ -129,6 +131,8 @@
 </node>
 </node>
 <node TEXT="Autres projets (sur GitHub, preuves de compétences)" COLOR="#1b7f6e">
+<node TEXT="Tous validés par OpenClassrooms" COLOR="#1b7f6e">
+</node>
 <node TEXT="P4 TechNova : déploiement d&#x27;un modèle ML en API" COLOR="#1b7f6e" LINK="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners">
 </node>
 <node TEXT="P8 Fashion-Insta : cadrage, budget, architecture Azure" COLOR="#1b7f6e">
@@ -413,6 +417,8 @@
 </node>
 <node TEXT="Penser la reproductibilité dès le début" COLOR="#2a5d9f">
 </node>
+<node TEXT="Un juge LLM se calibre sur un humain (SortirIA)" COLOR="#2a5d9f">
+</node>
 </node>
 <node TEXT="Ce que je ferais différemment" COLOR="#2a5d9f">
 <node TEXT="Figer plus tôt les datasets" COLOR="#2a5d9f">
@@ -423,6 +429,8 @@
 </node>
 <node TEXT="Mieux cibler les expériences" COLOR="#2a5d9f">
 </node>
+<node TEXT="Mettre en ligne et surveiller plus tôt, pour mesurer sur de vrais usages" COLOR="#2a5d9f">
+</node>
 </node>
 <node TEXT="Progrès constatés" COLOR="#2a5d9f">
 <node TEXT="Du notebook au service livré : API, tests, CI/CD, doc" COLOR="#2a5d9f">
@@ -430,6 +438,10 @@
 <node TEXT="Diagnostiquer un échec d&#x27;entraînement au lieu de relancer" COLOR="#2a5d9f">
 </node>
 <node TEXT="Présenter les résultats avec leurs limites" COLOR="#2a5d9f">
+</node>
+<node TEXT="Réutiliser mon propre code : SortirIA assemble cinq projets" COLOR="#2a5d9f">
+</node>
+<node TEXT="Un service en ligne avec CI, tableaux de bord, alertes et budget" COLOR="#2a5d9f">
 </node>
 </node>
 <node TEXT="Défis restants" COLOR="#2a5d9f">

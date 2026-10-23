@@ -928,3 +928,6 @@ footer {
     .facts, .project-media { break-inside: avoid; }
     .project-media.phones figure { flex-basis: 160px; }
 }
+
+/* Projet validé par OpenClassrooms (23/10/2026) */
+.validated { color: var(--accent); font-weight: 700; }

@@ -33,6 +33,7 @@ Stéphane Gonzalez – AI Engineer
 				Réentraînement automatique : adapté (agent du lundi, pull requests validées)
 				Versionnage données et modèles : partiel (versions de consigne, jeux d'évaluation dans Git)
 		Projets de formation
+			Tous validés par OpenClassrooms
 			P14 – Agent IA de triage médical (sept.-oct. 2026)
 				Domaine : LLM, fine-tuning, production
 				Réalisation : Qwen3-1.7B, SFT + DPO en QLoRA sur 6 Go, servi par vLLM. 453/500 bien classés, F1 90,6 %, sous-triage 5,4 %, P95 1,13 s
@@ -63,6 +64,7 @@ Stéphane Gonzalez – AI Engineer
 				Stack : LightGBM, MLflow, Evidently, ONNX, GitHub Actions
 				Code (https://github.com/gonzalezcourrier34-glitch/pret_a_depenser)
 		Autres projets (sur GitHub, preuves de compétences)
+			Tous validés par OpenClassrooms
 			P4 TechNova : déploiement d'un modèle ML en API (https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners)
 			P8 Fashion-Insta : cadrage, budget, architecture Azure
 			P9-10 BrainScanAI : semi-supervisé sur IRM (https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA)
@@ -204,15 +206,19 @@ Stéphane Gonzalez – AI Engineer
 			Une métrique seule ne suffit pas (F1 + sous-triage)
 			L'analyse des erreurs complète les chiffres
 			Penser la reproductibilité dès le début
+			Un juge LLM se calibre sur un humain (SortirIA)
 		Ce que je ferais différemment
 			Figer plus tôt les datasets
 			Définir les critères de succès avant l'entraînement
 			Automatiser les audits
 			Mieux cibler les expériences
+			Mettre en ligne et surveiller plus tôt, pour mesurer sur de vrais usages
 		Progrès constatés
 			Du notebook au service livré : API, tests, CI/CD, doc
 			Diagnostiquer un échec d'entraînement au lieu de relancer
 			Présenter les résultats avec leurs limites
+			Réutiliser mon propre code : SortirIA assemble cinq projets
+			Un service en ligne avec CI, tableaux de bord, alertes et budget
 		Défis restants
 			Montée en charge réelle
 			Kubernetes
