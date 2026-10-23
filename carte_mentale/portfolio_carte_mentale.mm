@@ -4,9 +4,11 @@
 <node TEXT="1. Profil" POSITION="right" COLOR="#1b7f6e">
 <font NAME="SansSerif" SIZE="14" BOLD="true"/>
 <node TEXT="Parcours" COLOR="#1b7f6e">
-<node TEXT="Informatique &amp; électronique : relation client, conseil" COLOR="#1b7f6e">
+<node TEXT="Développeur SQL, Visual Basic, WinDev, puis cadre (1998-2006)" COLOR="#1b7f6e">
 </node>
-<node TEXT="Gestion de projet informatique" COLOR="#1b7f6e">
+<node TEXT="Formation d&apos;éducateur technique spécialisé, licence en sciences de l&apos;éducation (2011)" COLOR="#1b7f6e">
+</node>
+<node TEXT="Conseiller de vente en informatique (2009-2025) : relation client, conseil" COLOR="#1b7f6e">
 </node>
 <node TEXT="Reconversion : formation Ingénieur IA OpenClassrooms" COLOR="#1b7f6e">
 </node>
@@ -35,7 +37,7 @@
 </node>
 <node TEXT="Stack : LangGraph, Mistral, PostgreSQL/pgvector, FastAPI, Angular, Azure Container Apps, GitHub Actions, Grafana, MLflow, Airflow" COLOR="#1b7f6e">
 </node>
-<node TEXT="Code repris de P6, P12, P13 et P14, puis adapté" COLOR="#1b7f6e">
+<node TEXT="Code repris de P5, P6, P12, P13 et P14, puis adapté" COLOR="#1b7f6e">
 </node>
 <node TEXT="Site" COLOR="#1b7f6e" LINK="https://www.sortiria-montpellier.fr">
 </node>
