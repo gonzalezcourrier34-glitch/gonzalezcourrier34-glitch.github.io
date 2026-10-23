@@ -464,14 +464,16 @@
 <node TEXT="Données → expérimentation → modèle → évaluation → déploiement → monitoring → amélioration" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="Compétences à acquérir (marché)" COLOR="#2a5d9f">
-<node TEXT="Cloud IA managé : Azure ML ou SageMaker" COLOR="#2a5d9f">
+<node TEXT="Compétences à acquérir (4 offres d&apos;AI Engineer relues en octobre 2026)" COLOR="#2a5d9f">
+<node TEXT="Kubernetes (2 offres sur 4)" COLOR="#2a5d9f">
 </node>
-<node TEXT="Kubernetes" COLOR="#2a5d9f">
+<node TEXT="Cloud IA managé (Azure ML ou SageMaker) et Terraform" COLOR="#2a5d9f">
 </node>
-<node TEXT="DVC, Terraform" COLOR="#2a5d9f">
+<node TEXT="Sécurité : OIDC, RBAC, secrets (2 offres sur 4)" COLOR="#2a5d9f">
 </node>
-<node TEXT="Évaluation des LLM en production" COLOR="#2a5d9f">
+<node TEXT="DVC et TensorFlow (2 offres sur 4)" COLOR="#2a5d9f">
+</node>
+<node TEXT="Évaluation des LLM en production, sur un vrai trafic" COLOR="#2a5d9f">
 </node>
 </node>
 </node>

@@ -229,11 +229,12 @@ Stéphane Gonzalez – AI Engineer
 			Ce que la formation m'a apporté : mener un projet IA comme en entreprise (cadrer, chiffrer, mesurer, documenter)
 			Aujourd'hui : construire un système IA fiable, du besoin au monitoring
 			Données → expérimentation → modèle → évaluation → déploiement → monitoring → amélioration
-		Compétences à acquérir (marché)
-			Cloud IA managé : Azure ML ou SageMaker
-			Kubernetes
-			DVC, Terraform
-			Évaluation des LLM en production
+		Compétences à acquérir (4 offres d'AI Engineer relues en octobre 2026)
+			Kubernetes (2 offres sur 4)
+			Cloud IA managé (Azure ML ou SageMaker) et Terraform
+			Sécurité : OIDC, RBAC, secrets (2 offres sur 4)
+			DVC et TensorFlow (2 offres sur 4)
+			Évaluation des LLM en production, sur un vrai trafic
 	5. Soft skills
 		Esprit d'analyse
 			Diagnostic et correction de l'échec Qwen3-Base (P14)

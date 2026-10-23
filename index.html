@@ -401,8 +401,8 @@
                         <div><dt>Le défi</dt><dd>Obtenir un atterrissage stable et reproductible : comparer DQN et PPO, puis régler leurs hyperparamètres avec Optuna.</dd></div>
                     </dl>
                     <figure class="project-media">
-                        <img src="img/lunarlander.gif" alt="Simulation : l'agent entraîné pose le module lunaire entre les deux drapeaux" width="600" height="400" loading="lazy">
-                        <figcaption>Un atterrissage réussi par l'agent entraîné.</figcaption>
+                        <img src="img/lunarlander.png" alt="Fin de simulation : l'agent entraîné a posé le module lunaire sur la zone d'atterrissage" width="600" height="400" loading="lazy">
+                        <figcaption>Un atterrissage réussi par l'agent entraîné · <a href="img/lunarlander.gif">voir l'animation (9 s)</a></figcaption>
                     </figure>
                     <ul class="tags" aria-label="Technologies">
                         <li>Stable-Baselines3</li><li>Gymnasium</li><li>Optuna</li><li>FastAPI</li>
@@ -671,18 +671,49 @@
             <div class="market">
                 <h3>Ce que demande le marché, et ce que je vais acquérir</h3>
                 <p>
-                    Les offres d'AI Engineer en France demandent, en plus de Python et des
-                    LLM : Docker, Kubernetes, CI/CD, MLflow et Airflow, un cloud (AWS, GCP
-                    ou Azure) et une attention aux coûts et à la latence. Mes projets couvrent
-                    déjà la plupart de ces points, et SortirIA tourne sur Azure ; mes
-                    priorités sont les suivantes.
+                    J'ai relu en octobre 2026 quatre offres d'AI Engineer en France (Alten,
+                    Verra, SBS, Cyclife Digital Solutions du groupe EDF) et un panorama du
+                    métier. Ce tableau compte combien des quatre offres citent chaque
+                    compétence, et la met en face de mon niveau. Trois offres sur quatre
+                    visent un profil confirmé : je les lis comme une direction, pas comme
+                    une barre d'entrée.
                 </p>
+                <div class="market-table" role="region" aria-label="Compétences demandées par les offres et mon niveau" tabindex="0">
+                    <table>
+                        <caption class="sr-only">Compétences citées dans quatre offres d'AI Engineer, et mon niveau</caption>
+                        <thead>
+                            <tr><th scope="col">Compétence demandée</th><th scope="col">Offres</th><th scope="col">Mon niveau, ma preuve</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">Python, mise en production (FastAPI)</th><td>4 / 4</td><td>Autonome ; API dans 6 projets</td></tr>
+                            <tr><th scope="row">LLM et LangChain ou LangGraph</th><td>4 / 4</td><td>Opérationnel ; SortirIA, Chess Agent, RAG OpenAgenda</td></tr>
+                            <tr><th scope="row">MLOps : CI/CD, MLflow, monitoring</th><td>4 / 4</td><td>Opérationnel ; évaluation bloquante en CI, MLflow, Grafana</td></tr>
+                            <tr><th scope="row">RAG, embeddings, bases vectorielles</th><td>3 / 4</td><td>Opérationnel ; pgvector, FAISS, Milvus</td></tr>
+                            <tr><th scope="row">Agents et outils</th><td>3 / 4</td><td>Opérationnel ; agent LangGraph en production</td></tr>
+                            <tr><th scope="row">Évaluation des LLM, hallucinations</th><td>3 / 4</td><td>Opérationnel ; juge calibré sur l'humain, citations vérifiées</td></tr>
+                            <tr><th scope="row">PyTorch, Hugging Face</th><td>3 / 4</td><td>Opérationnel ; fine-tuning SFT et DPO</td></tr>
+                            <tr><th scope="row">Recherche hybride (mots et vecteurs)</th><td>2 / 4</td><td>Opérationnel ; fusion des rangs dans SortirIA</td></tr>
+                            <tr><th scope="row">Docker</th><td>2 / 4</td><td>Opérationnel ; 7 projets</td></tr>
+                            <tr><th scope="row">Cloud (Azure, AWS, GCP)</th><td>2 / 4</td><td>En progression ; SortirIA sur Azure</td></tr>
+                            <tr class="gap"><th scope="row">Kubernetes</th><td>2 / 4</td><td>Notions : à acquérir en priorité</td></tr>
+                            <tr class="gap"><th scope="row">TensorFlow</th><td>2 / 4</td><td>Notions : à acquérir</td></tr>
+                            <tr class="gap"><th scope="row">Sécurité : OIDC, RBAC, secrets</th><td>2 / 4</td><td>Notions : à approfondir</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>Mes priorités, dans l'ordre :</p>
                 <ol>
-                    <li><strong>Un cloud IA managé</strong> (Azure ML ou AWS SageMaker) : après un service déployé sur Azure Container Apps, entraîner et servir un modèle sur une plateforme dédiée.</li>
-                    <li><strong>Kubernetes</strong> : passer de Docker Compose à un déploiement orchestré.</li>
-                    <li><strong>Versionnage des données</strong> (DVC) et infrastructure en code (Terraform).</li>
+                    <li><strong>Kubernetes</strong> : passer de Docker Compose et Container Apps à un déploiement orchestré.</li>
+                    <li><strong>Un cloud IA managé</strong> (Azure ML ou AWS SageMaker) et l'infrastructure en code (Terraform).</li>
+                    <li><strong>Sécurité des services IA</strong> : OIDC, droits par rôle, gestion des secrets.</li>
+                    <li><strong>Versionnage des données</strong> (DVC) et TensorFlow, pour lire et reprendre des projets existants.</li>
                     <li><strong>Évaluation des LLM en production</strong> : SortirIA suit déjà coûts, versions de consigne, avis et dérive ; reste la qualité mesurée dans la durée, sur un vrai trafic.</li>
                 </ol>
+                <p class="sources">Sources : offres <a href="https://www.alten.fr/jobs/744000144584179-ingenieur-ia-developpement-de-solutions-llm-automatisation-h-f/" target="_blank" rel="noopener">Alten</a>,
+                    <a href="https://www.welcometothejungle.com/fr/companies/descartes-mauss/jobs/sr-ai-engineer_paris" target="_blank" rel="noopener">Verra</a>,
+                    <a href="https://www.welcometothejungle.com/fr/companies/sbs/jobs/cdi-ai-engineer-digital-banking-sbs-paris_courbevoie" target="_blank" rel="noopener">SBS</a>,
+                    <a href="https://www.edf.fr/edf-recrute/offre/detail/2026-183532" target="_blank" rel="noopener">Cyclife Digital Solutions (EDF)</a> ;
+                    panorama <a href="https://jobrise.io/fr/blog/ingenieur-ia-emplois-france-2026/" target="_blank" rel="noopener">JobRise, mai 2026</a>.</p>
             </div>
 
         </div>
