@@ -851,3 +851,80 @@ footer {
     .timeline-item, .soft-grid div, .market { break-inside: avoid; }
     h2, h3, h4 { break-after: avoid; }
 }
+
+/* Rôle et défi de chaque projet (23/10/2026) */
+.facts {
+    display: grid;
+    gap: 0.6rem;
+    padding: 1rem 1.2rem;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    border-radius: 0 12px 12px 0;
+    font-size: 0.9rem;
+}
+
+.facts div { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; }
+.facts dt { color: var(--accent); font-weight: 700; }
+.facts dd { color: var(--text); }
+
+/* Visuels des projets */
+.project-media { margin: 0; }
+
+.project-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+}
+
+.project-media figcaption,
+.project-media.phones figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.project-media.wide img { background: transparent; border: 0; }
+
+.project-media.phones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.project-media.phones figure { flex: 0 1 220px; margin: 0; }
+.project-media.phones img { border-radius: 20px; }
+
+/* Photo (à activer dans index.html) */
+.hero-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+/* Témoignage (à activer dans index.html) */
+.testimony {
+    max-width: 780px;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--accent);
+    background: var(--surface-light);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.testimony p { font-size: 1.15rem; }
+.testimony footer { margin-top: 0.8rem; padding: 0; border: 0; color: var(--muted); }
+
+@media (max-width: 520px) {
+    .facts div { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+    .project-media.phones figure { flex-basis: calc(50% - 0.75rem); }
+}
+
+@media print {
+    .facts, .project-media { break-inside: avoid; }
+    .project-media.phones figure { flex-basis: 160px; }
+}

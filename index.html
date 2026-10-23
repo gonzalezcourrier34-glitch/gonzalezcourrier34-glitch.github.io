@@ -48,6 +48,10 @@
     <section id="home" class="hero">
         <div class="container hero-content">
 
+            <!-- Photo : déposer img/photo.jpg (carrée, 400 px) puis retirer ce commentaire
+            <img class="hero-photo" src="img/photo.jpg" alt="Stéphane Gonzalez" width="140" height="140">
+            -->
+
             <p class="eyebrow">PORTFOLIO • AI ENGINEER</p>
 
             <h1>
@@ -72,6 +76,9 @@
 
             <div class="hero-actions">
                 <a href="#projects" class="button primary">Découvrir mes projets</a>
+                <!-- CV : déposer cv_Stephane_Gonzalez.pdf à la racine puis retirer ce commentaire
+                <a href="cv_Stephane_Gonzalez.pdf" class="button secondary" download>Télécharger mon CV (PDF)</a>
+                -->
                 <a href="#personal-project" class="button secondary">Projet personnel : SortirIA</a>
                 <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" class="button secondary" target="_blank" rel="noopener">Rapport de conduite de projet</a>
                 <a href="https://github.com/gonzalezcourrier34-glitch" class="button secondary" target="_blank" rel="noopener">GitHub</a>
@@ -141,6 +148,8 @@
             <p class="section-intro">
                 Onze projets menés pendant ma formation, du plus récent au plus ancien.
                 Chacun est livré avec son code ou ses livrables, et chaque carte y renvoie.
+                Tous sont des projets individuels : chaque carte précise mon rôle et la
+                principale difficulté rencontrée.
                 Le dernier, SortirIA, est mon projet personnel : il réunit les briques des
                 précédents dans un service en ligne.
             </p>
@@ -165,6 +174,22 @@
                     rédige la réponse. Le service est en ligne sur Azure, déployé à chaque
                     push et surveillé.
                 </p>
+
+                <dl class="facts">
+                    <div><dt>Mon rôle</dt><dd>Seul, de bout en bout : cadrage, demandes d'autorisation aux sources, code, déploiement sur Azure et suivi en production.</dd></div>
+                    <div><dt>Le défi</dt><dd>Respecter à coup sûr la date, le lieu, le public et le budget d'une demande écrite librement, avec des agendas hétérogènes à collecter et vérifier chaque nuit.</dd></div>
+                </dl>
+
+                <div class="project-media phones">
+                    <figure>
+                        <img src="img/sortiria_accueil.jpg" alt="Page d'accueil de SortirIA sur téléphone : champ de recherche, filtres et exemples de demandes" width="420" height="909" loading="lazy">
+                        <figcaption>L'accueil : on écrit sa demande comme on la dirait.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/sortiria_cartes.jpg" alt="Réponse de SortirIA : cartes de concerts à Montpellier avec date, lieu, prix et source" width="420" height="909" loading="lazy">
+                        <figcaption>La réponse : des cartes datées, avec prix et source citée.</figcaption>
+                    </figure>
+                </div>
 
                 <dl class="metrics">
                     <div><dt>Contraintes respectées</dt><dd>98,7&nbsp;%</dd></div>
@@ -260,6 +285,16 @@
                     journalisée et surveillée.
                 </p>
 
+                <dl class="facts">
+                    <div><dt>Mon rôle</dt><dd>Seul : audit et anonymisation des données, entraînement, service du modèle, tests et documentation.</dd></div>
+                    <div><dt>Le défi</dt><dd>Spécialiser un modèle sur une carte de 6&nbsp;Go sans sous-trier les urgences : le premier entraînement (Qwen3-Base) a échoué, je l'ai diagnostiqué puis corrigé.</dd></div>
+                </dl>
+
+                <figure class="project-media wide">
+                    <img src="img/triage_architecture.svg" alt="Architecture : entraînement hors ligne sur mon poste, puis service d'inférence FastAPI et vLLM surveillé par Prometheus et Grafana" width="1080" height="640" loading="lazy">
+                    <figcaption>Chaque brique est marquée opérationnelle ou partielle : l'état réel, pas l'état visé.</figcaption>
+                </figure>
+
                 <dl class="metrics">
                     <div><dt>Cas du test gelé bien classés</dt><dd>453 / 500</dd></div>
                     <div><dt>F1 macro</dt><dd>90,6&nbsp;%</dd></div>
@@ -306,6 +341,10 @@
                         combine Stockfish, Lichess, un RAG sur Wikichess et un LLM local
                         pour expliquer une position en français.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul : architecture de l'agent, backend FastAPI, interface Angular, tests et CI.</dd></div>
+                        <div><dt>Le défi</dt><dd>Ne pas laisser le LLM inventer un coup ou une évaluation : Stockfish calcule, les sources apportent le contexte, le LLM explique seulement.</dd></div>
+                    </dl>
                     <dl class="metrics small">
                         <div><dt>Tests automatisés</dt><dd>1&nbsp;029</dd></div>
                         <div><dt>Couverture exigée par la CI</dt><dd>≥&nbsp;86&nbsp;%</dd></div>
@@ -331,6 +370,10 @@
                         Validation, déduplication et contrôle qualité, orchestrés par Airflow.
                         Premier cas d'usage : le fact-checking. SortirIA le réutilise.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul : architecture du moteur, connecteurs, orchestration Airflow et tableau de bord.</dd></div>
+                        <div><dt>Le défi</dt><dd>Faire entrer des sources très différentes dans un même format fiable (dates, liens, doublons, images vérifiés) sans dupliquer le code.</dd></div>
+                    </dl>
                     <dl class="metrics small">
                         <div><dt>Sources branchées (RSS, API, web, réseaux sociaux, datasets)</dt><dd>21</dd></div>
                     </dl>
@@ -354,6 +397,14 @@
                         optimisation des hyperparamètres et restitution dans une API
                         et un tableau de bord.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul : entraînement des agents, réglage des hyperparamètres, API et tableau de bord.</dd></div>
+                        <div><dt>Le défi</dt><dd>Obtenir un atterrissage stable et reproductible : comparer DQN et PPO, puis régler leurs hyperparamètres avec Optuna.</dd></div>
+                    </dl>
+                    <figure class="project-media">
+                        <img src="img/lunarlander.gif" alt="Simulation : l'agent entraîné pose le module lunaire entre les deux drapeaux" width="600" height="400" loading="lazy">
+                        <figcaption>Un atterrissage réussi par l'agent entraîné.</figcaption>
+                    </figure>
                     <ul class="tags" aria-label="Technologies">
                         <li>Stable-Baselines3</li><li>Gymnasium</li><li>Optuna</li><li>FastAPI</li>
                     </ul>
@@ -374,6 +425,14 @@
                         pseudo-étiquettes, puis entraînement d'un ResNet18. Étude de coût
                         pour un budget de 5&nbsp;000&nbsp;€.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul : pipeline semi-supervisé, évaluation et étude de coût.</dd></div>
+                        <div><dt>Le défi</dt><dd>Apprendre avec très peu d'images annotées sans manquer de tumeur : le rappel prime sur tout le reste.</dd></div>
+                    </dl>
+                    <figure class="project-media">
+                        <img src="img/curelytics_resultats.png" alt="Graphique : accuracy, précision, rappel, F1 et F2 des trois approches ; la semi-supervisée après fine-tuning atteint un rappel de 1,00" width="908" height="490" loading="lazy">
+                        <figcaption>Supervisé seul, puis semi-supervisé avant et après fine-tuning.</figcaption>
+                    </figure>
                     <dl class="metrics small">
                         <div><dt>Rappel (tumeurs détectées)</dt><dd>1,00</dd></div>
                         <div><dt>F2-score</dt><dd>0,98</dd></div>
@@ -399,6 +458,10 @@
                         (CLIP + recherche vectorielle), planning de 3 semaines, budget de
                         13 à 15&nbsp;k€, KPI de succès, architecture cible sur Azure, ROI et RGPD.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul, dans le rôle du chef de projet IA : cadrage, chiffrage et présentation au client.</dd></div>
+                        <div><dt>Le défi</dt><dd>Permettre une décision avant d'écrire du code : KPI, budget, planning et contraintes RGPD fixés pour un go / no-go.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Compétences">
                         <li>Cadrage</li><li>Budget &amp; ROI</li><li>Architecture Azure</li><li>RGPD</li><li>CLIP</li>
                     </ul>
@@ -418,6 +481,10 @@
                         MLflow, monitoring de la dérive avec Evidently, optimisation de
                         l'inférence avec ONNX.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul : API, suivi MLflow, monitoring de la dérive, optimisation et CI.</dd></div>
+                        <div><dt>Le défi</dt><dd>Garder un modèle fiable après son déploiement : tracer chaque appel, détecter la dérive et accélérer l'inférence.</dd></div>
+                    </dl>
                     <dl class="metrics small">
                         <div><dt>Latence API moyenne</dt><dd>11,8&nbsp;ms</dd></div>
                         <div><dt>Latence API P95</dt><dd>15,7&nbsp;ms</dd></div>
@@ -443,6 +510,10 @@
                         réponse générée par Mistral. Évaluation RAGAS sur des questions
                         claires, ambiguës et hors corpus.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul : collecte OpenAgenda, pipeline RAG, évaluation et conteneurisation.</dd></div>
+                        <div><dt>Le défi</dt><dd>Comprendre une demande libre, parfois floue, et ne répondre qu'avec les événements retrouvés, sans en inventer.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>LangChain</li><li>FAISS</li><li>Mistral</li><li>RAGAS</li><li>Docker</li>
                     </ul>
@@ -462,6 +533,10 @@
                         sécurisée avec base PostgreSQL et traçabilité des prédictions.
                         L'API est en ligne.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul : base de données, API sécurisée, tests, CI/CD et mise en ligne.</dd></div>
+                        <div><dt>Le défi</dt><dd>Rendre le modèle utilisable en production : aucune préparation des données dans l'API, chaque prédiction tracée en base.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>scikit-learn</li><li>FastAPI</li><li>PostgreSQL</li><li>Hugging Face Spaces</li>
                     </ul>
@@ -482,6 +557,14 @@
                         modèle Hugging Face appelé par API, puis analyse des tendances
                         par catégorie de vêtement.
                     </p>
+                    <dl class="facts">
+                        <div><dt>Mon rôle</dt><dd>Seul : appels au modèle, mesure de sa qualité et analyse des tendances.</dd></div>
+                        <div><dt>Le défi</dt><dd>Juger un modèle que je n'ai pas entraîné : l'IoU et le Dice par vêtement montrent que les petits éléments (chaussures, bras) sont mal segmentés.</dd></div>
+                    </dl>
+                    <figure class="project-media">
+                        <img src="img/modetrends_iou_dice.png" alt="Graphique : IoU et Dice par vêtement, élevés pour robes et jupes, faibles pour chaussures et membres" width="1000" height="396" loading="lazy">
+                        <figcaption>Qualité de la segmentation, vêtement par vêtement.</figcaption>
+                    </figure>
                     <ul class="tags" aria-label="Technologies">
                         <li>Hugging Face API</li><li>pandas</li><li>Matplotlib</li>
                     </ul>
@@ -777,6 +860,19 @@
     </section>
 
 
+    <!-- TÉMOIGNAGE : à activer avec l'accord de la personne citée
+    <section class="section" aria-labelledby="testimony-title">
+        <div class="container">
+            <p class="section-label">Témoignage</p>
+            <h2 id="testimony-title">Ils ont travaillé avec moi</h2>
+            <blockquote class="testimony">
+                <p>« Texte du témoignage. »</p>
+                <footer>Prénom Nom, mentor OpenClassrooms</footer>
+            </blockquote>
+        </div>
+    </section>
+    -->
+
     <!-- CONTACT -->
 
     <section id="contact" class="section contact" aria-labelledby="contact-title">
@@ -796,6 +892,9 @@
 
             <div class="hero-actions">
                 <a href="mailto:gonzalezcourrier34@gmail.com" class="button primary">Me contacter</a>
+                <!-- CV : retirer ce commentaire quand le PDF est déposé
+                <a href="cv_Stephane_Gonzalez.pdf" class="button secondary" download>Mon CV (PDF)</a>
+                -->
                 <a href="https://github.com/gonzalezcourrier34-glitch" class="button secondary" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://www.linkedin.com/in/st%C3%A9phane-gonzalez-682123341/" class="button secondary" target="_blank" rel="noopener">LinkedIn</a>
             </div>
