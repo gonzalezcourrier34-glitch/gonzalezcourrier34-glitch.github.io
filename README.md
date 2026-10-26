@@ -7,7 +7,7 @@ Portfolio présentant mon parcours, mes compétences et les projets réalisés p
 - Code du projet technique : https://github.com/gonzalezcourrier34-glitch/SortirIA
 - Compétences auto-évaluées sur 4 niveaux, chacune reliée aux projets qui la prouvent
 - Réflexion sur le parcours, soft skills, compétences visées
-- Carte mentale : `carte_mentale/portfolio_carte_mentale.mm` (Freeplane, FreeMind, Xmind) et sa version texte
+- Carte mentale : affichée dans la section « À propos » (cinq branches reliées aux sections), et complète dans `carte_mentale/portfolio_carte_mentale.mm` (Freeplane, FreeMind, Xmind) et sa version texte
 - Version PDF du portfolio : `portfolio_Stephane_Gonzalez.pdf`
 
 ## Exécution locale

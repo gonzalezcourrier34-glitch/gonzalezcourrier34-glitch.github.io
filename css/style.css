@@ -958,3 +958,109 @@ footer {
     .market-table td:nth-child(2)::before { content: "Offres : "; font-family: var(--font-body); color: var(--muted); }
     .market-table td:nth-child(2)::after { content: " · "; color: var(--muted); }
 }
+
+/* Carte mentale (section À propos) : une racine, cinq branches ; en colonne sur petit écran */
+.mindmap { margin-top: 3.5rem; }
+.mindmap > h3 { font-size: 1.35rem; margin-bottom: 0.5rem; }
+.mindmap-intro { color: var(--muted); max-width: 60ch; }
+.mindmap-root {
+    width: fit-content;
+    margin: 2rem auto 0;
+    padding: 0.8rem 1.6rem;
+    border: 2px solid var(--accent);
+    border-radius: 999px;
+    background: var(--accent-soft);
+    font-weight: 700;
+    text-align: center;
+}
+.mindmap-branches {
+    list-style: none;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+}
+.mindmap-branches::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    border-top: 2px solid var(--accent);
+}
+.mindmap-branches::after {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    height: 2rem;
+    border-left: 2px solid var(--accent);
+}
+.mindmap-branch {
+    position: relative;
+    padding: 1.1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+.mindmap-branch::before {
+    content: "";
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    height: 1.5rem;
+    border-left: 2px solid var(--accent);
+}
+.mindmap-branch h4 { font-size: 1rem; margin-bottom: 0.6rem; }
+.mindmap-branch h4 a { color: var(--accent); text-decoration: none; }
+.mindmap-branch h4 a:hover,
+.mindmap-branch h4 a:focus-visible { text-decoration: underline; }
+.mindmap-branch ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+.mindmap-branch ul li { position: relative; padding-left: 0.9rem; }
+.mindmap-branch ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--accent);
+}
+.mindmap-files { margin-top: 1.5rem; color: var(--muted); text-align: center; }
+.mindmap-files a { color: var(--accent); }
+
+@media (max-width: 900px) {
+    .mindmap-root { margin-left: 0; }
+    .mindmap-branches {
+        grid-template-columns: 1fr;
+        margin-left: 1rem;
+        padding-top: 0;
+        padding-left: 1.5rem;
+    }
+    .mindmap-branches::before { top: -2rem; bottom: 1.6rem; left: 0; right: auto; border-top: 0; border-left: 2px solid var(--accent); }
+    .mindmap-branches::after { display: none; }
+    .mindmap-branch::before { top: 1.5rem; left: -1.5rem; width: 1.5rem; height: 0; border-left: 0; border-top: 2px solid var(--accent); }
+    .mindmap-files { text-align: left; }
+}
+
+@media print {
+    #projects { break-before: page; }
+    .mindmap { break-inside: avoid; }
+    .mindmap-root { margin: 1rem 0 0; }
+    .mindmap-branches { grid-template-columns: repeat(5, 1fr); gap: 0.5rem; margin: 1rem 0 0; padding: 0; }
+    .mindmap-branches::before,
+    .mindmap-branches::after,
+    .mindmap-branch::before { display: none; }
+    .mindmap-branch { break-inside: avoid; padding: 0.7rem; }
+    .mindmap-branch ul { font-size: 0.8rem; }
+}
