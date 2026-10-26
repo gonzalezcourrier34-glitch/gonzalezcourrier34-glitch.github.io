@@ -306,11 +306,13 @@
                                 déployée. Un fine-tuning est prévu quand les avis réels suffiront.</dd>
                         </div>
                         <div class="mlops-row">
-                            <dt>Versionnage des données et des modèles <span class="status partial">Partiel</span></dt>
-                            <dd>Chaque réponse garde la version de sa consigne, et MLflow celle du
-                                juge (v7) et de la lecture des PDF. Les jeux d'évaluation et la
-                                configuration des sources sont versionnés dans Git. Pas de DVC ni de
-                                Model Registry : aucun modèle entraîné à enregistrer.</dd>
+                            <dt>Versionnage des données et des modèles <span class="status done">Couvert</span></dt>
+                            <dd>Les 8 consignes sont dans le Prompt Registry de MLflow ; la chaîne
+                                (modèles Mistral, versions des consignes, empreintes des 10 jeux
+                                d'évaluation) dans le Model Registry, avec les alias «&nbsp;production&nbsp;»
+                                et «&nbsp;précédente&nbsp;». La CI refuse une consigne modifiée sans nouvelle
+                                version, et chaque réponse garde la sienne. Pas de DVC : les jeux,
+                                environ 1&nbsp;Mo, restent dans Git.</dd>
                         </div>
                     </dl>
                 </div>

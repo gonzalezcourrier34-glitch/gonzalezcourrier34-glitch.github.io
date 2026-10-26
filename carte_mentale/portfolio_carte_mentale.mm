@@ -64,7 +64,7 @@
 </node>
 <node TEXT="Réentraînement automatique : adapté (agent du lundi, pull requests validées)" COLOR="#1b7f6e">
 </node>
-<node TEXT="Versionnage données et modèles : partiel (versions de consigne, jeux d&#x27;évaluation dans Git)" COLOR="#1b7f6e">
+<node TEXT="Versionnage données et modèles : couvert (consignes et chaîne dans les registres MLflow, jeux d&#x27;évaluation avec empreinte, contrôle en CI)" COLOR="#1b7f6e">
 </node>
 </node>
 </node>

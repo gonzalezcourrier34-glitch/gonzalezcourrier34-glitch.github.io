@@ -31,7 +31,7 @@ Stéphane Gonzalez – AI Engineer
 				Cycle de vie des modèles : couvert (CI/CD, évaluation bloquante, MLflow)
 				Suivi de la dérive : couvert (questions, réponses, collecte ; PSI chaque nuit)
 				Réentraînement automatique : adapté (agent du lundi, pull requests validées)
-				Versionnage données et modèles : partiel (versions de consigne, jeux d'évaluation dans Git)
+				Versionnage données et modèles : couvert (consignes et chaîne dans les registres MLflow, jeux d'évaluation avec empreinte, contrôle en CI)
 		Projets de formation
 			Tous validés par OpenClassrooms
 			P14 – Agent IA de triage médical (sept.-oct. 2026)
