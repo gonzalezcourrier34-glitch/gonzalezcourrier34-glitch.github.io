@@ -241,7 +241,7 @@
 </node>
 </node>
 <node TEXT="TensorFlow  ●○○○ Notions" COLOR="#2a5d9f" FOLDED="true">
-<node TEXT="À acquérir" COLOR="#2a5d9f">
+<node TEXT="En cours d&apos;acquisition" COLOR="#2a5d9f">
 </node>
 </node>
 </node>
@@ -357,7 +357,7 @@
 </node>
 </node>
 <node TEXT="DVC, Kubernetes  ●○○○ Notions" COLOR="#2a5d9f" FOLDED="true">
-<node TEXT="À acquérir" COLOR="#2a5d9f">
+<node TEXT="En cours d&apos;acquisition" COLOR="#2a5d9f">
 </node>
 </node>
 <node TEXT="Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
@@ -367,7 +367,7 @@
 </node>
 </node>
 <node TEXT="Cloud IA managé : Azure ML, SageMaker, Vertex AI  ●○○○ Notions" COLOR="#2a5d9f" FOLDED="true">
-<node TEXT="À acquérir" COLOR="#2a5d9f">
+<node TEXT="En cours d&apos;acquisition" COLOR="#2a5d9f">
 </node>
 </node>
 </node>
@@ -464,7 +464,7 @@
 <node TEXT="Données → expérimentation → modèle → évaluation → déploiement → monitoring → amélioration" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="Compétences à acquérir (4 offres d&apos;AI Engineer relues en octobre 2026)" COLOR="#2a5d9f">
+<node TEXT="Compétences en cours d&apos;acquisition (4 offres d&apos;AI Engineer relues en octobre 2026)" COLOR="#2a5d9f">
 <node TEXT="Kubernetes (2 offres sur 4)" COLOR="#2a5d9f">
 </node>
 <node TEXT="Cloud IA managé (Azure ML ou SageMaker) et Terraform" COLOR="#2a5d9f">

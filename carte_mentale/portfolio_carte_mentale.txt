@@ -119,7 +119,7 @@ Stéphane Gonzalez – AI Engineer
 			Anonymisation : Presidio  ●●○○ En progression
 				Preuve : P14
 			TensorFlow  ●○○○ Notions
-				À acquérir
+				En cours d'acquisition
 		Développement & déploiement
 			FastAPI  ●●●○ Opérationnel
 				Preuve : P4
@@ -177,12 +177,12 @@ Stéphane Gonzalez – AI Engineer
 				Preuve : P4
 				Preuve : P14
 			DVC, Kubernetes  ●○○○ Notions
-				À acquérir
+				En cours d'acquisition
 			Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)  ●●○○ En progression
 				Preuve : SortirIA (en production)
 				Preuve : P8 (architecture conçue)
 			Cloud IA managé : Azure ML, SageMaker, Vertex AI  ●○○○ Notions
-				À acquérir
+				En cours d'acquisition
 		Conduite de projet
 			Cadrage et étude de faisabilité  ●●●○ Opérationnel
 				Preuve : P8
@@ -229,7 +229,7 @@ Stéphane Gonzalez – AI Engineer
 			Ce que la formation m'a apporté : mener un projet IA comme en entreprise (cadrer, chiffrer, mesurer, documenter)
 			Aujourd'hui : construire un système IA fiable, du besoin au monitoring
 			Données → expérimentation → modèle → évaluation → déploiement → monitoring → amélioration
-		Compétences à acquérir (4 offres d'AI Engineer relues en octobre 2026)
+		Compétences en cours d'acquisition (4 offres d'AI Engineer relues en octobre 2026)
 			Kubernetes (2 offres sur 4)
 			Cloud IA managé (Azure ML ou SageMaker) et Terraform
 			Sécurité : OIDC, RBAC, secrets (2 offres sur 4)
