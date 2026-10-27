@@ -111,10 +111,10 @@ Stéphane Gonzalez – AI Engineer
 			Agents : LangGraph  ●●●○ Opérationnel
 				Preuve : P13
 				Preuve : SortirIA
-			Vision : CNN, OpenCV, segmentation  ●●○○ En progression
+			Vision : CNN, OpenCV, segmentation  ●●●○ Opérationnel
 				Preuve : P9
 				Preuve : MT
-			RL : Stable-Baselines3  ●●○○ En progression
+			RL : Stable-Baselines3  ●●●○ Opérationnel
 				Preuve : P11
 			Anonymisation : Presidio  ●●○○ En progression
 				Preuve : P14
@@ -146,9 +146,9 @@ Stéphane Gonzalez – AI Engineer
 				Preuve : P4
 				Preuve : P5
 				Preuve : P6
-			vLLM  ●●○○ En progression
+			vLLM  ●●●○ Opérationnel
 				Preuve : P14
-			Angular  ●●○○ En progression
+			Angular  ●●●○ Opérationnel
 				Preuve : P13
 				Preuve : SortirIA
 		MLOps & cloud
@@ -164,21 +164,21 @@ Stéphane Gonzalez – AI Engineer
 				Preuve : SortirIA
 			Weights & Biases  ●●●○ Opérationnel
 				Preuve : P14
-			Airflow  ●●○○ En progression
+			Airflow  ●●●○ Opérationnel
 				Preuve : P12
 				Preuve : SortirIA
 			Monitoring et dérive : Evidently, PSI, Prometheus, Grafana  ●●●○ Opérationnel
 				Preuve : P5
 				Preuve : P14
 				Preuve : SortirIA
-			ONNX Runtime  ●●○○ En progression
+			ONNX Runtime  ●●●○ Opérationnel
 				Preuve : P5
 			GPU cloud RunPod, Hugging Face Spaces  ●●○○ En progression
 				Preuve : P4
 				Preuve : P14
 			DVC, Kubernetes  ●○○○ Notions
 				En cours d'acquisition
-			Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)  ●●○○ En progression
+			Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)  ●●●○ Opérationnel
 				Preuve : SortirIA (en production)
 				Preuve : P8 (architecture conçue)
 			Cloud IA managé : Azure ML, SageMaker, Vertex AI  ●○○○ Notions
@@ -187,13 +187,13 @@ Stéphane Gonzalez – AI Engineer
 			Cadrage et étude de faisabilité  ●●●○ Opérationnel
 				Preuve : P8
 				Preuve : P14
-			Planning, budget, ROI  ●●○○ En progression
+			Planning, budget, ROI  ●●●○ Opérationnel
 				Preuve : P8
 				Preuve : SortirIA
 			Critères de succès, grille go / no-go  ●●●○ Opérationnel
 				Preuve : P14
 				Preuve : SortirIA
-			RGPD et AI Act  ●●○○ En progression
+			RGPD et AI Act  ●●●○ Opérationnel
 				Preuve : P8
 				Preuve : P14
 		Langues

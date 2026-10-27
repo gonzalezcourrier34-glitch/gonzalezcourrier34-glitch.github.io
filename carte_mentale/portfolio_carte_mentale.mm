@@ -226,13 +226,13 @@
 <node TEXT="Preuve : SortirIA" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="Vision : CNN, OpenCV, segmentation  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="Vision : CNN, OpenCV, segmentation  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P9" COLOR="#2a5d9f">
 </node>
 <node TEXT="Preuve : MT" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="RL : Stable-Baselines3  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="RL : Stable-Baselines3  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P11" COLOR="#2a5d9f">
 </node>
 </node>
@@ -296,11 +296,11 @@
 <node TEXT="Preuve : P6" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="vLLM  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="vLLM  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P14" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="Angular  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="Angular  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P13" COLOR="#2a5d9f">
 </node>
 <node TEXT="Preuve : SortirIA" COLOR="#2a5d9f">
@@ -332,7 +332,7 @@
 <node TEXT="Preuve : P14" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="Airflow  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="Airflow  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P12" COLOR="#2a5d9f">
 </node>
 <node TEXT="Preuve : SortirIA" COLOR="#2a5d9f">
@@ -346,7 +346,7 @@
 <node TEXT="Preuve : SortirIA" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="ONNX Runtime  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="ONNX Runtime  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P5" COLOR="#2a5d9f">
 </node>
 </node>
@@ -360,7 +360,7 @@
 <node TEXT="En cours d&apos;acquisition" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : SortirIA (en production)" COLOR="#2a5d9f">
 </node>
 <node TEXT="Preuve : P8 (architecture conçue)" COLOR="#2a5d9f">
@@ -378,7 +378,7 @@
 <node TEXT="Preuve : P14" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="Planning, budget, ROI  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="Planning, budget, ROI  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P8" COLOR="#2a5d9f">
 </node>
 <node TEXT="Preuve : SortirIA" COLOR="#2a5d9f">
@@ -390,7 +390,7 @@
 <node TEXT="Preuve : SortirIA" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="RGPD et AI Act  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="RGPD et AI Act  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P8" COLOR="#2a5d9f">
 </node>
 <node TEXT="Preuve : P14" COLOR="#2a5d9f">
