@@ -377,6 +377,7 @@ h1, h2, h3 { text-wrap: balance; }
     margin: -1rem 0 3rem;
     color: var(--muted);
 }
+.section-intro + .section-intro { margin-top: -2rem; }
 
 .about-grid {
     display: grid;
