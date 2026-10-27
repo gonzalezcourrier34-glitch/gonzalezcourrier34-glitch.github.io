@@ -449,12 +449,42 @@ h1, h2, h3 { text-wrap: balance; }
 .project-type { color: var(--accent-2); font-weight: 600; font-family: var(--font-mono); font-size: 0.85rem; }
 .project-status.progress { color: var(--warning); }
 
+/* Résultats en tuiles alignées (27/10/2026) */
 .metrics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.75rem;
     margin-block: 0.5rem;
 }
+.metrics div {
+    justify-content: flex-end; /* chiffres alignés en haut de chaque tuile */
+    padding: 0.9rem 1rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+/* Projets mis en avant : les résultats évalués dans un cadre titré */
+.results {
+    margin-block: 1.5rem;
+    padding: 1.25rem 1.5rem 1.5rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+.results h4 {
+    margin-bottom: 0.9rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.results .metrics { margin: 0; }
+.results.compact { margin-block: 1rem; padding: 1rem 1.1rem 1.1rem; }
+.results.compact .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.results.compact .metrics div { padding: 0.7rem 0.8rem; }
+.results.compact .metrics dt { font-size: 0.8rem; }
 
 .more-projects {
     margin-top: 2rem;
@@ -959,7 +989,7 @@ footer {
     .hero-main .hero-actions { margin-top: 2rem; padding-top: 0; }
     .status.adapted { color: #2a5d9f; }
 
-    .project-card, .skill-group, .reflection-card, .mlops-row,
+    .project-card, .skill-group, .reflection-card, .mlops-row, .results,
     .timeline-item, .soft-grid div, .market { break-inside: avoid; }
     h2, h3, h4 { break-after: avoid; }
     /* 27/10/2026 : la carte SortirIA dépasse une page ; elle se coupe au lieu de

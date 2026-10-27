@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="css/style.css?v=2026-10-27l">
+    <link rel="stylesheet" href="css/style.css?v=2026-10-27n">
 </head>
 
 <body>
@@ -259,13 +259,16 @@
                     </figure>
                 </div>
 
-                <dl class="metrics">
-                    <div><dt>Contraintes respectées</dt><dd>98,7&nbsp;%</dd></div>
-                    <div><dt>Pertinence des 3 premières sorties</dt><dd>97,8&nbsp;%</dd></div>
-                    <div><dt>Accord du juge LLM avec l'humain</dt><dd>98,6&nbsp;%</dd></div>
-                    <div><dt>Temps de réponse P95</dt><dd>6,4&nbsp;s</dd></div>
-                    <div><dt>Coût Mistral pour 1&nbsp;000 questions</dt><dd>0,12&nbsp;$</dd></div>
-                </dl>
+                <section class="results" aria-label="Mes résultats évalués">
+                    <h4>Mes résultats évalués</h4>
+                    <dl class="metrics">
+                        <div><dt>Contraintes respectées</dt><dd>98,7&nbsp;%</dd></div>
+                        <div><dt>Pertinence des 3 premières sorties</dt><dd>97,8&nbsp;%</dd></div>
+                        <div><dt>Accord du juge LLM avec l'humain</dt><dd>98,6&nbsp;%</dd></div>
+                        <div><dt>Temps de réponse P95</dt><dd>6,4&nbsp;s</dd></div>
+                        <div><dt>Coût Mistral pour 1&nbsp;000 questions</dt><dd>0,12&nbsp;$</dd></div>
+                    </dl>
+                </section>
 
                 <div class="axes">
                     <h4>Conduite de projet</h4>
@@ -368,13 +371,16 @@
                     <figcaption>Chaque brique est marquée opérationnelle ou partielle : l'état réel, pas l'état visé.</figcaption>
                 </figure>
 
-                <dl class="metrics">
-                    <div><dt>Cas du test gelé bien classés</dt><dd>453 / 500</dd></div>
-                    <div><dt>F1 macro</dt><dd>90,6&nbsp;%</dd></div>
-                    <div><dt>Urgences P1 reconnues</dt><dd>93,4&nbsp;%</dd></div>
-                    <div><dt>Sous-triage</dt><dd>5,4&nbsp;%</dd></div>
-                    <div><dt>Latence P95</dt><dd>1,13&nbsp;s</dd></div>
-                </dl>
+                <section class="results" aria-label="Mes résultats évalués">
+                    <h4>Mes résultats évalués</h4>
+                    <dl class="metrics">
+                        <div><dt>Cas du test gelé bien classés</dt><dd>453 / 500</dd></div>
+                        <div><dt>F1 macro</dt><dd>90,6&nbsp;%</dd></div>
+                        <div><dt>Urgences P1 reconnues</dt><dd>93,4&nbsp;%</dd></div>
+                        <div><dt>Sous-triage</dt><dd>5,4&nbsp;%</dd></div>
+                        <div><dt>Latence P95</dt><dd>1,13&nbsp;s</dd></div>
+                    </dl>
+                </section>
 
                 <div class="axes">
                     <h4>Conduite de projet</h4>
@@ -418,10 +424,14 @@
                         <div><dt>Mon rôle</dt><dd>Seul : architecture de l'agent, backend FastAPI, interface Angular, tests et CI.</dd></div>
                         <div><dt>Le défi</dt><dd>Ne pas laisser le LLM inventer un coup ou une évaluation : Stockfish calcule, les sources apportent le contexte, le LLM explique seulement.</dd></div>
                     </dl>
-                    <dl class="metrics small">
-                        <div><dt>Tests automatisés</dt><dd>1&nbsp;029</dd></div>
-                        <div><dt>Couverture exigée par la CI</dt><dd>≥&nbsp;86&nbsp;%</dd></div>
-                    </dl>
+                    <section class="results compact" aria-label="Mes résultats évalués">
+                        <h4>Mes résultats évalués</h4>
+                        <dl class="metrics small">
+                            <div><dt>Cas de routage de l'agent validés</dt><dd>34 / 34</dd></div>
+                            <div><dt>Couverture du code mesurée</dt><dd>90,4&nbsp;%</dd></div>
+                            <div><dt>Tests automatisés</dt><dd>1&nbsp;029</dd></div>
+                        </dl>
+                    </section>
                     <ul class="tags" aria-label="Technologies">
                         <li>LangGraph</li><li>Milvus</li><li>Ollama</li><li>FastAPI</li><li>MongoDB</li><li>Angular</li>
                     </ul>
@@ -447,9 +457,15 @@
                         <div><dt>Mon rôle</dt><dd>Seul : architecture du moteur, connecteurs, orchestration Airflow et tableau de bord.</dd></div>
                         <div><dt>Le défi</dt><dd>Faire entrer des sources très différentes dans un même format fiable (dates, liens, doublons, images vérifiés) sans dupliquer le code.</dd></div>
                     </dl>
-                    <dl class="metrics small">
-                        <div><dt>Sources branchées (RSS, API, web, réseaux sociaux, datasets)</dt><dd>21</dd></div>
-                    </dl>
+                    <section class="results compact" aria-label="Mes résultats évalués">
+                        <h4>Mes résultats évalués</h4>
+                        <dl class="metrics small">
+                            <div><dt>Sources branchées</dt><dd>21</dd></div>
+                            <div><dt>Articles collectés en un passage</dt><dd>4&nbsp;518</dd></div>
+                            <div><dt>Articles valides après contrôle qualité</dt><dd>99,1&nbsp;%</dd></div>
+                            <div><dt>Images téléchargées et vérifiées</dt><dd>1&nbsp;319</dd></div>
+                        </dl>
+                    </section>
                     <ul class="tags" aria-label="Technologies">
                         <li>Airflow</li><li>PostgreSQL</li><li>YAML</li><li>Docker</li><li>Streamlit</li>
                     </ul>
@@ -474,6 +490,15 @@
                         <div><dt>Mon rôle</dt><dd>Seul : entraînement des agents, réglage des hyperparamètres, API et tableau de bord.</dd></div>
                         <div><dt>Le défi</dt><dd>Obtenir un atterrissage stable et reproductible : comparer DQN et PPO, puis régler leurs hyperparamètres avec Optuna.</dd></div>
                     </dl>
+                    <section class="results compact" aria-label="Mes résultats évalués">
+                        <h4>Mes résultats évalués</h4>
+                        <dl class="metrics small">
+                            <div><dt>Récompense moyenne PPO sur 100 épisodes (objectif : 200)</dt><dd>270,6</dd></div>
+                            <div><dt>Écart-type : des atterrissages réguliers</dt><dd>±&nbsp;27,7</dd></div>
+                            <div><dt>DQN, même évaluation</dt><dd>119,9</dd></div>
+                            <div><dt>Agent aléatoire, la référence</dt><dd>−192,4</dd></div>
+                        </dl>
+                    </section>
                     <figure class="project-media">
                         <img src="img/lunarlander.png" alt="Fin de simulation : l'agent entraîné a posé le module lunaire sur la zone d'atterrissage" width="600" height="400" loading="lazy">
                         <figcaption>Un atterrissage réussi par l'agent entraîné · <a href="img/lunarlander.gif">voir l'animation (9 s)</a></figcaption>
@@ -506,11 +531,14 @@
                         <img src="img/curelytics_resultats.png" alt="Graphique : accuracy, précision, rappel, F1 et F2 des trois approches ; la semi-supervisée après fine-tuning atteint un rappel de 1,00" width="908" height="490" loading="lazy">
                         <figcaption>Supervisé seul, puis semi-supervisé avant et après fine-tuning.</figcaption>
                     </figure>
-                    <dl class="metrics small">
-                        <div><dt>Rappel (tumeurs détectées)</dt><dd>1,00</dd></div>
-                        <div><dt>F2-score</dt><dd>0,98</dd></div>
-                        <div><dt>Accuracy, contre 0,90 en supervisé seul</dt><dd>0,95</dd></div>
-                    </dl>
+                    <section class="results compact" aria-label="Mes résultats évalués">
+                        <h4>Mes résultats évalués</h4>
+                        <dl class="metrics small">
+                            <div><dt>Rappel (tumeurs détectées)</dt><dd>1,00</dd></div>
+                            <div><dt>F2-score</dt><dd>0,98</dd></div>
+                            <div><dt>Accuracy, contre 0,90 en supervisé seul</dt><dd>0,95</dd></div>
+                        </dl>
+                    </section>
                     <ul class="tags" aria-label="Technologies">
                         <li>PyTorch</li><li>ResNet</li><li>Clustering</li><li>Pseudo-labels</li>
                     </ul>
@@ -535,6 +563,15 @@
                         <div><dt>Mon rôle</dt><dd>Seul, dans le rôle du chef de projet IA : cadrage, chiffrage et présentation au client.</dd></div>
                         <div><dt>Le défi</dt><dd>Permettre une décision avant d'écrire du code : KPI, budget, planning et contraintes RGPD fixés pour un go / no-go.</dd></div>
                     </dl>
+                    <section class="results compact" aria-label="Mes livrables chiffrés">
+                        <h4>Mes livrables chiffrés</h4>
+                        <dl class="metrics small">
+                            <div><dt>Budget du PoC (3 semaines)</dt><dd>13 à 15&nbsp;k€</dd></div>
+                            <div><dt>Programme complet, du PoC au produit</dt><dd>163 à 207&nbsp;k€</dd></div>
+                            <div><dt>Seuil go / no-go : Top-5 accuracy</dt><dd>≥&nbsp;75&nbsp;%</dd></div>
+                            <div><dt>Résultat cumulé projeté en 2028</dt><dd>+480&nbsp;k€</dd></div>
+                        </dl>
+                    </section>
                     <ul class="tags" aria-label="Compétences">
                         <li>Cadrage</li><li>Budget &amp; ROI</li><li>Architecture Azure</li><li>RGPD</li><li>CLIP</li>
                     </ul>
@@ -558,11 +595,15 @@
                         <div><dt>Mon rôle</dt><dd>Seul : API, suivi MLflow, monitoring de la dérive, optimisation et CI.</dd></div>
                         <div><dt>Le défi</dt><dd>Garder un modèle fiable après son déploiement : tracer chaque appel, détecter la dérive et accélérer l'inférence.</dd></div>
                     </dl>
-                    <dl class="metrics small">
-                        <div><dt>Latence API moyenne</dt><dd>11,8&nbsp;ms</dd></div>
-                        <div><dt>Latence API P95</dt><dd>15,7&nbsp;ms</dd></div>
-                        <div><dt>Temps de traitement après optimisation</dt><dd>−18,6&nbsp;%</dd></div>
-                    </dl>
+                    <section class="results compact" aria-label="Mes résultats évalués">
+                        <h4>Mes résultats évalués</h4>
+                        <dl class="metrics small">
+                            <div><dt>Défauts de paiement détectés (rappel, jeu de test)</dt><dd>85,0&nbsp;%</dd></div>
+                            <div><dt>AUC ROC sur le jeu de test</dt><dd>0,76</dd></div>
+                            <div><dt>Latence API P95</dt><dd>15,7&nbsp;ms</dd></div>
+                            <div><dt>Temps de traitement après optimisation</dt><dd>−18,6&nbsp;%</dd></div>
+                        </dl>
+                    </section>
                     <ul class="tags" aria-label="Technologies">
                         <li>LightGBM</li><li>MLflow</li><li>Evidently</li><li>ONNX</li><li>GitHub Actions</li>
                     </ul>
@@ -587,6 +628,15 @@
                         <div><dt>Mon rôle</dt><dd>Seul : collecte OpenAgenda, pipeline RAG, évaluation et conteneurisation.</dd></div>
                         <div><dt>Le défi</dt><dd>Comprendre une demande libre, parfois floue, et ne répondre qu'avec les événements retrouvés, sans en inventer.</dd></div>
                     </dl>
+                    <section class="results compact" aria-label="Mes résultats évalués">
+                        <h4>Mes résultats évalués</h4>
+                        <dl class="metrics small">
+                            <div><dt>Fidélité aux sources (RAGAS, questions claires)</dt><dd>1,00</dd></div>
+                            <div><dt>Précision du contexte retrouvé</dt><dd>0,90</dd></div>
+                            <div><dt>Questions hors périmètre refusées</dt><dd>100&nbsp;%</dd></div>
+                            <div><dt>Rappel du contexte</dt><dd>0,69</dd></div>
+                        </dl>
+                    </section>
                     <ul class="tags" aria-label="Technologies">
                         <li>LangChain</li><li>FAISS</li><li>Mistral</li><li>RAGAS</li><li>Docker</li>
                     </ul>
@@ -610,6 +660,15 @@
                         <div><dt>Mon rôle</dt><dd>Seul : base de données, API sécurisée, tests, CI/CD et mise en ligne.</dd></div>
                         <div><dt>Le défi</dt><dd>Rendre le modèle utilisable en production : aucune préparation des données dans l'API, chaque prédiction tracée en base.</dd></div>
                     </dl>
+                    <section class="results compact" aria-label="Mes résultats évalués">
+                        <h4>Mes résultats évalués</h4>
+                        <dl class="metrics small">
+                            <div><dt>Départs détectés (rappel, XGBoost)</dt><dd>80,6&nbsp;%</dd></div>
+                            <div><dt>F2-score, contre 0 pour un modèle naïf</dt><dd>0,71</dd></div>
+                            <div><dt>AUC ROC sur le jeu de test</dt><dd>0,85</dd></div>
+                            <div><dt>Précision des alertes</dt><dd>47,5&nbsp;%</dd></div>
+                        </dl>
+                    </section>
                     <ul class="tags" aria-label="Technologies">
                         <li>scikit-learn</li><li>FastAPI</li><li>PostgreSQL</li><li>Hugging Face Spaces</li>
                     </ul>
@@ -634,6 +693,14 @@
                         <div><dt>Mon rôle</dt><dd>Seul : appels au modèle, mesure de sa qualité et analyse des tendances.</dd></div>
                         <div><dt>Le défi</dt><dd>Juger un modèle que je n'ai pas entraîné : l'IoU et le Dice par vêtement montrent que les petits éléments (chaussures, bras) sont mal segmentés.</dd></div>
                     </dl>
+                    <section class="results compact" aria-label="Mes résultats évalués">
+                        <h4>Mes résultats évalués</h4>
+                        <dl class="metrics small">
+                            <div><dt>IoU sur les robes</dt><dd>≈&nbsp;0,95</dd></div>
+                            <div><dt>IoU sur les jupes</dt><dd>≈&nbsp;0,93</dd></div>
+                            <div><dt>IoU sur les chaussures : le point faible</dt><dd>≈&nbsp;0,11 à 0,23</dd></div>
+                        </dl>
+                    </section>
                     <figure class="project-media">
                         <img src="img/modetrends_iou_dice.png" alt="Graphique : IoU et Dice par vêtement, élevés pour robes et jupes, faibles pour chaussures et membres" width="1000" height="396" loading="lazy">
                         <figcaption>Qualité de la segmentation, vêtement par vêtement.</figcaption>
