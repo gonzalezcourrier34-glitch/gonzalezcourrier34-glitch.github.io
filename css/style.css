@@ -226,7 +226,7 @@ h1, h2, h3 { text-wrap: balance; }
 /* Le haut de page remplit l'écran : les boutons s'alignent sur le bas de
    l'écran, les chiffres clés viennent en dessous, au défilement. */
 .hero-main {
-    min-height: calc(100svh - 72px - 1.5rem - clamp(1.5rem, 4vw, 3rem) - 1.5rem);
+    min-height: calc(100svh - 72px - 1.5rem - 1.5rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -313,15 +313,18 @@ h1, h2, h3 { text-wrap: balance; }
 }
 
 .secondary { border: 1px solid var(--border); }
+.hero .secondary, .hero-tags li { background: var(--panel); }
 .secondary:hover { border-color: var(--accent); }
 
 .hero-stats {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 3.5rem;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+    padding: 1.5rem clamp(1.5rem, 4vw, 3rem);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
 .hero-stats div,
@@ -355,7 +358,6 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Lisibilité (27/10/2026) : chaque bloc de texte est posé dans un cadre
    sur fond bleu, au-dessus de l'image de fond. */
-.hero-content,
 .section > .container {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -946,7 +948,7 @@ footer {
         --meter-empty: rgba(15, 23, 42, 0.12);
     }
     body::before, body::after { display: none; }
-    .hero-content, .section > .container { background: none; border: 0; padding: 0; backdrop-filter: none; }
+    .section > .container, .hero-stats { background: none; border: 0; padding: 0; backdrop-filter: none; }
     .section { padding-block: 1.5rem; }
 
     .header, .skip-link, .hero-actions { display: none !important; }
