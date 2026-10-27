@@ -145,7 +145,7 @@ h1, h2, h3 { text-wrap: balance; }
     position: sticky;
     top: env(safe-area-inset-top, 0px);
     z-index: 10;
-    background: var(--header-bg);
+    background: var(--background);
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(14px);
 }
@@ -232,6 +232,18 @@ h1, h2, h3 { text-wrap: balance; }
     justify-content: center;
 }
 .hero-main .hero-actions { margin-top: auto; padding-top: 2rem; }
+
+/* Les boutons du haut de page tiennent sur une seule ligne, sur toute la largeur */
+@media (min-width: 1200px) {
+    .hero-main .hero-actions { flex-wrap: nowrap; gap: 0.6rem; }
+    .hero-main .hero-actions .button {
+        flex: 1 1 auto;
+        padding: 0.8rem 0.7rem;
+        font-size: 0.9rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
 
 .eyebrow,
 .section-label {
