@@ -116,7 +116,7 @@ Stéphane Gonzalez – AI Engineer
 				Preuve : MT
 			RL : Stable-Baselines3  ●●●○ Opérationnel
 				Preuve : P11
-			Anonymisation : Presidio  ●●○○ En progression
+			Anonymisation : Presidio  ●●●○ Opérationnel
 				Preuve : P14
 			TensorFlow  ●○○○ Notions
 				En cours d'acquisition
@@ -173,7 +173,7 @@ Stéphane Gonzalez – AI Engineer
 				Preuve : SortirIA
 			ONNX Runtime  ●●●○ Opérationnel
 				Preuve : P5
-			GPU cloud RunPod, Hugging Face Spaces  ●●○○ En progression
+			GPU cloud RunPod, Hugging Face Spaces  ●●●○ Opérationnel
 				Preuve : P4
 				Preuve : P14
 			DVC, Kubernetes  ●○○○ Notions
@@ -233,7 +233,6 @@ Stéphane Gonzalez – AI Engineer
 		Compétences en cours d'acquisition (4 offres d'AI Engineer relues en octobre 2026)
 			Kubernetes (2 offres sur 4)
 			Cloud IA managé (Azure ML ou SageMaker) et Terraform
-			Sécurité : OIDC, RBAC, secrets (2 offres sur 4)
 			DVC et TensorFlow (2 offres sur 4)
 			Évaluation des LLM en production, sur un vrai trafic
 	5. Soft skills

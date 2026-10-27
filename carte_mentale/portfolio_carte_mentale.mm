@@ -236,7 +236,7 @@
 <node TEXT="Preuve : P11" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="Anonymisation : Presidio  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="Anonymisation : Presidio  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P14" COLOR="#2a5d9f">
 </node>
 </node>
@@ -350,7 +350,7 @@
 <node TEXT="Preuve : P5" COLOR="#2a5d9f">
 </node>
 </node>
-<node TEXT="GPU cloud RunPod, Hugging Face Spaces  ●●○○ En progression" COLOR="#2a5d9f" FOLDED="true">
+<node TEXT="GPU cloud RunPod, Hugging Face Spaces  ●●●○ Opérationnel" COLOR="#2a5d9f" FOLDED="true">
 <node TEXT="Preuve : P4" COLOR="#2a5d9f">
 </node>
 <node TEXT="Preuve : P14" COLOR="#2a5d9f">
@@ -470,8 +470,6 @@
 <node TEXT="Kubernetes (2 offres sur 4)" COLOR="#2a5d9f">
 </node>
 <node TEXT="Cloud IA managé (Azure ML ou SageMaker) et Terraform" COLOR="#2a5d9f">
-</node>
-<node TEXT="Sécurité : OIDC, RBAC, secrets (2 offres sur 4)" COLOR="#2a5d9f">
 </node>
 <node TEXT="DVC et TensorFlow (2 offres sur 4)" COLOR="#2a5d9f">
 </node>
