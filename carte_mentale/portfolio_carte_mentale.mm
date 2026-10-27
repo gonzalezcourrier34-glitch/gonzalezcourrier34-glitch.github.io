@@ -60,7 +60,7 @@
 <node TEXT="Thèmes MLOps du projet final" COLOR="#1b7f6e" FOLDED="true">
 <node TEXT="Cycle de vie des modèles : couvert (CI/CD, évaluation bloquante, MLflow)" COLOR="#1b7f6e">
 </node>
-<node TEXT="Suivi de la dérive : couvert (questions, réponses, collecte ; PSI chaque nuit)" COLOR="#1b7f6e">
+<node TEXT="Suivi de la dérive : couvert (questions, réponses, collecte ; PSI chaque nuit, Evidently chaque mois)" COLOR="#1b7f6e">
 </node>
 <node TEXT="Réentraînement automatique : adapté (agent du lundi, pull requests validées)" COLOR="#1b7f6e">
 </node>
@@ -418,6 +418,8 @@
 <node TEXT="Penser la reproductibilité dès le début" COLOR="#2a5d9f">
 </node>
 <node TEXT="Un juge LLM se calibre sur un humain (SortirIA)" COLOR="#2a5d9f">
+</node>
+<node TEXT="L'usage réel corrige les jeux de test : 47 % de réponses exactes (SortirIA)" COLOR="#2a5d9f">
 </node>
 </node>
 <node TEXT="Ce que je ferais différemment" COLOR="#2a5d9f">

@@ -29,7 +29,7 @@ Stéphane Gonzalez – AI Engineer
 				5. Contrôle : coût, évaluation en CI, Grafana, MLflow, suivi de la dérive (PSI), alertes, budget Azure
 			Thèmes MLOps du projet final
 				Cycle de vie des modèles : couvert (CI/CD, évaluation bloquante, MLflow)
-				Suivi de la dérive : couvert (questions, réponses, collecte ; PSI chaque nuit)
+				Suivi de la dérive : couvert (questions, réponses, collecte ; PSI chaque nuit, Evidently chaque mois)
 				Réentraînement automatique : adapté (agent du lundi, pull requests validées)
 				Versionnage données et modèles : couvert (consignes et chaîne dans les registres MLflow, jeux d'évaluation avec empreinte, contrôle en CI)
 		Projets de formation
@@ -207,6 +207,7 @@ Stéphane Gonzalez – AI Engineer
 			L'analyse des erreurs complète les chiffres
 			Penser la reproductibilité dès le début
 			Un juge LLM se calibre sur un humain (SortirIA)
+			L'usage réel corrige les jeux de test : 47 % de réponses exactes (SortirIA)
 		Ce que je ferais différemment
 			Figer plus tôt les datasets
 			Définir les critères de succès avant l'entraînement

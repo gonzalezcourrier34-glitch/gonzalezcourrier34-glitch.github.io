@@ -269,8 +269,8 @@
                         <li><strong>Besoin</strong> Trouver une sortie qui convient vraiment (date, lieu, public, budget), sans parcourir dix agendas.</li>
                         <li><strong>Audit des données</strong> Sources ouvertes et autorisées seulement ; chaque fiche vérifiée, dédoublonnée, attribuée à sa source.</li>
                         <li><strong>Solution</strong> Agent LangGraph la nuit, PostgreSQL + pgvector, FastAPI, Angular, Mistral ; code repris de mes projets précédents et adapté.</li>
-                        <li><strong>Aide à la décision</strong> Seuils fixés avant de mesurer (95&nbsp;% de contraintes, 70&nbsp;% de pertinence) ; juge calibré sur l'humain ; limites assumées.</li>
-                        <li><strong>Contrôle</strong> Environ 10&nbsp;$ par mois ; évaluation rejouée en CI (déploiement bloqué sous 95&nbsp;%) ; Grafana, MLflow, suivi de la dérive, alertes et budget Azure.</li>
+                        <li><strong>Aide à la décision</strong> Seuils fixés avant de mesurer (95&nbsp;% de contraintes, 70&nbsp;% de pertinence) ; juge calibré sur l'humain ; usage réel mesuré (93 questions de testeurs, 47&nbsp;% de réponses exactes) : la couverture devient la priorité.</li>
+                        <li><strong>Contrôle</strong> Environ 10&nbsp;$ par mois ; évaluation rejouée en CI (déploiement bloqué sous 95&nbsp;%) ; Grafana, MLflow, dérive suivie chaque nuit (PSI) et chaque mois (Evidently), alertes et budget Azure.</li>
                     </ol>
                 </div>
 
@@ -286,8 +286,8 @@
                             <dt>Cycle de vie des modèles <span class="status done">Couvert</span></dt>
                             <dd>CI à chaque push : tests sur un vrai PostgreSQL et évaluation de la
                                 recherche rejouée, déploiement bloqué sous 95&nbsp;%. CD vers Azure,
-                                contrôle du service en ligne toutes les 3&nbsp;h, MLflow pour chaque
-                                collecte et chaque évaluation.</dd>
+                                contrôle du service en ligne toutes les 3&nbsp;h, MLflow sur le poste pour
+                                chaque évaluation et chaque collecte lancée en local.</dd>
                         </div>
                         <div class="mlops-row">
                             <dt>Suivi de la dérive <span class="status done">Couvert</span></dt>
@@ -295,7 +295,10 @@
                                 ce que les visiteurs demandent (zone, public, type de sortie), ce que
                                 SortirIA répond (exacte, élargie, introuvable ; latence, avis) et ce
                                 que les sources apportent (volumes, rejets, juge de qualité). Rapport
-                                le lundi, alerte si la dérive est forte, suivi dans Grafana et MLflow.</dd>
+                                le lundi, alerte si la dérive est forte, suivi dans Grafana. Chaque
+                                mois, un rapport Evidently complet (mois contre mois) produit par
+                                GitHub Actions, la base n'étant ouverte que le temps du rapport. Pas
+                                de verdict sur trop peu de données.</dd>
                         </div>
                         <div class="mlops-row">
                             <dt>Réentraînement automatique <span class="status adapted">Adapté</span></dt>
@@ -319,7 +322,7 @@
 
                 <ul class="tags" aria-label="Technologies">
                     <li>LangGraph</li><li>Mistral</li><li>PostgreSQL / pgvector</li><li>FastAPI</li><li>Angular</li>
-                    <li>Azure Container Apps</li><li>GitHub Actions</li><li>Grafana</li><li>MLflow</li><li>Airflow</li>
+                    <li>Azure Container Apps</li><li>GitHub Actions</li><li>Grafana</li><li>MLflow</li><li>Evidently</li><li>Airflow</li>
                 </ul>
 
                 <div class="project-links">
@@ -850,6 +853,7 @@
                         <li>L'analyse des erreurs complète l'évaluation chiffrée.</li>
                         <li>La reproductibilité doit être pensée dès le début.</li>
                         <li>Un juge LLM se calibre sur un humain : chaque version de SortirIA lui a retiré ce que le code vérifie mieux que lui.</li>
+                        <li>L'usage réel corrige les jeux de test : 97,8&nbsp;% de pertinence sur mes questions, 47&nbsp;% de réponses exactes sur celles des testeurs, qui cherchaient aussi des lieux.</li>
                     </ul>
                 </div>
 
