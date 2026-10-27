@@ -1201,3 +1201,16 @@ footer {
     .rncp .market-table tr { break-inside: avoid; }
     .rncp h4 { break-after: avoid; }
 }
+
+/* Adresse du site à côté du titre du projet */
+.project-site {
+    margin-left: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+}
+@media (max-width: 600px) { .project-site { display: block; margin: 0.3rem 0 0; } }
