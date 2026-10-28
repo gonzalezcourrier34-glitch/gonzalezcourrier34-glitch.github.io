@@ -2,7 +2,7 @@ Stéphane Gonzalez – AI Engineer
 	1. Profil
 		Parcours
 			Développeur SQL, Visual Basic, WinDev, puis cadre (1998-2006)
-			Formation d'éducateur technique spécialisé, licence en sciences de l'éducation (2011)
+			Formation d'éducateur technique spécialisé, licence en sciences de l'éducation (2011-2012)
 			Conseiller de vente en informatique (2009-2025) : relation client, conseil
 			Reconversion : formation Ingénieur IA OpenClassrooms
 		Objectif professionnel

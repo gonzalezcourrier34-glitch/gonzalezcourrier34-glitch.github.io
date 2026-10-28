@@ -6,7 +6,7 @@
 <node TEXT="Parcours" COLOR="#1b7f6e">
 <node TEXT="Développeur SQL, Visual Basic, WinDev, puis cadre (1998-2006)" COLOR="#1b7f6e">
 </node>
-<node TEXT="Formation d&apos;éducateur technique spécialisé, licence en sciences de l&apos;éducation (2011)" COLOR="#1b7f6e">
+<node TEXT="Formation d&apos;éducateur technique spécialisé, licence en sciences de l&apos;éducation (2011-2012)" COLOR="#1b7f6e">
 </node>
 <node TEXT="Conseiller de vente en informatique (2009-2025) : relation client, conseil" COLOR="#1b7f6e">
 </node>
