@@ -247,7 +247,7 @@
                     <div><dt>Le défi</dt><dd>Respecter à coup sûr la date, le lieu, le public et le budget d'une demande écrite librement, avec des agendas hétérogènes à collecter et vérifier chaque nuit.</dd></div>
                 </dl>
                 <dl class="facts facts-comment">
-                    <div><dt>Comment</dt><dd>Des règles comprennent la demande (date, lieu, public, budget) et des filtres SQL la font respecter. Les mots et le sens ne servent qu'à classer ce qui reste. Mistral rédige à partir des fiches trouvées, jamais de mémoire.</dd></div>
+                    <div><dt>Comment</dt><dd>Des règles comprennent la demande (date, lieu, public, budget) et des filtres SQL la font respecter. Les mots et le sens servent ensuite à classer ce qui reste. Mistral rédige uniquement à partir des fiches trouvées.</dd></div>
                 </dl>
 
                 <div class="project-media phones">
@@ -272,13 +272,13 @@
                     </dl>
                 </section>
                 <dl class="facts facts-limit">
-                    <div class="limit"><dt>Limite et ouverture</dt><dd>Sur 93 questions de vrais testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux permanents, que mes agendas ne contiennent pas. J'en ai fait ma priorité : élargir les sources. Je démarche des lieux partenaires (Sète, Frontignan), et chaque lundi, l'agent me propose les agendas à ajouter.</dd></div>
+                    <div class="limit"><dt>Limite et ouverture</dt><dd>Sur 93 questions de vrais testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux permanents, alors que mes agendas recensent des événements datés. J'en ai fait ma priorité : élargir les sources. Je démarche des lieux partenaires (Sète, Frontignan), et chaque lundi, l'agent me propose les agendas à ajouter.</dd></div>
                 </dl>
 
                 <div class="axes">
                     <h4>Conduite de projet</h4>
                     <ol>
-                        <li><strong>Besoin</strong> Trouver une sortie qui convient vraiment (date, lieu, public, budget), sans parcourir dix agendas.</li>
+                        <li><strong>Besoin</strong> Trouver une sortie qui convient vraiment (date, lieu, public, budget), en un seul endroit, plutôt que dans dix agendas.</li>
                         <li><strong>Audit des données</strong> Seulement des sources ouvertes et autorisées. Chaque fiche est vérifiée, dédoublonnée et attribuée à sa source.</li>
                         <li><strong>Solution</strong> Un agent LangGraph la nuit, PostgreSQL et pgvector, FastAPI, Angular, Mistral. J'ai repris et adapté le code de mes projets précédents.</li>
                         <li><strong>Aide à la décision</strong> J'ai fixé les seuils avant de mesurer : 95&nbsp;% de contraintes respectées, 70&nbsp;% de pertinence. Le juge est calibré sur l'humain. Puis j'ai mesuré l'usage réel : 93 questions de testeurs, 47&nbsp;% de réponses exactes. La couverture des sources devient ma priorité.</li>
@@ -289,8 +289,7 @@
                 <div class="mlops" aria-labelledby="mlops-title">
                     <h4 id="mlops-title">Le MLOps de SortirIA</h4>
                     <p class="mlops-intro">
-                        La consigne du projet final propose quatre thèmes MLOps. SortirIA n'entraîne
-                        pas son propre modèle : il appelle Mistral. J'ai donc adapté chaque thème à ce cas.
+                        La consigne du projet final propose quatre thèmes MLOps. SortirIA s'appuie sur Mistral plutôt que sur un modèle entraîné maison. J'ai donc adapté chaque thème à ce cas.
                     </p>
                     <dl class="mlops-list">
                         <div class="mlops-row">
@@ -309,13 +308,11 @@
                                 reçois un rapport. Si la dérive est forte, une alerte part. Tout se lit
                                 dans Grafana.</p>
                                 <p>Une fois par mois, GitHub Actions produit un rapport Evidently complet.
-                                La base n'est ouverte que le temps du rapport. Quand il y a trop peu de
-                                données, le rapport le dit au lieu de conclure.</p></dd>
+                                La base s'ouvre le temps du rapport, puis se referme. Quand les données sont trop peu nombreuses, le rapport le signale et attend d'en avoir assez.</p></dd>
                         </div>
                         <div class="mlops-row">
                             <dt>Réentraînement automatique <span class="status adapted">Adapté</span></dt>
-                            <dd>Il n'y a pas de modèle à réentraîner. Ma boucle d'amélioration, c'est
-                                l'agent du lundi. Il lit les recherches ratées et les pouces bas, puis
+                            <dd>Ici, l'amélioration passe par l'agent du lundi plutôt que par un réentraînement. Il lit les recherches ratées et les pouces bas, puis
                                 ouvre une pull request par correction : un synonyme à ajouter, un agenda
                                 à lire. La CI la teste, je la valide, elle part en production. Le
                                 fine-tuning viendra quand j'aurai assez d'avis réels.</dd>
@@ -325,9 +322,7 @@
                             <dd>Mes 8 consignes sont versionnées dans MLflow. La chaîne complète aussi :
                                 modèles Mistral, versions des consignes, empreintes des 10 jeux
                                 d'évaluation. Deux étiquettes, «&nbsp;production&nbsp;» et «&nbsp;précédente&nbsp;»,
-                                me permettent de revenir en arrière. La CI refuse une consigne modifiée
-                                sans nouvelle version, et chaque réponse garde la trace de la sienne. Pas
-                                de DVC : mes jeux de test pèsent environ 1&nbsp;Mo, Git suffit.</dd>
+                                me permettent de revenir en arrière. La CI exige une nouvelle version pour toute consigne modifiée, et chaque réponse garde la trace de la sienne. Mes jeux de test pèsent environ 1&nbsp;Mo : Git suffit à les versionner.</dd>
                         </div>
                     </dl>
                     <p class="mlops-limit"><strong>Prochaine étape :</strong> MLflow tourne aujourd'hui sur mon poste. Je le déploierais à côté du service, pour suivre directement la production.</p>
@@ -369,15 +364,15 @@
 
                 <dl class="facts">
                     <div><dt>Mon rôle</dt><dd>Tout le projet, sur mon ordinateur portable : audit et anonymisation des données, entraînement, mise en service, tests et documentation.</dd></div>
-                    <div><dt>Le défi</dt><dd>Tenir sur une carte de 6&nbsp;Go sans sous-trier les urgences. Mon premier entraînement, sur Qwen3-Base, a échoué. J'ai cherché pourquoi, puis je l'ai corrigé.</dd></div>
+                    <div><dt>Le défi</dt><dd>Tenir sur une carte de 6&nbsp;Go en gardant les urgences bien classées. Mon premier entraînement, sur Qwen3-Base, a échoué. J'ai cherché pourquoi, puis je l'ai corrigé.</dd></div>
                 </dl>
                 <dl class="facts facts-comment">
-                    <div><dt>Comment</dt><dd>Je change une seule chose à la fois, depuis un essai à trois changements qui m'avait fait perdre le fil. J'ai donné plus de poids à la priorité P1/P2/P3 dans l'apprentissage : sans ça, le modèle apprenait le texte mais pas la décision. Quand la Base ne finissait plus ses réponses, j'ai mesuré avant de corriger : elle n'avait jamais appris le jeton de fin.</dd></div>
+                    <div><dt>Comment</dt><dd>Je change une seule chose à la fois, depuis un essai à trois changements qui m'avait fait perdre le fil. J'ai donné plus de poids à la priorité P1/P2/P3 dans l'apprentissage : le modèle a ainsi appris la décision, et plus seulement le texte. Quand la Base a eu du mal à finir ses réponses, j'ai mesuré avant de corriger : il lui manquait l'apprentissage du jeton de fin.</dd></div>
                 </dl>
 
                 <figure class="project-media wide">
                     <img src="img/triage_architecture.svg" alt="Architecture : entraînement hors ligne sur mon poste, puis service d'inférence FastAPI et vLLM surveillé par Prometheus et Grafana" width="1080" height="640" loading="lazy">
-                    <figcaption>Chaque brique est marquée opérationnelle ou partielle. C'est l'état réel, pas l'état visé.</figcaption>
+                    <figcaption>Chaque brique est marquée opérationnelle ou partielle : c'est l'état réel du projet.</figcaption>
                 </figure>
 
                 <section class="results" aria-label="Mes résultats évalués">
@@ -447,7 +442,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et ouverture</dt><dd>Je teste le code et le routage, pas encore la qualité des explications. Prochaine étape : un jeu de positions annotées pour la mesurer, avec un juge calibré sur l'humain, comme dans SortirIA.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Je teste aujourd'hui le code et le routage. Prochaine étape : mesurer aussi la qualité des explications, avec un jeu de positions annotées et un juge calibré sur l'humain, comme dans SortirIA.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>LangGraph</li><li>Milvus</li><li>Ollama</li><li>FastAPI</li><li>MongoDB</li><li>Angular</li>
@@ -471,7 +466,7 @@
                         Airflow. Premier usage : le fact-checking. SortirIA le réutilise aujourd'hui.
                     </p>
                     <dl class="facts">
-                        <div><dt>Le défi</dt><dd>Faire entrer des sources très différentes dans un même format fiable : dates, liens et images vérifiés, aucun doublon. Et sans dupliquer le code.</dd></div>
+                        <div><dt>Le défi</dt><dd>Faire entrer des sources très différentes dans un même format fiable : dates, liens et images vérifiés, doublons écartés. Le tout avec un seul code, réutilisé pour chaque source.</dd></div>
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>Un moteur par type de source (RSS, API, web…), et pour chaque fournisseur, un adaptateur et un fichier YAML. Ajouter une source demande très peu de code. Chaque lot passe un contrôle qualité qui s'arrête en erreur si quelque chose cloche.</dd></div>
@@ -486,7 +481,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et ouverture</dt><dd>Au premier lot, beaucoup d'articles n'avaient pas d'URL canonique, et les images sont vérifiées techniquement, pas dans leur contenu. Prochaine étape : transformer ces mesures en règles de rejet, puis analyser les images elles-mêmes, utile pour le fact-checking.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Au premier lot, j'ai repéré de nombreux articles à l'URL canonique manquante, et les images sont vérifiées sur le plan technique. Prochaine étape : transformer ces mesures en règles de rejet, puis analyser le contenu des images, utile pour le fact-checking.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>Airflow</li><li>PostgreSQL</li><li>YAML</li><li>Docker</li><li>Streamlit</li>
@@ -512,7 +507,7 @@
                         <div><dt>Le défi</dt><dd>Obtenir un atterrissage stable, et pouvoir le reproduire. J'ai comparé DQN et PPO, puis réglé leurs hyperparamètres avec Optuna.</dd></div>
                     </dl>
                     <dl class="facts facts-comment">
-                        <div><dt>Comment</dt><dd>J'ai d'abord mesuré un agent aléatoire, pour avoir une référence. Optuna a testé 10 combinaisons de réglages pour chaque algorithme. Puis j'ai évalué chaque agent sur 100 atterrissages, pas sur le meilleur.</dd></div>
+                        <div><dt>Comment</dt><dd>J'ai d'abord mesuré un agent aléatoire, pour avoir une référence. Optuna a testé 10 combinaisons de réglages pour chaque algorithme. Puis j'ai évalué chaque agent sur 100 atterrissages, pour une moyenne fiable.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -551,10 +546,10 @@
                         aussi chiffré le projet pour un budget de 5&nbsp;000&nbsp;€.
                     </p>
                     <dl class="facts">
-                        <div><dt>Le défi</dt><dd>Apprendre avec très peu d'exemples sans laisser passer une tumeur. Ici, le rappel passe avant tout.</dd></div>
+                        <div><dt>Le défi</dt><dd>Apprendre avec très peu d'exemples, en repérant chaque tumeur. Ici, le rappel passe avant tout.</dd></div>
                     </dl>
                     <dl class="facts facts-comment">
-                        <div><dt>Comment</dt><dd>Je ne garde que les pseudo-étiquettes les plus sûres : un score de confiance, moitié cluster, moitié distance, avec un seuil à 0,681. J'entraîne un ResNet18 dont seules les dernières couches sont réentraînées, puis je vérifie sur 5 seeds que le gain tient. Je suis le F2, qui compte deux fois plus le rappel.</dd></div>
+                        <div><dt>Comment</dt><dd>Je garde les pseudo-étiquettes les plus sûres : un score de confiance, moitié cluster, moitié distance, avec un seuil à 0,681. J'entraîne un ResNet18 dont seules les dernières couches sont réentraînées, puis je vérifie sur 5 seeds que le gain tient. Je suis le F2, qui compte deux fois plus le rappel.</dd></div>
                     </dl>
                     <figure class="project-media">
                         <img src="img/curelytics_resultats.png" alt="Graphique : accuracy, précision, rappel, F1 et F2 des trois approches ; la semi-supervisée après fine-tuning atteint un rappel de 1,00" width="908" height="490" loading="lazy">
@@ -633,7 +628,7 @@
                         <div><dt>Le défi</dt><dd>Garder le modèle fiable une fois déployé. Chaque appel est tracé, la dérive est détectée, et je sais où part le temps de réponse.</dd></div>
                     </dl>
                     <dl class="facts facts-comment">
-                        <div><dt>Comment</dt><dd>Un défaut non détecté coûte 10 fois plus qu'une fausse alerte. J'ai donc choisi le seuil en validation croisée avec un F-bêta à β&nbsp;=&nbsp;3, qui privilégie fortement le rappel. J'ai mesuré ONNX : à peine 2&nbsp;% de gain, le modèle n'était pas le goulot. C'est en allégeant les logs que l'API a gagné 18&nbsp;% sur sa P95.</dd></div>
+                        <div><dt>Comment</dt><dd>Un défaut de paiement manqué coûte 10 fois plus qu'une fausse alerte. J'ai donc choisi le seuil en validation croisée avec un F-bêta à β&nbsp;=&nbsp;3, qui privilégie fortement le rappel. J'ai mesuré ONNX : à peine 2&nbsp;% de gain, le goulot était ailleurs. C'est en allégeant les logs que l'API a gagné 18&nbsp;% sur sa P95.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -665,10 +660,10 @@
                         Un assistant qui recommande des événements culturels, avec une recherche par le sens dans FAISS. Il classe les résultats en expliquant pourquoi, et Mistral rédige la réponse.
                     </p>
                     <dl class="facts">
-                        <div><dt>Le défi</dt><dd>Comprendre une demande libre, parfois floue. Et ne répondre qu'avec les événements trouvés, sans en inventer.</dd></div>
+                        <div><dt>Le défi</dt><dd>Comprendre une demande libre, parfois floue. Et répondre uniquement avec les événements trouvés.</dd></div>
                     </dl>
                     <dl class="facts facts-comment">
-                        <div><dt>Comment</dt><dd>Je filtre d'abord par ville, date et type, avant toute recherche par le sens. Si rien ne correspond, l'assistant répond qu'il n'a rien trouvé, au lieu d'inventer. Je l'ai testé avec RAGAS sur trois sortes de questions : claires, ambiguës et hors sujet.</dd></div>
+                        <div><dt>Comment</dt><dd>Je filtre d'abord par ville, date et type, avant toute recherche par le sens. Quand la recherche revient vide, l'assistant le dit franchement. Je l'ai testé avec RAGAS sur trois sortes de questions : claires, ambiguës et hors sujet.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -702,10 +697,10 @@
                         ligne.
                     </p>
                     <dl class="facts">
-                        <div><dt>Le défi</dt><dd>Rendre le modèle utilisable en production. L'API ne prépare aucune donnée elle-même, et chaque prédiction est enregistrée en base.</dd></div>
+                        <div><dt>Le défi</dt><dd>Rendre le modèle utilisable en production. L'API reçoit des données déjà préparées, et chaque prédiction est enregistrée en base.</dd></div>
                     </dl>
                     <dl class="facts facts-comment">
-                        <div><dt>Comment</dt><dd>J'ai choisi le F2-score, parce que rater un départ coûte plus qu'une fausse alerte, et cherché le seuil en validation croisée, sur l'entraînement seulement. La préparation des données tourne à part : des scripts remplissent des tables « clean », et l'API ne fait que lire, prédire et tracer.</dd></div>
+                        <div><dt>Comment</dt><dd>J'ai choisi le F2-score, parce que rater un départ coûte plus qu'une fausse alerte, et cherché le seuil en validation croisée, sur l'entraînement seulement. La préparation des données tourne à part : des scripts remplissent des tables « clean », et l'API se concentre sur l'essentiel : lire, prédire et tracer.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -717,7 +712,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et ouverture</dt><dd>Une alerte sur deux est un faux positif, un choix assumé pour ne manquer presque aucun départ. Pour aller plus loin : présenter la régression logistique, presque aussi bonne et plus simple, à côté de XGBoost, pour que le métier choisisse en connaissance de cause.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Une alerte sur deux est un faux positif, un choix assumé pour détecter presque tous les départs. Pour aller plus loin : présenter la régression logistique, presque aussi bonne et plus simple, à côté de XGBoost, pour que le métier choisisse en connaissance de cause.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>scikit-learn</li><li>FastAPI</li><li>PostgreSQL</li><li>Hugging Face Spaces</li>
@@ -740,7 +735,7 @@
                         vêtement.
                     </p>
                     <dl class="facts">
-                        <div><dt>Le défi</dt><dd>Juger un modèle que je n'ai pas entraîné. En mesurant l'IoU et le Dice vêtement par vêtement, j'ai vu que les petits éléments, chaussures et bras, sont mal segmentés.</dd></div>
+                        <div><dt>Le défi</dt><dd>Juger un modèle conçu par d'autres. En mesurant l'IoU et le Dice vêtement par vêtement, j'ai vu que les petits éléments, chaussures et bras, sont mal segmentés.</dd></div>
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>J'ai comparé deux moyennes : sur les classes présentes, et pondérée par la surface. L'écart entre les deux montre que le modèle réussit les grandes zones mais rate les petites : chaussures, bras, accessoires.</dd></div>
@@ -866,7 +861,7 @@
             <div class="market">
                 <h3>Ce que demande le marché, et ce que je vais acquérir</h3>
                 <p>
-                    En octobre 2026, j'ai relu quatre offres d'AI Engineer en France (Alten, Verra, SBS, Cyclife Digital Solutions du groupe EDF) et un panorama du métier. Le tableau compte combien d'offres citent chaque compétence, et la met en face de mon niveau. Trois offres sur quatre visent un profil confirmé. Je les prends comme une direction, pas comme une barre d'entrée.
+                    En octobre 2026, j'ai relu quatre offres d'AI Engineer en France (Alten, Verra, SBS, Cyclife Digital Solutions du groupe EDF) et un panorama du métier. Le tableau compte combien d'offres citent chaque compétence, et la met en face de mon niveau. Trois offres sur quatre visent un profil confirmé. Je les prends comme une direction à suivre.
                 </p>
                 <div class="market-table" role="region" aria-label="Compétences demandées par les offres et mon niveau" tabindex="0">
                     <table>
@@ -920,11 +915,11 @@
                                 <tr><th scope="row">Recueillir les besoins métiers et leurs contraintes</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <span class="note">Fashion-Insta</span></td><td>Utilisateurs et contraintes de SortirIA, relecture du mentor, tests d'usage ; besoin client de Fashion-Insta</td></tr>
                                 <tr><th scope="row">Définir, planifier et suivre le projet avec des indicateurs</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <span class="note">Fashion-Insta</span></td><td>Seuils fixés avant de mesurer, MVP en trois colonnes, feuille de route jusqu'au gel ; planning de 3 semaines</td></tr>
                                 <tr><th scope="row">Assurer la veille technique, juridique et réglementaire</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <span class="note">Fashion-Insta</span></td><td>Licences des sources, collecte seulement sur autorisation écrite, RGPD ; anonymisation (Presidio) ; AI Act</td></tr>
-                                <tr><th scope="row">Animer les échanges avec les parties prenantes, y compris en situation de handicap</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/interface.html" target="_blank" rel="noopener">interface SortirIA</a></td><td>Mentor, testeurs, demandes aux villes ; interface utilisable au clavier et balisée pour les lecteurs d'écran (sans audit formel)</td></tr>
+                                <tr><th scope="row">Animer les échanges avec les parties prenantes, y compris en situation de handicap</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/interface.html" target="_blank" rel="noopener">interface SortirIA</a></td><td>Mentor, testeurs, demandes aux villes ; interface utilisable au clavier et balisée pour les lecteurs d'écran (audit formel à venir)</td></tr>
                                 <tr><th scope="row">Suivre le projet (délais, coûts, livrables, performance) et en rendre compte</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/suivi.html" target="_blank" rel="noopener">suivi des incidents</a></td><td>Jalons, budget Azure avec alertes, mail chaque nuit, plus de 25 incidents tracés</td></tr>
                                 <tr><th scope="row">Conseiller sur le plan stratégique et méthodologique</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>Recommandation chiffrée après l'usage réel (la couverture d'abord) ; grille go / no-go</td></tr>
                                 <tr><th scope="row">Auditer la solution data : historique, qualité, disponibilité</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Audit des sources (droit d'usage, volume, qualité, manques), script d'audit OpenAgenda</td></tr>
-                                <tr><th scope="row">Évaluer les risques : accessibilité, sécurité, développement durable</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/limites.html" target="_blank" rel="noopener">limites SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Tableau des risques et parades ; secrets hors du code, limite de débit ; services qui s'éteignent sans usage</td></tr>
+                                <tr><th scope="row">Évaluer les risques : accessibilité, sécurité, développement durable</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/limites.html" target="_blank" rel="noopener">limites SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Tableau des risques et parades ; secrets hors du code, limite de débit ; services qui s'éteignent d'eux-mêmes au repos</td></tr>
                                 <tr><th scope="row">Identifier une solution technique adaptée</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a></td><td>Chaque choix mesuré contre son alternative : pgvector contre FAISS, règles contre LLM</td></tr>
                                 <tr><th scope="row">Réaliser un prototype si nécessaire</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <span class="note">Fashion-Insta</span></td><td>MVP en ligne en trois jours ; preuve de concept en quatre semaines ; POC cadré</td></tr>
                                 <tr><th scope="row">Présenter la solution et justifier ses choix</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <span class="note">Fashion-Insta</span></td><td>Dossier et rapport de conduite de projet ; présentation client de 52 diapositives</td></tr>
@@ -938,7 +933,7 @@
                             <tbody>
                                 <tr><th scope="row">Configurer l'environnement de travail (machines physiques ou virtuelles)</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>Docker Compose en local, Azure Container Apps ; GPU de 6 Go puis cloud (RunPod)</td></tr>
                                 <tr><th scope="row">Définir les processus de collecte, de traitement et de stockage</th><td><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Moteur multi-sources (21 sources) ; collecte, validation et stockage chaque nuit</td></tr>
-                                <tr><th scope="row">Mettre en place une authentification conforme aux règles de sécurité</th><td><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>API sécurisée ; connexion à Azure sans mot de passe (OIDC), compte de base en lecture seule, secrets hors du code</td></tr>
+                                <tr><th scope="row">Mettre en place une authentification conforme aux règles de sécurité</th><td><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>API sécurisée ; connexion à Azure par jeton OIDC, compte de base en lecture seule, secrets hors du code</td></tr>
                                 <tr><th scope="row">Structurer l'architecture des données et concevoir les bases (SQL ou NoSQL)</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a></td><td>13 tables et 6 vues PostgreSQL ; MongoDB et Milvus</td></tr>
                                 <tr><th scope="row">Installer et paramétrer un SGBD et un outil d'extraction</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a></td><td>PostgreSQL et pgvector en local et sur Azure ; Airflow</td></tr>
                                 <tr><th scope="row">Établir et exécuter des tests : SGBD, qualité des données, performance des requêtes</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Tests du schéma sur un vrai PostgreSQL en CI, contrôle qualité de chaque nuit, temps de réponse P95</td></tr>
@@ -1015,7 +1010,7 @@
                 <li class="timeline-item">
                     <span>Aujourd'hui</span>
                     <h3>AI Engineer</h3>
-                    <p>Construire des outils IA que des gens utilisent vraiment, et pouvoir dire, chiffres à l'appui, quand ils marchent et quand ils ne marchent pas.</p>
+                    <p>Construire des outils IA que des gens utilisent vraiment, et pouvoir dire, chiffres à l'appui, quand ils marchent et où ils peuvent progresser.</p>
                 </li>
             </ol>
 
@@ -1038,7 +1033,7 @@
                     <p class="reflection-intro">Les leçons qui m'ont le plus marqué sont venues de mes erreurs.</p>
                     <ul>
                         <li>Un bon score peut cacher un mauvais modèle. Sur le triage, mon premier modèle prédisait 94,5&nbsp;% des mots justes, mais choisissait la priorité à peine mieux qu'au hasard. Le sous-triage et le F1 m'en disent bien plus.</li>
-                        <li>Ne pas lâcher. La Base du triage ne finissait jamais ses réponses, et j'ai repris les données maintes et maintes fois. Quand elle a enfin terminé, j'ai surtout été soulagé.</li>
+                        <li>Persévérer. La Base du triage peinait à finir ses réponses, et j'ai repris les données maintes et maintes fois. Quand elle a enfin terminé, j'ai surtout été soulagé.</li>
                         <li>L'usage réel corrige les jeux de test. Sur mes questions, 97,8&nbsp;% de pertinence. Sur celles des testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux.</li>
                     </ul>
                 </div>
@@ -1049,7 +1044,7 @@
                     <ul>
                         <li>Garder le jeu de test intact jusqu'au bout. Sur le triage, j'ai compris que je m'en étais servi pour prendre mes décisions, et que c'est cette façon de faire qui m'avait mené à ce résultat. Si je devais recommencer, je ferais tout différemment. C'est ce que j'ai appliqué ensuite : sur SortirIA, mes seuils étaient fixés avant de mesurer.</li>
                         <li>Choisir le modèle sur la métrique qui compte vraiment, et l'évaluer sur assez de cas. Sur CurelyticsIA, je visais le rappel mais je sélectionnais sur la perte. Pour le RAG, 9 questions, c'était trop peu. Sur SortirIA, j'ai corrigé le tir : 10 jeux d'évaluation, rejoués à chaque push.</li>
-                        <li>Faire tester par de vrais utilisateurs plus tôt. Sur SortirIA, ils ont révélé en quelques jours un manque que mes jeux de test ne montraient pas. Pour mes prochains projets, je ferai tester dès le premier prototype.</li>
+                        <li>Faire tester par de vrais utilisateurs plus tôt. Sur SortirIA, ils ont révélé en quelques jours un besoin que mes jeux de test laissaient dans l'ombre. Pour mes prochains projets, je ferai tester dès le premier prototype.</li>
                     </ul>
                 </div>
 
@@ -1061,7 +1056,7 @@
                         <li>Face à un entraînement qui échoue, je cherche la cause avant de corriger, au lieu de relancer au hasard.</li>
                         <li>Je réutilise mon propre code : SortirIA assemble et adapte des briques de cinq projets précédents.</li>
                     </ul>
-                    <p class="reflection-pride">Ce dont je suis le plus fier, c'est le parcours : des difficultés de plus en plus fortes, et aujourd'hui de nombreux outils en main. J'aime ce que je fais, ça me motive et ça me plaît. Je n'ai aucun mal à y passer du temps : je m'amuse.</p>
+                    <p class="reflection-pride">Ce dont je suis le plus fier, c'est le parcours : des difficultés de plus en plus fortes, et aujourd'hui de nombreux outils en main. J'aime ce que je fais, ça me motive et ça me plaît. J'y passe du temps avec plaisir : je m'amuse.</p>
                 </div>
 
                 <div class="reflection-card">
@@ -1092,7 +1087,7 @@
                 </div>
 
                 <p>
-                    Je voyais l'AI Engineer comme quelqu'un qui choisit et entraîne des modèles. Aujourd'hui, je le vois partir d'un besoin métier et fixer des critères de réussite. Il construit toute la chaîne : données, modèle, évaluation, service, monitoring. Et il aide à décider s'il faut déployer ou non.
+                    Je voyais l'AI Engineer comme quelqu'un qui choisit et entraîne des modèles. Aujourd'hui, je le vois partir d'un besoin métier et fixer des critères de réussite. Il construit toute la chaîne : données, modèle, évaluation, service, monitoring. Et il aide à décider du bon moment pour déployer.
                 </p>
                 <p>
                     La formation m'a surtout appris à mener un projet IA comme en entreprise. Cadrer le besoin, chiffrer, mesurer, documenter. Et dire honnêtement où sont les limites.
@@ -1138,7 +1133,7 @@
                 </div>
                 <div>
                     <h3>Créativité</h3>
-                    <p>Faire écrire à SortirIA ses propres corrections : chaque lundi, un agent lit les recherches ratées et me propose une pull request. Je n'ai plus qu'à relire et valider.</p>
+                    <p>Faire écrire à SortirIA ses propres corrections : chaque lundi, un agent lit les recherches ratées et me propose une pull request. Il me reste à relire et valider.</p>
                 </div>
             </div>
 
