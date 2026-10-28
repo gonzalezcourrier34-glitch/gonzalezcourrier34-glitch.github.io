@@ -1278,4 +1278,20 @@ footer {
 
 /* Bilan : une phrase d'introduction à la première personne */
 .reflection-intro { margin-bottom: 0.8rem; font-style: italic; color: var(--muted); }
-.reflection-pride { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border); color: var(--text); font-weight: 500; }
+
+/* Conclusion du bilan : la phrase qui résume mon parcours, mise en avant */
+.conclusion {
+    margin: 2.5rem 0 0;
+    padding: 2rem clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--accent-soft), rgba(167, 139, 250, 0.10));
+    font-family: var(--font-title);
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+    line-height: 1.5;
+    color: var(--text);
+}
+.conclusion p + p { margin-top: 0.8rem; }
+.conclusion-strong { color: var(--accent); font-weight: 700; }
+@media print { .conclusion { break-inside: avoid; } }
