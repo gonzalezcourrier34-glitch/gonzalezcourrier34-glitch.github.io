@@ -4,7 +4,7 @@
 <node TEXT="1. Profil" POSITION="right" COLOR="#1b7f6e">
 <font NAME="SansSerif" SIZE="14" BOLD="true"/>
 <node TEXT="Parcours" COLOR="#1b7f6e">
-<node TEXT="Développeur SQL, Visual Basic, WinDev, puis cadre (1998-2006)" COLOR="#1b7f6e">
+<node TEXT="Développeur SQL, Visual Basic, WinDev, puis chef de projet (1998-2006)" COLOR="#1b7f6e">
 </node>
 <node TEXT="Formation d&apos;éducateur technique spécialisé, licence en sciences de l&apos;éducation (2011-2012)" COLOR="#1b7f6e">
 </node>
