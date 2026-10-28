@@ -248,6 +248,7 @@
                 </dl>
                 <dl class="facts facts-comment">
                     <div><dt>Comment</dt><dd>Des règles comprennent la demande (date, lieu, public, budget) et des filtres SQL la font respecter. Les mots et le sens servent ensuite à classer ce qui reste. Mistral rédige uniquement à partir des fiches trouvées.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>Des règles pour comprendre la question : 100&nbsp;% de compréhension sur mon jeu de test, en 1&nbsp;ms et gratuitement, là où un petit modèle ajoutait coût et délai. PostgreSQL avec pgvector plutôt que FAISS : filtres stricts et recherche par le sens tiennent dans la même requête.</dd></div>
                 </dl>
 
                 <div class="project-media phones">
@@ -266,7 +267,7 @@
                     <dl class="metrics">
                         <div><dt>Contraintes respectées</dt><dd>98,7&nbsp;%</dd></div>
                         <div><dt>Pertinence des 3 premières sorties</dt><dd>97,8&nbsp;%</dd></div>
-                        <div><dt>Accord du juge LLM avec l'humain</dt><dd>98,6&nbsp;%</dd></div>
+                        <div><dt>Accord du juge LLM avec l'humain, sur 135 cartes nouvelles</dt><dd>91,9&nbsp;%</dd></div>
                         <div><dt>Temps de réponse P95</dt><dd>6,4&nbsp;s</dd></div>
                         <div><dt>Coût Mistral pour 1&nbsp;000 questions</dt><dd>0,12&nbsp;$</dd></div>
                     </dl>
@@ -295,8 +296,8 @@
                         <div class="mlops-row">
                             <dt>Cycle de vie des modèles <span class="status done">Couvert</span></dt>
                             <dd>À chaque push, la CI lance les tests sur une vraie base PostgreSQL et
-                                rejoue l'évaluation de la recherche. Sous 95&nbsp;%, le déploiement est
-                                bloqué. Sinon, le service part sur Azure. Ensuite, un contrôle vérifie
+                                rejoue l'évaluation de la recherche. Sous 95&nbsp;% sur mes 50 questions principales (90&nbsp;% pour deux jeux annexes),
+                                le déploiement est bloqué. Sinon, le service part sur Azure. Ensuite, un contrôle vérifie
                                 toutes les 3&nbsp;heures qu'il répond toujours. Sur mon poste, MLflow garde
                                 la trace de chaque évaluation et de chaque collecte.</dd>
                         </div>
@@ -334,6 +335,7 @@
                 </ul>
 
                 <div class="project-links">
+                    <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/resultats.html" target="_blank" rel="noopener" aria-label="Mesures détaillées : SortirIA www.sortiria-montpellier.fr">Mesures détaillées →</a>
                     <a href="https://www.sortiria-montpellier.fr" target="_blank" rel="noopener" aria-label="Site en ligne : SortirIA">Site en ligne →</a>
                     <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener" aria-label="Code : SortirIA">Code →</a>
                     <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener" aria-label="Rapport de conduite de projet : SortirIA">Rapport de conduite de projet →</a>
@@ -368,6 +370,7 @@
                 </dl>
                 <dl class="facts facts-comment">
                     <div><dt>Comment</dt><dd>Je change une seule chose à la fois, depuis un essai à trois changements qui m'avait fait perdre le fil. J'ai donné plus de poids à la priorité P1/P2/P3 dans l'apprentissage : le modèle a ainsi appris la décision, et plus seulement le texte. Quand la Base a eu du mal à finir ses réponses, j'ai mesuré avant de corriger : il lui manquait l'apprentissage du jeton de fin.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>J'ai entraîné les deux versions de Qwen3, la Base et l'instruct, avec le même pipeline. Au même niveau global, la Base sous-trie moins : 5,4&nbsp;% contre 7,2&nbsp;%. C'est elle que je livre.</dd></div>
                 </dl>
 
                 <figure class="project-media wide">
@@ -406,6 +409,7 @@
                 </ul>
 
                 <div class="project-links">
+                    <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent/blob/HEAD/docs/experiments.html" target="_blank" rel="noopener" aria-label="Journal des expériences : Agent IA de triage médical">Journal des expériences →</a>
                     <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener" aria-label="Code : Agent IA de triage médical">Code →</a>
                     <a href="https://gonzalezcourrier34-glitch.github.io/medical_triage_agent/" target="_blank" rel="noopener" aria-label="Documentation : Agent IA de triage médical">Documentation →</a>
                     <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent/blob/master/docs/rapport_technique.md" target="_blank" rel="noopener" aria-label="Rapport technique : Agent IA de triage médical">Rapport technique →</a>
@@ -432,6 +436,7 @@
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>Chaque outil a un seul rôle : Stockfish calcule, Lichess et Wikichess donnent le contexte, le LLM explique. 34 cas testés vérifient que l'agent envoie chaque question vers la bonne étape.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>Un moteur d'échecs calcule juste à coup sûr ; un LLM explique bien. J'ai donc confié à chacun ce qu'il fait le mieux, et les 34 cas de routage le vérifient.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -448,7 +453,8 @@
                         <li>LangGraph</li><li>Milvus</li><li>Ollama</li><li>FastAPI</li><li>MongoDB</li><li>Angular</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener" aria-label="Code : Chess Agent">Code →</a>
+                        <a href="https://github.com/gonzalezcourrier34-glitch/chess_agent/blob/HEAD/docs/13-qualite-tests.md" target="_blank" rel="noopener" aria-label="Qualité et tests : Chess Agent">Qualité et tests →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener" aria-label="Code : Chess Agent">Code →</a>
                         <a href="https://gonzalezcourrier34-glitch.github.io/chess_agent/" target="_blank" rel="noopener" aria-label="Documentation : Chess Agent">Documentation →</a>
                     </div>
                 </article>
@@ -470,6 +476,7 @@
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>Un moteur par type de source (RSS, API, web…), et pour chaque fournisseur, un adaptateur et un fichier YAML. Ajouter une source demande très peu de code. Chaque lot passe un contrôle qualité qui s'arrête en erreur si quelque chose cloche.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>Un moteur par type de source se réutilise : ce même moteur collecte aujourd'hui les agendas de SortirIA.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -487,7 +494,8 @@
                         <li>Airflow</li><li>PostgreSQL</li><li>YAML</li><li>Docker</li><li>Streamlit</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener" aria-label="Code : CheckIt.AI">Code →</a>
+                        <a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai/blob/HEAD/docs/07_resultats/01_pipeline.md" target="_blank" rel="noopener" aria-label="Résultats du pipeline : CheckIt.AI">Résultats du pipeline →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener" aria-label="Code : CheckIt.AI">Code →</a>
                         <a href="https://gonzalezcourrier34-glitch.github.io/checkit_ai/" target="_blank" rel="noopener" aria-label="Documentation : CheckIt.AI">Documentation →</a>
                     </div>
                 </article>
@@ -508,6 +516,7 @@
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>J'ai d'abord mesuré un agent aléatoire, pour avoir une référence. Optuna a testé 10 combinaisons de réglages pour chaque algorithme. Puis j'ai évalué chaque agent sur 100 atterrissages, pour une moyenne fiable.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>PPO l'emporte nettement : 270,6 de récompense moyenne contre 119,9 pour DQN, avec un écart-type de 27,7 qui montre des atterrissages réguliers.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -529,7 +538,8 @@
                         <li>Stable-Baselines3</li><li>Gymnasium</li><li>Optuna</li><li>FastAPI</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener" aria-label="Code : Atterrissage LunarLander">Code →</a>
+                        <a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning/blob/HEAD/docs/11_analyse_resultats.md" target="_blank" rel="noopener" aria-label="Analyse des résultats : Atterrissage LunarLander">Analyse des résultats →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener" aria-label="Code : Atterrissage LunarLander">Code →</a>
                     </div>
                 </article>
 
@@ -549,7 +559,8 @@
                         <div><dt>Le défi</dt><dd>Apprendre avec très peu d'exemples, en repérant chaque tumeur. Ici, le rappel passe avant tout.</dd></div>
                     </dl>
                     <dl class="facts facts-comment">
-                        <div><dt>Comment</dt><dd>Je garde les pseudo-étiquettes les plus sûres : un score de confiance, moitié cluster, moitié distance, avec un seuil à 0,681. J'entraîne un ResNet18 dont seules les dernières couches sont réentraînées, puis je vérifie sur 5 seeds que le gain tient. Je suis le F2, qui compte deux fois plus le rappel.</dd></div>
+                        <div><dt>Comment</dt><dd>Je garde les pseudo-étiquettes les plus sûres : un score de confiance, moitié cluster, moitié distance, avec un seuil à 0,681. J'entraîne un ResNet18 dont seules les dernières couches sont réentraînées, puis je compare les deux approches sur 5 découpages différents des données. Je suis le F2, qui compte deux fois plus le rappel.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>Quand annoter une IRM coûte cher, les pseudo-étiquettes permettent d'apprendre avec peu d'exemples. J'ai mesuré leur apport honnêtement : sur 5 découpages, les deux approches détectent autant de tumeurs (rappel moyen de 0,96). Mon étude du budget d'annotation, dans le même notebook, mesure ensuite l'apport selon le nombre d'images annotées.</dd></div>
                     </dl>
                     <figure class="project-media">
                         <img src="img/curelytics_resultats.png" alt="Graphique : accuracy, précision, rappel, F1 et F2 des trois approches ; la semi-supervisée après fine-tuning atteint un rappel de 1,00" width="908" height="490" loading="lazy">
@@ -558,19 +569,20 @@
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
                         <dl class="metrics small">
-                            <div><dt>Rappel (tumeurs détectées)</dt><dd>1,00</dd></div>
-                            <div><dt>F2-score</dt><dd>0,98</dd></div>
-                            <div><dt>Accuracy, contre 0,90 en supervisé seul</dt><dd>0,95</dd></div>
+                            <div><dt>Rappel (tumeurs détectées), test principal</dt><dd>1,00</dd></div>
+                            <div><dt>F2-score, test principal</dt><dd>0,98</dd></div>
+                            <div><dt>Rappel moyen sur 5 découpages des données</dt><dd>0,96</dd></div>
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et ouverture</dt><dd>Je choisis aujourd'hui le meilleur modèle sur la perte de validation. Prochaine étape : le choisir directement sur le F2 de validation, pour coller encore mieux à l'objectif de rappel.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Mon jeu de test compte 20 images : une erreur y pèse 5&nbsp;%, et les scores varient selon le découpage. Prochaines étapes : un test plus large, et choisir le modèle directement sur le F2 de validation plutôt que sur la perte.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>PyTorch</li><li>ResNet</li><li>Clustering</li><li>Pseudo-labels</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener" aria-label="Code : CurelyticsIA · BrainScanAI">Code →</a>
+                        <a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA/blob/HEAD/notebooks/02_clustering_semi_supervised_cnn_training.ipynb" target="_blank" rel="noopener" aria-label="Notebook : CurelyticsIA · BrainScanAI">Notebook →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener" aria-label="Code : CurelyticsIA · BrainScanAI">Code →</a>
                     </div>
                 </article>
 
@@ -593,6 +605,7 @@
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>J'ai fixé les critères de succès avant tout (Top-5 ≥&nbsp;75&nbsp;%, Precision@5 ≥&nbsp;70&nbsp;%). Puis j'ai découpé le projet en PoC, MVP et produit final, chacun avec son budget, en gardant 10 à 15&nbsp;% de marge pour les imprévus.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>CLIP relie l'image et le texte dans un même espace : on retrouve un vêtement à partir d'une simple photo, ce qui répond directement au besoin d'inspiration visuelle.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes livrables chiffrés">
                         <h4>Mes livrables chiffrés</h4>
@@ -629,6 +642,7 @@
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>Un défaut de paiement manqué coûte 10 fois plus qu'une fausse alerte. J'ai donc choisi le seuil en validation croisée avec un F-bêta à β&nbsp;=&nbsp;3, qui privilégie fortement le rappel. J'ai mesuré ONNX : à peine 2&nbsp;% de gain, le goulot était ailleurs. C'est en allégeant les logs que l'API a gagné 18&nbsp;% sur sa P95.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>J'ai comparé quatre modèles (régression logistique, Random Forest, XGBoost, CatBoost) sur le rappel et le F-bêta. XGBoost a été retenu, puis réglé avec Optuna, chaque essai suivi dans MLflow.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -646,7 +660,8 @@
                         <li>XGBoost</li><li>LightGBM</li><li>MLflow</li><li>Evidently</li><li>ONNX</li><li>GitHub Actions</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener" aria-label="Code : Scoring crédit Prêt à dépenser">Code →</a>
+                        <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser/blob/HEAD/notebook/pret_a_depenser.ipynb" target="_blank" rel="noopener" aria-label="Notebook : Scoring crédit Prêt à dépenser">Notebook →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener" aria-label="Code : Scoring crédit Prêt à dépenser">Code →</a>
                     </div>
                 </article>
 
@@ -664,6 +679,7 @@
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>Je filtre d'abord par ville, date et type, avant toute recherche par le sens. Quand la recherche revient vide, l'assistant le dit franchement. Je l'ai testé avec RAGAS sur trois sortes de questions : claires, ambiguës et hors sujet.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>Le préfiltrage garantit la ville et la date ; la recherche par le sens classe ensuite. Résultat : 0,90 de précision du contexte retrouvé, et 100&nbsp;% des questions hors sujet refusées.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -681,7 +697,8 @@
                         <li>LangChain</li><li>FAISS</li><li>Mistral</li><li>RAGAS</li><li>Docker</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener" aria-label="Code : Assistant RAG OpenAgenda">Code →</a>
+                        <a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda/blob/HEAD/notebook/rag_evaluation.ipynb" target="_blank" rel="noopener" aria-label="Notebook d'évaluation : Assistant RAG OpenAgenda">Notebook d'évaluation →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/rag-openagenda" target="_blank" rel="noopener" aria-label="Code : Assistant RAG OpenAgenda">Code →</a>
                     </div>
                 </article>
 
@@ -701,6 +718,7 @@
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>J'ai choisi le F2-score, parce que rater un départ coûte plus qu'une fausse alerte, et cherché le seuil en validation croisée, sur l'entraînement seulement. La préparation des données tourne à part : des scripts remplissent des tables « clean », et l'API se concentre sur l'essentiel : lire, prédire et tracer.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>Sur le jeu de test, XGBoost détecte le plus de départs : un rappel de 0,81, contre 0,75 pour la régression logistique et 0,67 pour le Random Forest, avec le meilleur F2 (0,71).</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -718,7 +736,8 @@
                         <li>scikit-learn</li><li>FastAPI</li><li>PostgreSQL</li><li>Hugging Face Spaces</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener" aria-label="Code : TechNova Partners">Code →</a>
+                        <a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners/blob/HEAD/notebooks/projet_technova_partners.ipynb" target="_blank" rel="noopener" aria-label="Notebook : TechNova Partners">Notebook →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener" aria-label="Code : TechNova Partners">Code →</a>
                         <a href="https://stegonzalez-technova-api.hf.space/docs" target="_blank" rel="noopener" aria-label="API en ligne : TechNova Partners">API en ligne →</a>
                     </div>
                 </article>
@@ -739,6 +758,7 @@
                     </dl>
                     <dl class="facts facts-comment">
                         <div><dt>Comment</dt><dd>J'ai comparé deux moyennes : sur les classes présentes, et pondérée par la surface. L'écart entre les deux montre que le modèle réussit les grandes zones mais rate les petites : chaussures, bras, accessoires.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>La moyenne globale donnait une bonne note au modèle ; la mesure classe par classe a révélé ses vrais points faibles, et donc où l'améliorer.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -759,7 +779,8 @@
                         <li>Hugging Face API</li><li>pandas</li><li>Matplotlib</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/gonzalezcourrier34-glitch/ModeTrends" target="_blank" rel="noopener" aria-label="Code : ModeTrends">Code →</a>
+                        <a href="https://github.com/gonzalezcourrier34-glitch/ModeTrends/blob/HEAD/ModeTrends/huggingface_api_cloth_seg.ipynb" target="_blank" rel="noopener" aria-label="Notebook : ModeTrends">Notebook →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/ModeTrends" target="_blank" rel="noopener" aria-label="Code : ModeTrends">Code →</a>
                     </div>
                 </article>
 
@@ -916,7 +937,7 @@
                                 <tr><th scope="row">Définir, planifier et suivre le projet avec des indicateurs</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <span class="note">Fashion-Insta</span></td><td>Seuils fixés avant de mesurer, MVP en trois colonnes, feuille de route jusqu'au gel ; planning de 3 semaines</td></tr>
                                 <tr><th scope="row">Assurer la veille technique, juridique et réglementaire</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <span class="note">Fashion-Insta</span></td><td>Licences des sources, collecte seulement sur autorisation écrite, RGPD ; anonymisation (Presidio) ; AI Act</td></tr>
                                 <tr><th scope="row">Animer les échanges avec les parties prenantes, y compris en situation de handicap</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/interface.html" target="_blank" rel="noopener">interface SortirIA</a></td><td>Mentor, testeurs, demandes aux villes ; interface utilisable au clavier et balisée pour les lecteurs d'écran (audit formel à venir)</td></tr>
-                                <tr><th scope="row">Suivre le projet (délais, coûts, livrables, performance) et en rendre compte</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/suivi.html" target="_blank" rel="noopener">suivi des incidents</a></td><td>Jalons, budget Azure avec alertes, mail chaque nuit, plus de 25 incidents tracés</td></tr>
+                                <tr><th scope="row">Suivre le projet (délais, coûts, livrables, performance) et en rendre compte</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/suivi.html" target="_blank" rel="noopener">suivi des incidents</a></td><td>Jalons, budget Azure avec alertes, mail chaque nuit, 31 incidents tracés</td></tr>
                                 <tr><th scope="row">Conseiller sur le plan stratégique et méthodologique</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>Recommandation chiffrée après l'usage réel (la couverture d'abord) ; grille go / no-go</td></tr>
                                 <tr><th scope="row">Auditer la solution data : historique, qualité, disponibilité</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Audit des sources (droit d'usage, volume, qualité, manques), script d'audit OpenAgenda</td></tr>
                                 <tr><th scope="row">Évaluer les risques : accessibilité, sécurité, développement durable</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/limites.html" target="_blank" rel="noopener">limites SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Tableau des risques et parades ; secrets hors du code, limite de débit ; services qui s'éteignent d'eux-mêmes au repos</td></tr>
@@ -932,7 +953,7 @@
                             <thead><tr><th scope="col">Compétence du référentiel</th><th scope="col">Où je la prouve</th><th scope="col">Ce qui le montre</th></tr></thead>
                             <tbody>
                                 <tr><th scope="row">Configurer l'environnement de travail (machines physiques ou virtuelles)</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>Docker Compose en local, Azure Container Apps ; GPU de 6 Go puis cloud (RunPod)</td></tr>
-                                <tr><th scope="row">Définir les processus de collecte, de traitement et de stockage</th><td><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Moteur multi-sources (21 sources) ; collecte, validation et stockage chaque nuit</td></tr>
+                                <tr><th scope="row">Définir les processus de collecte, de traitement et de stockage</th><td><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Moteur multi-sources de CheckIt.AI (21 sources), réutilisé par SortirIA pour collecter, valider et stocker chaque nuit</td></tr>
                                 <tr><th scope="row">Mettre en place une authentification conforme aux règles de sécurité</th><td><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>API sécurisée ; connexion à Azure par jeton OIDC, compte de base en lecture seule, secrets hors du code</td></tr>
                                 <tr><th scope="row">Structurer l'architecture des données et concevoir les bases (SQL ou NoSQL)</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a></td><td>13 tables et 6 vues PostgreSQL ; MongoDB et Milvus</td></tr>
                                 <tr><th scope="row">Installer et paramétrer un SGBD et un outil d'extraction</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a></td><td>PostgreSQL et pgvector en local et sur Azure ; Airflow</td></tr>
@@ -1145,18 +1166,17 @@
     </section>
 
 
-    <!-- TÉMOIGNAGE : à activer avec l'accord de la personne citée
+    <!-- TÉMOIGNAGE : extrait du compte rendu de la dernière session de mentorat (27/10/2026) -->
     <section class="section" aria-labelledby="testimony-title">
         <div class="container">
             <p class="section-label">Témoignage</p>
-            <h2 id="testimony-title">Ils ont travaillé avec moi</h2>
+            <h2 id="testimony-title">Le regard de mon mentor</h2>
             <blockquote class="testimony">
-                <p>« Texte du témoignage. »</p>
-                <footer>Prénom Nom, mentor OpenClassrooms</footer>
+                <p>« Stéphane ne s'est pas contenté de développer une solution : il a également cherché à mesurer ses résultats, à justifier ses décisions et à définir des pistes d'amélioration réalistes. […] C'était particulièrement enrichissant de travailler avec quelqu'un d'aussi motivé, impliqué et toujours prêt à approfondir ses connaissances. »</p>
+                <footer>— Mon mentor OpenClassrooms</footer>
             </blockquote>
         </div>
     </section>
-    -->
 
     <!-- CONTACT -->
 

@@ -33,7 +33,7 @@
 <node TEXT="Projet personnel – SortirIA (oct.-nov. 2026, en ligne sur Azure)" COLOR="#1b7f6e">
 <node TEXT="Domaine : RAG, agent, mise en production" COLOR="#1b7f6e">
 </node>
-<node TEXT="Réalisation : assistant de sorties Montpellier et bassin de Thau. Agent LangGraph la nuit (OpenAgenda, DATAtourisme, PDF), recherche SQL + mots + pgvector, réponse Mistral. Contraintes respectées 98,7 %, pertinence@3 97,8 %, juge LLM d&#x27;accord à 98,6 % avec l&#x27;humain (AC1 0,985), P95 6,4 s, 0,12 $ pour 1 000 questions, environ 10 $ par mois" COLOR="#1b7f6e">
+<node TEXT="Réalisation : assistant de sorties Montpellier et bassin de Thau. Agent LangGraph la nuit (OpenAgenda, DATAtourisme, PDF), recherche SQL + mots + pgvector, réponse Mistral. Contraintes respectées 98,7 %, pertinence@3 97,8 %, juge LLM d&#x27;accord à 91,9 % avec l&#x27;humain sur 135 cartes nouvelles (98,6 % sur la grille de réglage), P95 6,4 s, 0,12 $ pour 1 000 questions, environ 10 $ par mois" COLOR="#1b7f6e">
 </node>
 <node TEXT="Stack : LangGraph, Mistral, PostgreSQL/pgvector, FastAPI, Angular, Azure Container Apps, GitHub Actions, Grafana, MLflow, Airflow" COLOR="#1b7f6e">
 </node>
