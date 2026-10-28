@@ -1250,12 +1250,28 @@ footer {
 .mlops-limit {
     margin-top: 1rem;
     padding: 0.7rem 1rem;
-    border-left: 3px solid var(--warning);
-    background: var(--accent-soft);
+    border-left: 3px solid var(--orange-bord);
+    background: rgba(207, 127, 60, 0.08);
     border-radius: 0 10px 10px 0;
     font-size: 0.9rem;
 }
 
-/* Limite et recul : même cadre que rôle, défi et comment, libellé en jaune */
-.facts .limit dt { color: var(--warning); }
-.facts-limit { margin: 0 0 1rem; border-left-color: var(--warning); }
+/* Comment (vert) et Limite et recul (orange), chacun dans son cadre,
+   avec les couleurs du schéma d'architecture du triage */
+:root { --vert: #48c9b0; --vert-bord: #2f9e8a; --orange: #e0914d; --orange-bord: #cf7f3c; }
+@media (prefers-color-scheme: light) { :root { --vert: #1b7f6e; --orange: #a5581c; } }
+.facts-comment, .facts-limit {
+    border: 1px solid var(--vert-bord);
+    border-left-width: 3px;
+    border-radius: 12px;
+    background: rgba(47, 158, 138, 0.08);
+}
+.facts-comment { margin-top: 0.75rem; }
+.facts-comment dt { color: var(--vert); }
+.facts-limit {
+    margin: 0 0 1rem;
+    border-color: var(--orange-bord);
+    background: rgba(207, 127, 60, 0.08);
+}
+.facts-limit dt { color: var(--orange); }
+.mlops-limit strong { color: var(--orange); }

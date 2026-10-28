@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="css/style.css?v=2026-10-28d">
+    <link rel="stylesheet" href="css/style.css?v=2026-10-28e">
 </head>
 
 <body>
@@ -246,7 +246,9 @@
                 <dl class="facts">
                     <div><dt>Mon rôle</dt><dd>Seul, de bout en bout : cadrage, demandes d'autorisation aux sources, code, déploiement sur Azure et suivi en production.</dd></div>
                     <div><dt>Le défi</dt><dd>Respecter à coup sûr la date, le lieu, le public et le budget d'une demande écrite librement, avec des agendas hétérogènes à collecter et vérifier chaque nuit.</dd></div>
-                <div><dt>Comment</dt><dd>Des règles comprennent la demande (date, lieu, public, budget) et des filtres SQL la font respecter. Les mots et le sens ne servent qu'à classer ce qui reste. Mistral rédige à partir des fiches trouvées, jamais de mémoire.</dd></div>
+                </dl>
+                <dl class="facts facts-comment">
+                    <div><dt>Comment</dt><dd>Des règles comprennent la demande (date, lieu, public, budget) et des filtres SQL la font respecter. Les mots et le sens ne servent qu'à classer ce qui reste. Mistral rédige à partir des fiches trouvées, jamais de mémoire.</dd></div>
                 </dl>
 
                 <div class="project-media phones">
@@ -369,7 +371,9 @@
                 <dl class="facts">
                     <div><dt>Mon rôle</dt><dd>Seul, sur tout le projet : audit et anonymisation des données, entraînement, mise en service, tests et documentation.</dd></div>
                     <div><dt>Le défi</dt><dd>Tenir sur une carte de 6&nbsp;Go sans sous-trier les urgences. Mon premier entraînement, sur Qwen3-Base, a échoué. J'ai cherché pourquoi, puis je l'ai corrigé.</dd></div>
-                <div><dt>Comment</dt><dd>Je change une seule chose à la fois, depuis un essai à trois changements qui m'avait fait perdre le fil. J'ai donné plus de poids à la priorité P1/P2/P3 dans l'apprentissage : sans ça, le modèle apprenait le texte mais pas la décision. Quand la Base ne finissait plus ses réponses, j'ai mesuré avant de corriger : elle n'avait jamais appris le jeton de fin.</dd></div>
+                </dl>
+                <dl class="facts facts-comment">
+                    <div><dt>Comment</dt><dd>Je change une seule chose à la fois, depuis un essai à trois changements qui m'avait fait perdre le fil. J'ai donné plus de poids à la priorité P1/P2/P3 dans l'apprentissage : sans ça, le modèle apprenait le texte mais pas la décision. Quand la Base ne finissait plus ses réponses, j'ai mesuré avant de corriger : elle n'avait jamais appris le jeton de fin.</dd></div>
                 </dl>
 
                 <figure class="project-media wide">
@@ -432,7 +436,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : architecture de l'agent, backend FastAPI, interface Angular, tests et CI.</dd></div>
                         <div><dt>Le défi</dt><dd>Empêcher le LLM d'inventer un coup ou une évaluation. J'ai réparti les rôles : Stockfish calcule, les sources donnent le contexte, le LLM se contente d'expliquer.</dd></div>
-                    <div><dt>Comment</dt><dd>Chaque outil a un seul rôle : Stockfish calcule, Lichess et Wikichess donnent le contexte, le LLM explique. 34 cas testés vérifient que l'agent envoie chaque question vers la bonne étape.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>Chaque outil a un seul rôle : Stockfish calcule, Lichess et Wikichess donnent le contexte, le LLM explique. 34 cas testés vérifient que l'agent envoie chaque question vers la bonne étape.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -469,7 +475,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : architecture du moteur, connecteurs, orchestration Airflow et tableau de bord.</dd></div>
                         <div><dt>Le défi</dt><dd>Faire entrer des sources très différentes dans un même format fiable : dates, liens et images vérifiés, aucun doublon. Et sans dupliquer le code.</dd></div>
-                    <div><dt>Comment</dt><dd>Un moteur par type de source (RSS, API, web…), et pour chaque fournisseur, un adaptateur et un fichier YAML. Ajouter une source demande très peu de code. Chaque lot passe un contrôle qualité qui s'arrête en erreur si quelque chose cloche.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>Un moteur par type de source (RSS, API, web…), et pour chaque fournisseur, un adaptateur et un fichier YAML. Ajouter une source demande très peu de code. Chaque lot passe un contrôle qualité qui s'arrête en erreur si quelque chose cloche.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -506,7 +514,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : entraînement des agents, réglage des hyperparamètres, API et tableau de bord.</dd></div>
                         <div><dt>Le défi</dt><dd>Obtenir un atterrissage stable, et pouvoir le reproduire. J'ai comparé DQN et PPO, puis réglé leurs hyperparamètres avec Optuna.</dd></div>
-                    <div><dt>Comment</dt><dd>J'ai d'abord mesuré un agent aléatoire, pour avoir une référence. Optuna a testé 10 combinaisons de réglages pour chaque algorithme. Puis j'ai évalué chaque agent sur 100 atterrissages, pas sur le meilleur.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>J'ai d'abord mesuré un agent aléatoire, pour avoir une référence. Optuna a testé 10 combinaisons de réglages pour chaque algorithme. Puis j'ai évalué chaque agent sur 100 atterrissages, pas sur le meilleur.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -547,7 +557,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : pipeline semi-supervisé, évaluation et étude de coût.</dd></div>
                         <div><dt>Le défi</dt><dd>Apprendre avec très peu d'exemples sans laisser passer une tumeur. Ici, le rappel passe avant tout.</dd></div>
-                    <div><dt>Comment</dt><dd>Je ne garde que les pseudo-étiquettes les plus sûres : un score de confiance, moitié cluster, moitié distance, avec un seuil à 0,681. J'entraîne un ResNet18 dont seules les dernières couches sont réentraînées, puis je vérifie sur 5 seeds que le gain tient. Je suis le F2, qui compte deux fois plus le rappel.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>Je ne garde que les pseudo-étiquettes les plus sûres : un score de confiance, moitié cluster, moitié distance, avec un seuil à 0,681. J'entraîne un ResNet18 dont seules les dernières couches sont réentraînées, puis je vérifie sur 5 seeds que le gain tient. Je suis le F2, qui compte deux fois plus le rappel.</dd></div>
                     </dl>
                     <figure class="project-media">
                         <img src="img/curelytics_resultats.png" alt="Graphique : accuracy, précision, rappel, F1 et F2 des trois approches ; la semi-supervisée après fine-tuning atteint un rappel de 1,00" width="908" height="490" loading="lazy">
@@ -588,7 +600,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul, dans le rôle du chef de projet IA : cadrage, chiffrage et présentation au client.</dd></div>
                         <div><dt>Le défi</dt><dd>Permettre au client de décider avant d'écrire une ligne de code. KPI, budget, planning et RGPD étaient fixés pour un go / no-go.</dd></div>
-                    <div><dt>Comment</dt><dd>J'ai fixé les critères de succès avant tout (Top-5 ≥&nbsp;75&nbsp;%, Precision@5 ≥&nbsp;70&nbsp;%). Puis j'ai découpé le projet en PoC, MVP et produit final, chacun avec son budget, en gardant 10 à 15&nbsp;% de marge pour les imprévus.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>J'ai fixé les critères de succès avant tout (Top-5 ≥&nbsp;75&nbsp;%, Precision@5 ≥&nbsp;70&nbsp;%). Puis j'ai découpé le projet en PoC, MVP et produit final, chacun avec son budget, en gardant 10 à 15&nbsp;% de marge pour les imprévus.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes livrables chiffrés">
                         <h4>Mes livrables chiffrés</h4>
@@ -623,7 +637,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : API, suivi MLflow, monitoring de la dérive, optimisation et CI.</dd></div>
                         <div><dt>Le défi</dt><dd>Garder le modèle fiable une fois déployé. Chaque appel est tracé, la dérive est détectée, et je sais où part le temps de réponse.</dd></div>
-                    <div><dt>Comment</dt><dd>Un défaut non détecté coûte 10 fois plus qu'une fausse alerte. J'ai donc choisi le seuil en validation croisée avec un F-bêta à β&nbsp;=&nbsp;3, qui privilégie fortement le rappel. J'ai mesuré ONNX : à peine 2&nbsp;% de gain, le modèle n'était pas le goulot. C'est en allégeant les logs que l'API a gagné 18&nbsp;% sur sa P95.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>Un défaut non détecté coûte 10 fois plus qu'une fausse alerte. J'ai donc choisi le seuil en validation croisée avec un F-bêta à β&nbsp;=&nbsp;3, qui privilégie fortement le rappel. J'ai mesuré ONNX : à peine 2&nbsp;% de gain, le modèle n'était pas le goulot. C'est en allégeant les logs que l'API a gagné 18&nbsp;% sur sa P95.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -657,7 +673,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : collecte OpenAgenda, pipeline RAG, évaluation et conteneurisation.</dd></div>
                         <div><dt>Le défi</dt><dd>Comprendre une demande libre, parfois floue. Et ne répondre qu'avec les événements trouvés, sans en inventer.</dd></div>
-                    <div><dt>Comment</dt><dd>Je filtre d'abord par ville, date et type, avant toute recherche par le sens. Si rien ne correspond, l'assistant répond qu'il n'a rien trouvé, au lieu d'inventer. Je l'ai testé avec RAGAS sur trois sortes de questions : claires, ambiguës et hors sujet.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>Je filtre d'abord par ville, date et type, avant toute recherche par le sens. Si rien ne correspond, l'assistant répond qu'il n'a rien trouvé, au lieu d'inventer. Je l'ai testé avec RAGAS sur trois sortes de questions : claires, ambiguës et hors sujet.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -693,7 +711,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : base de données, API sécurisée, tests, CI/CD et mise en ligne.</dd></div>
                         <div><dt>Le défi</dt><dd>Rendre le modèle utilisable en production. L'API ne prépare aucune donnée elle-même, et chaque prédiction est enregistrée en base.</dd></div>
-                    <div><dt>Comment</dt><dd>J'ai choisi le F2-score, parce que rater un départ coûte plus qu'une fausse alerte, et cherché le seuil en validation croisée, sur l'entraînement seulement. La préparation des données tourne à part : des scripts remplissent des tables « clean », et l'API ne fait que lire, prédire et tracer.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>J'ai choisi le F2-score, parce que rater un départ coûte plus qu'une fausse alerte, et cherché le seuil en validation croisée, sur l'entraînement seulement. La préparation des données tourne à part : des scripts remplissent des tables « clean », et l'API ne fait que lire, prédire et tracer.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -730,7 +750,9 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : appels au modèle, mesure de sa qualité et analyse des tendances.</dd></div>
                         <div><dt>Le défi</dt><dd>Juger un modèle que je n'ai pas entraîné. En mesurant l'IoU et le Dice vêtement par vêtement, j'ai vu que les petits éléments, chaussures et bras, sont mal segmentés.</dd></div>
-                    <div><dt>Comment</dt><dd>J'ai comparé deux moyennes : sur les classes présentes, et pondérée par la surface. L'écart entre les deux montre que le modèle réussit les grandes zones mais rate les petites : chaussures, bras, accessoires.</dd></div>
+                    </dl>
+                    <dl class="facts facts-comment">
+                        <div><dt>Comment</dt><dd>J'ai comparé deux moyennes : sur les classes présentes, et pondérée par la surface. L'écart entre les deux montre que le modèle réussit les grandes zones mais rate les petites : chaussures, bras, accessoires.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
