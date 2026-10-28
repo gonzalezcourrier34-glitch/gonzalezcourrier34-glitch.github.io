@@ -400,7 +400,7 @@
 <node TEXT="Langues" COLOR="#2a5d9f">
 <node TEXT="Français  ●●●● Langue maternelle" COLOR="#2a5d9f">
 </node>
-<node TEXT="Anglais  ●●○○ Intermédiaire" COLOR="#2a5d9f">
+<node TEXT="Anglais  ●●○○ Intermédiaire, B1 (CLES 1, certification universitaire, 2011)" COLOR="#2a5d9f">
 </node>
 <node TEXT="Espagnol  ●●○○ Intermédiaire" COLOR="#2a5d9f">
 </node>
