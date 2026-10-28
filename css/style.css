@@ -1244,3 +1244,14 @@ footer {
     white-space: nowrap;
 }
 @media (max-width: 600px) { .project-site { display: block; margin: 0.3rem 0 0; } }
+
+/* MLOps de SortirIA : paragraphes dans une ligne, limite assumée */
+.mlops-row dd p + p { margin-top: 0.6rem; }
+.mlops-limit {
+    margin-top: 1rem;
+    padding: 0.7rem 1rem;
+    border-left: 3px solid var(--warning);
+    background: var(--accent-soft);
+    border-radius: 0 10px 10px 0;
+    font-size: 0.9rem;
+}

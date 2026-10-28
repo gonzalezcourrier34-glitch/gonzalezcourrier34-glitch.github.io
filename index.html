@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="css/style.css?v=2026-10-27n">
+    <link rel="stylesheet" href="css/style.css?v=2026-10-28a">
 </head>
 
 <body>
@@ -274,57 +274,58 @@
                     <h4>Conduite de projet</h4>
                     <ol>
                         <li><strong>Besoin</strong> Trouver une sortie qui convient vraiment (date, lieu, public, budget), sans parcourir dix agendas.</li>
-                        <li><strong>Audit des données</strong> Sources ouvertes et autorisées seulement ; chaque fiche vérifiée, dédoublonnée, attribuée à sa source.</li>
-                        <li><strong>Solution</strong> Agent LangGraph la nuit, PostgreSQL + pgvector, FastAPI, Angular, Mistral ; code repris de mes projets précédents et adapté.</li>
-                        <li><strong>Aide à la décision</strong> Seuils fixés avant de mesurer (95&nbsp;% de contraintes, 70&nbsp;% de pertinence) ; juge calibré sur l'humain ; usage réel mesuré (93 questions de testeurs, 47&nbsp;% de réponses exactes) : la couverture devient la priorité.</li>
-                        <li><strong>Contrôle</strong> Environ 10&nbsp;$ par mois ; évaluation rejouée en CI (déploiement bloqué sous 95&nbsp;%) ; Grafana, MLflow, dérive suivie chaque nuit (PSI) et chaque mois (Evidently), alertes et budget Azure.</li>
+                        <li><strong>Audit des données</strong> Seulement des sources ouvertes et autorisées. Chaque fiche est vérifiée, dédoublonnée et attribuée à sa source.</li>
+                        <li><strong>Solution</strong> Un agent LangGraph la nuit, PostgreSQL et pgvector, FastAPI, Angular, Mistral. J'ai repris et adapté le code de mes projets précédents.</li>
+                        <li><strong>Aide à la décision</strong> J'ai fixé les seuils avant de mesurer : 95&nbsp;% de contraintes respectées, 70&nbsp;% de pertinence. Le juge est calibré sur l'humain. Puis j'ai mesuré l'usage réel : 93 questions de testeurs, 47&nbsp;% de réponses exactes. La couverture des sources devient ma priorité.</li>
+                        <li><strong>Contrôle</strong> Environ 10&nbsp;$ par mois. L'évaluation est rejouée en CI, et le déploiement est bloqué sous 95&nbsp;%. Grafana, MLflow, dérive suivie chaque nuit (PSI) et chaque mois (Evidently), alertes et budget Azure.</li>
                     </ol>
                 </div>
 
                 <div class="mlops" aria-labelledby="mlops-title">
-                    <h4 id="mlops-title">Thèmes MLOps du projet final</h4>
+                    <h4 id="mlops-title">Le MLOps de SortirIA</h4>
                     <p class="mlops-intro">
-                        La consigne propose quatre thèmes. Voici ce que SortirIA en couvre, et
-                        comment, pour un service qui appelle Mistral au lieu d'entraîner son
-                        propre modèle.
+                        La consigne du projet final propose quatre thèmes MLOps. SortirIA n'entraîne
+                        pas son propre modèle : il appelle Mistral. J'ai donc adapté chaque thème à ce cas.
                     </p>
                     <dl class="mlops-list">
                         <div class="mlops-row">
                             <dt>Cycle de vie des modèles <span class="status done">Couvert</span></dt>
-                            <dd>CI à chaque push : tests sur un vrai PostgreSQL et évaluation de la
-                                recherche rejouée, déploiement bloqué sous 95&nbsp;%. CD vers Azure,
-                                contrôle du service en ligne toutes les 3&nbsp;h, MLflow sur le poste pour
-                                chaque évaluation et chaque collecte lancée en local.</dd>
+                            <dd>À chaque push, la CI lance les tests sur une vraie base PostgreSQL et
+                                rejoue l'évaluation de la recherche. Sous 95&nbsp;%, le déploiement est
+                                bloqué. Sinon, le service part sur Azure. Ensuite, un contrôle vérifie
+                                toutes les 3&nbsp;heures qu'il répond toujours. Sur mon poste, MLflow garde
+                                la trace de chaque évaluation et de chaque collecte.</dd>
                         </div>
                         <div class="mlops-row">
                             <dt>Suivi de la dérive <span class="status done">Couvert</span></dt>
-                            <dd>Chaque nuit, les 7 derniers jours comparés aux 28 précédents (PSI) :
-                                ce que les visiteurs demandent (zone, public, type de sortie), ce que
-                                SortirIA répond (exacte, élargie, introuvable ; latence, avis) et ce
-                                que les sources apportent (volumes, rejets, juge de qualité). Rapport
-                                le lundi, alerte si la dérive est forte, suivi dans Grafana. Chaque
-                                mois, un rapport Evidently complet (mois contre mois) produit par
-                                GitHub Actions, la base n'étant ouverte que le temps du rapport. Pas
-                                de verdict sur trop peu de données.</dd>
+                            <dd><p>Chaque nuit, je compare les 7 derniers jours aux 28 précédents (PSI).
+                                Je surveille trois choses : ce que les visiteurs demandent, ce que
+                                SortirIA leur répond, et ce que les sources apportent. Le lundi, je
+                                reçois un rapport. Si la dérive est forte, une alerte part. Tout se lit
+                                dans Grafana.</p>
+                                <p>Une fois par mois, GitHub Actions produit un rapport Evidently complet.
+                                La base n'est ouverte que le temps du rapport. Quand il y a trop peu de
+                                données, le rapport le dit au lieu de conclure.</p></dd>
                         </div>
                         <div class="mlops-row">
                             <dt>Réentraînement automatique <span class="status adapted">Adapté</span></dt>
-                            <dd>Pas de modèle à réentraîner : SortirIA appelle Mistral. La boucle
-                                d'amélioration est l'agent du lundi : il lit les recherches ratées et
-                                les pouces bas, puis ouvre une pull request par correction (synonyme,
-                                agenda à lire). Elle est testée en CI, je la valide, puis elle est
-                                déployée. Un fine-tuning est prévu quand les avis réels suffiront.</dd>
+                            <dd>Il n'y a pas de modèle à réentraîner. Ma boucle d'amélioration, c'est
+                                l'agent du lundi. Il lit les recherches ratées et les pouces bas, puis
+                                ouvre une pull request par correction : un synonyme à ajouter, un agenda
+                                à lire. La CI la teste, je la valide, elle part en production. Le
+                                fine-tuning viendra quand j'aurai assez d'avis réels.</dd>
                         </div>
                         <div class="mlops-row">
                             <dt>Versionnage des données et des modèles <span class="status done">Couvert</span></dt>
-                            <dd>Les 8 consignes sont dans le Prompt Registry de MLflow ; la chaîne
-                                (modèles Mistral, versions des consignes, empreintes des 10 jeux
-                                d'évaluation) dans le Model Registry, avec les alias «&nbsp;production&nbsp;»
-                                et «&nbsp;précédente&nbsp;». La CI refuse une consigne modifiée sans nouvelle
-                                version, et chaque réponse garde la sienne. Pas de DVC : les jeux,
-                                environ 1&nbsp;Mo, restent dans Git.</dd>
+                            <dd>Mes 8 consignes sont versionnées dans MLflow. La chaîne complète aussi :
+                                modèles Mistral, versions des consignes, empreintes des 10 jeux
+                                d'évaluation. Deux étiquettes, «&nbsp;production&nbsp;» et «&nbsp;précédente&nbsp;»,
+                                me permettent de revenir en arrière. La CI refuse une consigne modifiée
+                                sans nouvelle version, et chaque réponse garde la trace de la sienne. Pas
+                                de DVC : mes jeux de test pèsent environ 1&nbsp;Mo, Git suffit.</dd>
                         </div>
                     </dl>
+                    <p class="mlops-limit"><strong>Ce qui manque encore :</strong> MLflow tourne sur mon poste, pas en production.</p>
                 </div>
 
                 <ul class="tags" aria-label="Technologies">
@@ -354,21 +355,21 @@
                 <h3 id="p14-title">Agent IA de triage médical</h3>
 
                 <p>
-                    Un petit modèle de langage (Qwen3-1.7B) spécialisé pour classer un
-                    patient des urgences en P1, P2 ou P3 et justifier sa décision, en
-                    français et en anglais. Entraîné par SFT puis DPO avec QLoRA sur une
-                    carte graphique de 6&nbsp;Go, servi par vLLM derrière une API FastAPI
+                    J'ai spécialisé un petit modèle de langage, Qwen3-1.7B, pour classer un
+                    patient des urgences en P1, P2 ou P3. Il justifie sa décision, en français
+                    comme en anglais. Je l'ai entraîné par SFT puis DPO, avec QLoRA, sur une carte
+                    graphique de 6&nbsp;Go. Il est servi par vLLM, derrière une API FastAPI
                     journalisée et surveillée.
                 </p>
 
                 <dl class="facts">
-                    <div><dt>Mon rôle</dt><dd>Seul : audit et anonymisation des données, entraînement, service du modèle, tests et documentation.</dd></div>
-                    <div><dt>Le défi</dt><dd>Spécialiser un modèle sur une carte de 6&nbsp;Go sans sous-trier les urgences : le premier entraînement (Qwen3-Base) a échoué, je l'ai diagnostiqué puis corrigé.</dd></div>
+                    <div><dt>Mon rôle</dt><dd>Seul, sur tout le projet : audit et anonymisation des données, entraînement, mise en service, tests et documentation.</dd></div>
+                    <div><dt>Le défi</dt><dd>Tenir sur une carte de 6&nbsp;Go sans sous-trier les urgences. Mon premier entraînement, sur Qwen3-Base, a échoué. J'ai cherché pourquoi, puis je l'ai corrigé.</dd></div>
                 </dl>
 
                 <figure class="project-media wide">
                     <img src="img/triage_architecture.svg" alt="Architecture : entraînement hors ligne sur mon poste, puis service d'inférence FastAPI et vLLM surveillé par Prometheus et Grafana" width="1080" height="640" loading="lazy">
-                    <figcaption>Chaque brique est marquée opérationnelle ou partielle : l'état réel, pas l'état visé.</figcaption>
+                    <figcaption>Chaque brique est marquée opérationnelle ou partielle. C'est l'état réel, pas l'état visé.</figcaption>
                 </figure>
 
                 <section class="results" aria-label="Mes résultats évalués">
@@ -416,13 +417,13 @@
                     </div>
                     <h3>Chess Agent</h3>
                     <p>
-                        Aide à l'apprentissage des ouvertures d'échecs. Un agent LangGraph
-                        combine Stockfish, Lichess, un RAG sur Wikichess et un LLM local
-                        pour expliquer une position en français.
+                        Un assistant pour apprendre les ouvertures d'échecs. Un agent LangGraph
+                        combine Stockfish, Lichess, un RAG sur Wikichess et un LLM local. Il explique
+                        une position en français.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : architecture de l'agent, backend FastAPI, interface Angular, tests et CI.</dd></div>
-                        <div><dt>Le défi</dt><dd>Ne pas laisser le LLM inventer un coup ou une évaluation : Stockfish calcule, les sources apportent le contexte, le LLM explique seulement.</dd></div>
+                        <div><dt>Le défi</dt><dd>Empêcher le LLM d'inventer un coup ou une évaluation. J'ai réparti les rôles : Stockfish calcule, les sources donnent le contexte, le LLM se contente d'expliquer.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -448,14 +449,14 @@
                     </div>
                     <h3>CheckIt.AI</h3>
                     <p>
-                        Moteur de collecte multi-sources réutilisable : un moteur par type
-                        de source, un adaptateur et une configuration YAML par fournisseur.
-                        Validation, déduplication et contrôle qualité, orchestrés par Airflow.
-                        Premier cas d'usage : le fact-checking. SortirIA le réutilise.
+                        Un moteur de collecte que je peux réutiliser. Chaque type de source a son
+                        moteur, chaque fournisseur son adaptateur et sa configuration YAML. Les
+                        articles sont validés, dédoublonnés et contrôlés, le tout orchestré par
+                        Airflow. Premier usage : le fact-checking. SortirIA le réutilise aujourd'hui.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : architecture du moteur, connecteurs, orchestration Airflow et tableau de bord.</dd></div>
-                        <div><dt>Le défi</dt><dd>Faire entrer des sources très différentes dans un même format fiable (dates, liens, doublons, images vérifiés) sans dupliquer le code.</dd></div>
+                        <div><dt>Le défi</dt><dd>Faire entrer des sources très différentes dans un même format fiable : dates, liens et images vérifiés, aucun doublon. Et sans dupliquer le code.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -482,13 +483,13 @@
                     </div>
                     <h3>Atterrissage LunarLander</h3>
                     <p>
-                        Entraînement d'agents DQN et PPO pour poser un module lunaire,
-                        optimisation des hyperparamètres et restitution dans une API
-                        et un tableau de bord.
+                        J'ai entraîné deux agents, DQN et PPO, à poser un module lunaire. J'ai
+                        optimisé leurs hyperparamètres, puis présenté les résultats dans une API et un
+                        tableau de bord.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : entraînement des agents, réglage des hyperparamètres, API et tableau de bord.</dd></div>
-                        <div><dt>Le défi</dt><dd>Obtenir un atterrissage stable et reproductible : comparer DQN et PPO, puis régler leurs hyperparamètres avec Optuna.</dd></div>
+                        <div><dt>Le défi</dt><dd>Obtenir un atterrissage stable, et pouvoir le reproduire. J'ai comparé DQN et PPO, puis réglé leurs hyperparamètres avec Optuna.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -518,14 +519,14 @@
                     </div>
                     <h3>CurelyticsIA · BrainScanAI</h3>
                     <p>
-                        Détection de tumeurs sur des IRM cérébrales avec peu d'images annotées :
-                        caractéristiques extraites par ResNet50, ACP et clustering,
-                        pseudo-étiquettes, puis entraînement d'un ResNet18. Étude de coût
-                        pour un budget de 5&nbsp;000&nbsp;€.
+                        Détecter des tumeurs sur des IRM cérébrales, avec très peu d'images annotées.
+                        J'ai extrait les caractéristiques avec un ResNet50, regroupé les images (ACP
+                        et clustering), créé des pseudo-étiquettes, puis entraîné un ResNet18. J'ai
+                        aussi chiffré le projet pour un budget de 5&nbsp;000&nbsp;€.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : pipeline semi-supervisé, évaluation et étude de coût.</dd></div>
-                        <div><dt>Le défi</dt><dd>Apprendre avec très peu d'images annotées sans manquer de tumeur : le rappel prime sur tout le reste.</dd></div>
+                        <div><dt>Le défi</dt><dd>Apprendre avec très peu d'exemples sans laisser passer une tumeur. Ici, le rappel passe avant tout.</dd></div>
                     </dl>
                     <figure class="project-media">
                         <img src="img/curelytics_resultats.png" alt="Graphique : accuracy, précision, rappel, F1 et F2 des trois approches ; la semi-supervisée après fine-tuning atteint un rappel de 1,00" width="908" height="490" loading="lazy">
@@ -554,14 +555,15 @@
                     </div>
                     <h3>Cadrage du POC Fashion-Insta</h3>
                     <p>
-                        Cadrage d'un système de recommandation de vêtements par la vision
-                        pour une enseigne de mode : besoin métier, choix de l'approche
-                        (CLIP + recherche vectorielle), planning de 3 semaines, budget de
-                        13 à 15&nbsp;k€, KPI de succès, architecture cible sur Azure, ROI et RGPD.
+                        J'ai cadré un système de recommandation de vêtements à partir de photos, pour
+                        une enseigne de mode. J'ai défini le besoin métier et choisi l'approche (CLIP
+                        et recherche vectorielle). J'ai planifié 3 semaines, chiffré le budget entre
+                        13 et 15&nbsp;k€ et fixé les KPI. J'ai aussi dessiné l'architecture cible sur
+                        Azure, estimé le ROI et traité le RGPD.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul, dans le rôle du chef de projet IA : cadrage, chiffrage et présentation au client.</dd></div>
-                        <div><dt>Le défi</dt><dd>Permettre une décision avant d'écrire du code : KPI, budget, planning et contraintes RGPD fixés pour un go / no-go.</dd></div>
+                        <div><dt>Le défi</dt><dd>Permettre au client de décider avant d'écrire une ligne de code. KPI, budget, planning et RGPD étaient fixés pour un go / no-go.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes livrables chiffrés">
                         <h4>Mes livrables chiffrés</h4>
@@ -587,13 +589,13 @@
                     </div>
                     <h3>Scoring crédit Prêt à dépenser</h3>
                     <p>
-                        Modèle de scoring mis en production : API, suivi des expériences
-                        MLflow, monitoring de la dérive avec Evidently, optimisation de
-                        l'inférence avec ONNX.
+                        Un modèle de scoring crédit mis en production. Je l'ai exposé en API, j'ai
+                        suivi les expériences dans MLflow, surveillé la dérive avec Evidently et
+                        accéléré l'inférence avec ONNX.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : API, suivi MLflow, monitoring de la dérive, optimisation et CI.</dd></div>
-                        <div><dt>Le défi</dt><dd>Garder un modèle fiable après son déploiement : tracer chaque appel, détecter la dérive et accélérer l'inférence.</dd></div>
+                        <div><dt>Le défi</dt><dd>Garder le modèle fiable une fois déployé. Chaque appel est tracé, la dérive est détectée, et l'inférence va plus vite.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -619,14 +621,14 @@
                     </div>
                     <h3>Assistant RAG OpenAgenda</h3>
                     <p>
-                        Recommandation d'événements culturels : préfiltrage structuré (ville,
-                        date, type), recherche sémantique FAISS, classement explicable et
-                        réponse générée par Mistral. Évaluation RAGAS sur des questions
-                        claires, ambiguës et hors corpus.
+                        Un assistant qui recommande des événements culturels. Il filtre d'abord par
+                        ville, date et type, puis cherche par le sens avec FAISS. Il classe les
+                        résultats en expliquant pourquoi, et Mistral rédige la réponse. Je l'ai évalué
+                        avec RAGAS sur des questions claires, ambiguës et hors corpus.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : collecte OpenAgenda, pipeline RAG, évaluation et conteneurisation.</dd></div>
-                        <div><dt>Le défi</dt><dd>Comprendre une demande libre, parfois floue, et ne répondre qu'avec les événements retrouvés, sans en inventer.</dd></div>
+                        <div><dt>Le défi</dt><dd>Comprendre une demande libre, parfois floue. Et ne répondre qu'avec les événements trouvés, sans en inventer.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -652,13 +654,13 @@
                     </div>
                     <h3>TechNova Partners</h3>
                     <p>
-                        Prédiction du départ des employés, déployée en API FastAPI
-                        sécurisée avec base PostgreSQL et traçabilité des prédictions.
-                        L'API est en ligne.
+                        Prédire le départ des employés. J'ai déployé le modèle dans une API FastAPI
+                        sécurisée, avec une base PostgreSQL qui trace chaque prédiction. L'API est en
+                        ligne.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : base de données, API sécurisée, tests, CI/CD et mise en ligne.</dd></div>
-                        <div><dt>Le défi</dt><dd>Rendre le modèle utilisable en production : aucune préparation des données dans l'API, chaque prédiction tracée en base.</dd></div>
+                        <div><dt>Le défi</dt><dd>Rendre le modèle utilisable en production. L'API ne prépare aucune donnée elle-même, et chaque prédiction est enregistrée en base.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -685,13 +687,13 @@
                     </div>
                     <h3>ModeTrends</h3>
                     <p>
-                        Segmentation de vêtements dans des photos d'influenceurs via un
-                        modèle Hugging Face appelé par API, puis analyse des tendances
-                        par catégorie de vêtement.
+                        J'ai segmenté les vêtements sur des photos d'influenceurs avec un modèle
+                        Hugging Face, appelé par API. Puis j'ai analysé les tendances par type de
+                        vêtement.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : appels au modèle, mesure de sa qualité et analyse des tendances.</dd></div>
-                        <div><dt>Le défi</dt><dd>Juger un modèle que je n'ai pas entraîné : l'IoU et le Dice par vêtement montrent que les petits éléments (chaussures, bras) sont mal segmentés.</dd></div>
+                        <div><dt>Le défi</dt><dd>Juger un modèle que je n'ai pas entraîné. En mesurant l'IoU et le Dice vêtement par vêtement, j'ai vu que les petits éléments, chaussures et bras, sont mal segmentés.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -727,8 +729,7 @@
             <h2 id="skills-title">Compétences</h2>
 
             <p class="section-intro">
-                Chaque niveau est une auto-évaluation de mon autonomie, et chaque
-                compétence renvoie aux projets où je l'ai mise en œuvre.
+                Chaque niveau est mon auto-évaluation. Chaque compétence renvoie aux projets où je l'ai mise en pratique.
             </p>
 
             <ul class="legend" aria-label="Échelle des niveaux">
@@ -812,12 +813,7 @@
             <div class="market">
                 <h3>Ce que demande le marché, et ce que je vais acquérir</h3>
                 <p>
-                    J'ai relu en octobre 2026 quatre offres d'AI Engineer en France (Alten,
-                    Verra, SBS, Cyclife Digital Solutions du groupe EDF) et un panorama du
-                    métier. Ce tableau compte combien des quatre offres citent chaque
-                    compétence, et la met en face de mon niveau. Trois offres sur quatre
-                    visent un profil confirmé : je les lis comme une direction, pas comme
-                    une barre d'entrée.
+                    En octobre 2026, j'ai relu quatre offres d'AI Engineer en France (Alten, Verra, SBS, Cyclife Digital Solutions du groupe EDF) et un panorama du métier. Le tableau compte combien d'offres citent chaque compétence, et la met en face de mon niveau. Trois offres sur quatre visent un profil confirmé. Je les prends comme une direction, pas comme une barre d'entrée.
                 </p>
                 <div class="market-table" role="region" aria-label="Compétences demandées par les offres et mon niveau" tabindex="0">
                     <table>
@@ -847,7 +843,7 @@
                     <li><strong>Kubernetes</strong> : passer de Docker Compose et Container Apps à un déploiement orchestré.</li>
                     <li><strong>Un cloud IA managé</strong> (Azure ML ou AWS SageMaker) et l'infrastructure en code (Terraform).</li>
                     <li><strong>Versionnage des données</strong> (DVC) et TensorFlow, pour lire et reprendre des projets existants.</li>
-                    <li><strong>Évaluation des LLM en production</strong> : SortirIA suit déjà coûts, versions de consigne, avis et dérive ; reste la qualité mesurée dans la durée, sur un vrai trafic.</li>
+                    <li><strong>Évaluation des LLM en production</strong> : SortirIA suit déjà les coûts, les versions de consigne, les avis et la dérive. Il me reste à mesurer la qualité dans la durée, sur un vrai trafic.</li>
                 </ol>
                 <p class="sources">Sources : offres <a href="https://www.alten.fr/jobs/744000144584179-ingenieur-ia-developpement-de-solutions-llm-automatisation-h-f/" target="_blank" rel="noopener">Alten</a>,
                     <a href="https://www.welcometothejungle.com/fr/companies/descartes-mauss/jobs/sr-ai-engineer_paris" target="_blank" rel="noopener">Verra</a>,
@@ -860,8 +856,7 @@
                 <h3>Le référentiel du titre, compétence par compétence</h3>
                 <p>
                     Ma formation prépare au titre RNCP39775, «&nbsp;Expert en ingénierie et science des données&nbsp;»
-                    (niveau 7, OpenClassrooms). Il se valide avec trois blocs communs et une option ; la mienne
-                    est l'option data science (bloc 5). Pour chacune de ces compétences, voici le projet qui la prouve
+                    (niveau 7, OpenClassrooms). Il se valide avec trois blocs communs et une option. La mienne est l'option data science (bloc 5). Pour chacune de ces compétences, voici le projet qui la prouve
                     et ce qu'on y trouve.
                 </p>
                     <h4>Bloc 1 · Manager et piloter un projet data et le développement d'une solution <span class="rncp-code">RNCP39775BC01</span></h4>
@@ -947,7 +942,7 @@
                 <li class="timeline-item">
                     <span>1998 – 2006 · Développement</span>
                     <h3>Développeur, puis cadre</h3>
-                    <p>Applications de gestion en SQL, Visual Basic et WinDev chez Alternative Informatique (Montpellier), cadre en 2001 ; une période d'activité indépendante à Tenerife.</p>
+                    <p>Des applications de gestion en SQL, Visual Basic et WinDev chez Alternative Informatique, à Montpellier. Cadre en 2001. Puis une période d'activité indépendante à Tenerife.</p>
                 </li>
                 <li class="timeline-item">
                     <span>2006 – 2011 · Pédagogie</span>
@@ -963,10 +958,7 @@
                     <span>Formation Ingénieur IA · OpenClassrooms</span>
                     <h3>Du modèle au système</h3>
                     <p>
-                        Octobre 2025 à novembre 2026 : vision, Machine Learning et déploiement,
-                        RAG, MLOps, cadrage de projet, apprentissage semi-supervisé,
-                        renforcement, ingénierie des données, agents, fine-tuning de LLM,
-                        puis SortirIA, mon projet personnel, mis en production sur Azure.
+                        D'octobre 2025 à novembre 2026 : vision, Machine Learning et déploiement, RAG, MLOps, cadrage de projet, apprentissage semi-supervisé, renforcement, ingénierie des données, agents, fine-tuning de LLM. Puis SortirIA, mon projet personnel, que j'ai mis en production sur Azure.
                     </p>
                 </li>
                 <li class="timeline-item">
@@ -997,8 +989,8 @@
                         <li>Une métrique seule ne suffit pas à juger un modèle : sur le triage, le sous-triage compte autant que le F1.</li>
                         <li>L'analyse des erreurs complète l'évaluation chiffrée.</li>
                         <li>La reproductibilité doit être pensée dès le début.</li>
-                        <li>Un juge LLM se calibre sur un humain : chaque version de SortirIA lui a retiré ce que le code vérifie mieux que lui.</li>
-                        <li>L'usage réel corrige les jeux de test : 97,8&nbsp;% de pertinence sur mes questions, 47&nbsp;% de réponses exactes sur celles des testeurs, qui cherchaient aussi des lieux.</li>
+                        <li>Un juge LLM se calibre sur un humain. À chaque version de SortirIA, je lui ai retiré ce que le code vérifie mieux que lui.</li>
+                        <li>L'usage réel corrige les jeux de test. Sur mes questions, 97,8&nbsp;% de pertinence. Sur celles des testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux.</li>
                     </ul>
                 </div>
 
@@ -1016,11 +1008,11 @@
                 <div class="reflection-card">
                     <h3>Les progrès que je constate</h3>
                     <ul>
-                        <li>Mes premiers projets s'arrêtaient au notebook ; les derniers sont livrés avec API, tests, CI/CD et documentation.</li>
+                        <li>Mes premiers projets s'arrêtaient au notebook. Les derniers sont livrés avec API, tests, CI/CD et documentation.</li>
                         <li>Je sais diagnostiquer un échec d'entraînement et le corriger, au lieu de relancer au hasard.</li>
                         <li>Je présente mes résultats avec leurs limites.</li>
                         <li>Je réutilise mon propre code : SortirIA assemble et adapte des briques de cinq projets précédents.</li>
-                        <li>Un service en ligne, déployé à chaque push, avec évaluation en CI, tableaux de bord, alertes et budget.</li>
+                        <li>J'ai un service en ligne, déployé à chaque push, avec évaluation en CI, tableaux de bord, alertes et budget.</li>
                     </ul>
                 </div>
 
@@ -1052,15 +1044,10 @@
                 </div>
 
                 <p>
-                    Je voyais l'AI Engineer comme quelqu'un qui choisit et entraîne des
-                    modèles. Je le vois aujourd'hui comme quelqu'un qui part d'un besoin
-                    métier, fixe des critères de réussite, construit toute la chaîne
-                    (données, modèle, évaluation, service, monitoring) et aide à décider
-                    s'il faut déployer ou non.
+                    Je voyais l'AI Engineer comme quelqu'un qui choisit et entraîne des modèles. Aujourd'hui, je le vois partir d'un besoin métier et fixer des critères de réussite. Il construit toute la chaîne : données, modèle, évaluation, service, monitoring. Et il aide à décider s'il faut déployer ou non.
                 </p>
                 <p>
-                    La formation m'a surtout appris à mener un projet IA comme en entreprise :
-                    cadrer le besoin, chiffrer, mesurer, documenter et rendre compte des limites.
+                    La formation m'a surtout appris à mener un projet IA comme en entreprise. Cadrer le besoin, chiffrer, mesurer, documenter. Et dire honnêtement où sont les limites.
                 </p>
                 <p class="flow-line">
                     Données → expérimentation → modèle → évaluation →
@@ -1083,27 +1070,27 @@
             <div class="soft-grid">
                 <div>
                     <h3>Esprit d'analyse</h3>
-                    <p>Diagnostic de l'échec du premier entraînement sur Qwen3-Base, mesuré puis corrigé (triage médical).</p>
+                    <p>Sur le triage médical, mon premier entraînement (Qwen3-Base) a échoué. Je l'ai diagnostiqué, mesuré, puis corrigé.</p>
                 </div>
                 <div>
                     <h3>Curiosité et apprentissage continu</h3>
-                    <p>Onze projets dans des domaines différents, du scoring crédit au renforcement, aux LLM et au cloud.</p>
+                    <p>Onze projets dans des domaines très différents : scoring crédit, renforcement, LLM, cloud.</p>
                 </div>
                 <div>
                     <h3>Communication et vulgarisation</h3>
-                    <p>Documentation publiée pour chaque projet, rapport technique de 20 pages qui s'ouvre sur une synthèse pour les décideurs.</p>
+                    <p>Une documentation publiée pour chaque projet. Pour le triage, un rapport technique de 20 pages qui commence par une synthèse pour les décideurs.</p>
                 </div>
                 <div>
                     <h3>Gestion de projet et autonomie</h3>
-                    <p>POC de triage livré en 4 semaines avec une grille go / no-go ; SortirIA en ligne en trois jours, avec une feuille de route jusqu'au gel du code.</p>
+                    <p>Le POC de triage livré en 4 semaines, avec une grille go / no-go. SortirIA en ligne en trois jours, avec une feuille de route jusqu'au gel du code.</p>
                 </div>
                 <div>
                     <h3>Relation client</h3>
-                    <p>Des années passées à traduire un besoin client en solution concrète ; pour SortirIA, un circuit prévu pour les lieux partenaires (montré avec des exemples) et des demandes d'autorisation avant toute collecte.</p>
+                    <p>Seize ans à traduire un besoin client en solution concrète. Pour SortirIA, j'ai demandé l'autorisation aux sources avant toute collecte, et prévu un circuit pour les lieux partenaires.</p>
                 </div>
                 <div>
                     <h3>Créativité</h3>
-                    <p>Un agent d'échecs qui combine moteur, RAG et LLM, chacun avec un rôle précis.</p>
+                    <p>Un agent d'échecs qui fait travailler ensemble un moteur, un RAG et un LLM, chacun dans son rôle.</p>
                 </div>
             </div>
 
@@ -1130,11 +1117,10 @@
         <div class="container">
 
             <p class="section-label">Contact</p>
-            <h2 id="contact-title">Construisons quelque chose d'utile.</h2>
+            <h2 id="contact-title">Parlons de votre projet.</h2>
 
             <p>
-                Vous souhaitez échanger autour d'un projet IA, d'une opportunité
-                ou simplement parler technologie ?
+                Un projet IA, une opportunité, ou simplement l'envie d'échanger ? Écrivez-moi.
             </p>
 
             <p class="email">
