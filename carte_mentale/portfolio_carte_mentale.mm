@@ -122,7 +122,7 @@
 <node TEXT="P5 – Scoring crédit Prêt à dépenser (avril-mai 2026)" COLOR="#1b7f6e" FOLDED="true">
 <node TEXT="Domaine : ML, MLOps" COLOR="#1b7f6e">
 </node>
-<node TEXT="Réalisation : Modèle en production, monitoring de dérive, ONNX. Latence API 11,8 ms (P95 15,7 ms), −18,6 % après optimisation" COLOR="#1b7f6e">
+<node TEXT="Réalisation : Modèle en production, monitoring de dérive, ONNX. Latence API P95 9,2 ms, −18 % en allégeant les logs (ONNX : environ 2 %)" COLOR="#1b7f6e">
 </node>
 <node TEXT="Stack : LightGBM, MLflow, Evidently, ONNX, GitHub Actions" COLOR="#1b7f6e">
 </node>

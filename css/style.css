@@ -1255,3 +1255,7 @@ footer {
     border-radius: 0 10px 10px 0;
     font-size: 0.9rem;
 }
+
+/* Limite et recul : même cadre que rôle, défi et comment, libellé en jaune */
+.facts .limit dt { color: var(--warning); }
+.facts-limit { margin: 0 0 1rem; border-left-color: var(--warning); }

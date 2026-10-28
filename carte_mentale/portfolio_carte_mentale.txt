@@ -60,7 +60,7 @@ Stéphane Gonzalez – AI Engineer
 				Code (https://github.com/gonzalezcourrier34-glitch/rag-openagenda)
 			P5 – Scoring crédit Prêt à dépenser (avril-mai 2026)
 				Domaine : ML, MLOps
-				Réalisation : Modèle en production, monitoring de dérive, ONNX. Latence API 11,8 ms (P95 15,7 ms), −18,6 % après optimisation
+				Réalisation : Modèle en production, monitoring de dérive, ONNX. Latence API P95 9,2 ms, −18 % en allégeant les logs (ONNX : environ 2 %)
 				Stack : LightGBM, MLflow, Evidently, ONNX, GitHub Actions
 				Code (https://github.com/gonzalezcourrier34-glitch/pret_a_depenser)
 		Autres projets (sur GitHub, preuves de compétences)

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="css/style.css?v=2026-10-28a">
+    <link rel="stylesheet" href="css/style.css?v=2026-10-28d">
 </head>
 
 <body>
@@ -246,6 +246,7 @@
                 <dl class="facts">
                     <div><dt>Mon rôle</dt><dd>Seul, de bout en bout : cadrage, demandes d'autorisation aux sources, code, déploiement sur Azure et suivi en production.</dd></div>
                     <div><dt>Le défi</dt><dd>Respecter à coup sûr la date, le lieu, le public et le budget d'une demande écrite librement, avec des agendas hétérogènes à collecter et vérifier chaque nuit.</dd></div>
+                <div><dt>Comment</dt><dd>Des règles comprennent la demande (date, lieu, public, budget) et des filtres SQL la font respecter. Les mots et le sens ne servent qu'à classer ce qui reste. Mistral rédige à partir des fiches trouvées, jamais de mémoire.</dd></div>
                 </dl>
 
                 <div class="project-media phones">
@@ -269,6 +270,9 @@
                         <div><dt>Coût Mistral pour 1&nbsp;000 questions</dt><dd>0,12&nbsp;$</dd></div>
                     </dl>
                 </section>
+                <dl class="facts facts-limit">
+                    <div class="limit"><dt>Limite et recul</dt><dd>Sur 93 questions de vrais testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux permanents. J'aurais dû faire tester plus tôt, pour voir ce manque de couverture avant de mettre en ligne.</dd></div>
+                </dl>
 
                 <div class="axes">
                     <h4>Conduite de projet</h4>
@@ -365,6 +369,7 @@
                 <dl class="facts">
                     <div><dt>Mon rôle</dt><dd>Seul, sur tout le projet : audit et anonymisation des données, entraînement, mise en service, tests et documentation.</dd></div>
                     <div><dt>Le défi</dt><dd>Tenir sur une carte de 6&nbsp;Go sans sous-trier les urgences. Mon premier entraînement, sur Qwen3-Base, a échoué. J'ai cherché pourquoi, puis je l'ai corrigé.</dd></div>
+                <div><dt>Comment</dt><dd>Je change une seule chose à la fois, depuis un essai à trois changements qui m'avait fait perdre le fil. J'ai donné plus de poids à la priorité P1/P2/P3 dans l'apprentissage : sans ça, le modèle apprenait le texte mais pas la décision. Quand la Base ne finissait plus ses réponses, j'ai mesuré avant de corriger : elle n'avait jamais appris le jeton de fin.</dd></div>
                 </dl>
 
                 <figure class="project-media wide">
@@ -382,6 +387,9 @@
                         <div><dt>Latence P95</dt><dd>1,13&nbsp;s</dd></div>
                     </dl>
                 </section>
+                <dl class="facts facts-limit">
+                    <div class="limit"><dt>Limite et recul</dt><dd>5,4&nbsp;% de sous-triage : c'est un prototype, pas un dispositif médical. Avec le recul, j'aurais dû partir de la Base dès le début, comme le demandait la mission, et ne regarder le jeu de test qu'à la toute fin.</dd></div>
+                </dl>
 
                 <div class="axes">
                     <h4>Conduite de projet</h4>
@@ -424,6 +432,7 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : architecture de l'agent, backend FastAPI, interface Angular, tests et CI.</dd></div>
                         <div><dt>Le défi</dt><dd>Empêcher le LLM d'inventer un coup ou une évaluation. J'ai réparti les rôles : Stockfish calcule, les sources donnent le contexte, le LLM se contente d'expliquer.</dd></div>
+                    <div><dt>Comment</dt><dd>Chaque outil a un seul rôle : Stockfish calcule, Lichess et Wikichess donnent le contexte, le LLM explique. 34 cas testés vérifient que l'agent envoie chaque question vers la bonne étape.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -433,6 +442,9 @@
                             <div><dt>Tests automatisés</dt><dd>1&nbsp;029</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Je teste le code et le routage, pas la qualité des explications du LLM. J'ajouterais un jeu de positions annotées pour la mesurer.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>LangGraph</li><li>Milvus</li><li>Ollama</li><li>FastAPI</li><li>MongoDB</li><li>Angular</li>
                     </ul>
@@ -457,6 +469,7 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : architecture du moteur, connecteurs, orchestration Airflow et tableau de bord.</dd></div>
                         <div><dt>Le défi</dt><dd>Faire entrer des sources très différentes dans un même format fiable : dates, liens et images vérifiés, aucun doublon. Et sans dupliquer le code.</dd></div>
+                    <div><dt>Comment</dt><dd>Un moteur par type de source (RSS, API, web…), et pour chaque fournisseur, un adaptateur et un fichier YAML. Ajouter une source demande très peu de code. Chaque lot passe un contrôle qualité qui s'arrête en erreur si quelque chose cloche.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -467,6 +480,9 @@
                             <div><dt>Images téléchargées et vérifiées</dt><dd>1&nbsp;319</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Au premier lot, beaucoup d'articles n'avaient pas d'URL canonique, et le contenu des images n'est pas vérifié. Je transformerais ces mesures en règles de rejet.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>Airflow</li><li>PostgreSQL</li><li>YAML</li><li>Docker</li><li>Streamlit</li>
                     </ul>
@@ -490,6 +506,7 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : entraînement des agents, réglage des hyperparamètres, API et tableau de bord.</dd></div>
                         <div><dt>Le défi</dt><dd>Obtenir un atterrissage stable, et pouvoir le reproduire. J'ai comparé DQN et PPO, puis réglé leurs hyperparamètres avec Optuna.</dd></div>
+                    <div><dt>Comment</dt><dd>J'ai d'abord mesuré un agent aléatoire, pour avoir une référence. Optuna a testé 10 combinaisons de réglages pour chaque algorithme. Puis j'ai évalué chaque agent sur 100 atterrissages, pas sur le meilleur.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -500,6 +517,9 @@
                             <div><dt>Agent aléatoire, la référence</dt><dd>−192,4</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Une seule seed et 10 essais Optuna : je ne peux pas affirmer que PPO bat DQN à tous les coups. Je relancerais sur plusieurs seeds.</dd></div>
+                    </dl>
                     <figure class="project-media">
                         <img src="img/lunarlander.png" alt="Fin de simulation : l'agent entraîné a posé le module lunaire sur la zone d'atterrissage" width="600" height="400" loading="lazy">
                         <figcaption>Un atterrissage réussi par l'agent entraîné · <a href="img/lunarlander.gif">voir l'animation (9 s)</a></figcaption>
@@ -527,6 +547,7 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : pipeline semi-supervisé, évaluation et étude de coût.</dd></div>
                         <div><dt>Le défi</dt><dd>Apprendre avec très peu d'exemples sans laisser passer une tumeur. Ici, le rappel passe avant tout.</dd></div>
+                    <div><dt>Comment</dt><dd>Je ne garde que les pseudo-étiquettes les plus sûres : un score de confiance, moitié cluster, moitié distance, avec un seuil à 0,681. J'entraîne un ResNet18 dont seules les dernières couches sont réentraînées, puis je vérifie sur 5 seeds que le gain tient. Je suis le F2, qui compte deux fois plus le rappel.</dd></div>
                     </dl>
                     <figure class="project-media">
                         <img src="img/curelytics_resultats.png" alt="Graphique : accuracy, précision, rappel, F1 et F2 des trois approches ; la semi-supervisée après fine-tuning atteint un rappel de 1,00" width="908" height="490" loading="lazy">
@@ -540,6 +561,9 @@
                             <div><dt>Accuracy, contre 0,90 en supervisé seul</dt><dd>0,95</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Je choisis le meilleur modèle sur la perte de validation, alors que mon objectif est le rappel. Je le choisirais aujourd'hui sur le F2 de validation.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>PyTorch</li><li>ResNet</li><li>Clustering</li><li>Pseudo-labels</li>
                     </ul>
@@ -564,6 +588,7 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul, dans le rôle du chef de projet IA : cadrage, chiffrage et présentation au client.</dd></div>
                         <div><dt>Le défi</dt><dd>Permettre au client de décider avant d'écrire une ligne de code. KPI, budget, planning et RGPD étaient fixés pour un go / no-go.</dd></div>
+                    <div><dt>Comment</dt><dd>J'ai fixé les critères de succès avant tout (Top-5 ≥&nbsp;75&nbsp;%, Precision@5 ≥&nbsp;70&nbsp;%). Puis j'ai découpé le projet en PoC, MVP et produit final, chacun avec son budget, en gardant 10 à 15&nbsp;% de marge pour les imprévus.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes livrables chiffrés">
                         <h4>Mes livrables chiffrés</h4>
@@ -574,6 +599,9 @@
                             <div><dt>Résultat cumulé projeté en 2028</dt><dd>+480&nbsp;k€</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Ce sont des estimations : le PoC n'a pas été réalisé. Et mon budget du PoC varie entre deux diapositives. Je ferais une relecture croisée des chiffres avant de présenter.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Compétences">
                         <li>Cadrage</li><li>Budget &amp; ROI</li><li>Architecture Azure</li><li>RGPD</li><li>CLIP</li>
                     </ul>
@@ -590,24 +618,27 @@
                     <h3>Scoring crédit Prêt à dépenser</h3>
                     <p>
                         Un modèle de scoring crédit mis en production. Je l'ai exposé en API, j'ai
-                        suivi les expériences dans MLflow, surveillé la dérive avec Evidently et
-                        accéléré l'inférence avec ONNX.
+                        suivi les expériences dans MLflow, surveillé la dérive avec Evidently et mesuré l'apport d'ONNX sur l'inférence.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : API, suivi MLflow, monitoring de la dérive, optimisation et CI.</dd></div>
-                        <div><dt>Le défi</dt><dd>Garder le modèle fiable une fois déployé. Chaque appel est tracé, la dérive est détectée, et l'inférence va plus vite.</dd></div>
+                        <div><dt>Le défi</dt><dd>Garder le modèle fiable une fois déployé. Chaque appel est tracé, la dérive est détectée, et je sais où part le temps de réponse.</dd></div>
+                    <div><dt>Comment</dt><dd>Un défaut non détecté coûte 10 fois plus qu'une fausse alerte. J'ai donc choisi le seuil en validation croisée avec un F-bêta à β&nbsp;=&nbsp;3, qui privilégie fortement le rappel. J'ai mesuré ONNX : à peine 2&nbsp;% de gain, le modèle n'était pas le goulot. C'est en allégeant les logs que l'API a gagné 18&nbsp;% sur sa P95.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
                         <dl class="metrics small">
                             <div><dt>Défauts de paiement détectés (rappel, jeu de test)</dt><dd>85,0&nbsp;%</dd></div>
                             <div><dt>AUC ROC sur le jeu de test</dt><dd>0,76</dd></div>
-                            <div><dt>Latence API P95</dt><dd>15,7&nbsp;ms</dd></div>
-                            <div><dt>Temps de traitement après optimisation</dt><dd>−18,6&nbsp;%</dd></div>
+                            <div><dt>Latence API P95, après allègement des logs</dt><dd>9,2&nbsp;ms</dd></div>
+                            <div><dt>Latence P95 gagnée en allégeant les logs</dt><dd>−18&nbsp;%</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Environ 6 alertes sur 7 sont des faux positifs : c'est le prix pour détecter 85&nbsp;% des défauts. Le seuil de l'API diffère de celui du notebook. Je l'enregistrerais avec le modèle, et j'optimiserais directement le coût métier.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Technologies">
-                        <li>LightGBM</li><li>MLflow</li><li>Evidently</li><li>ONNX</li><li>GitHub Actions</li>
+                        <li>XGBoost</li><li>LightGBM</li><li>MLflow</li><li>Evidently</li><li>ONNX</li><li>GitHub Actions</li>
                     </ul>
                     <div class="project-links">
                         <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener" aria-label="Code : Scoring crédit Prêt à dépenser">Code →</a>
@@ -621,14 +652,12 @@
                     </div>
                     <h3>Assistant RAG OpenAgenda</h3>
                     <p>
-                        Un assistant qui recommande des événements culturels. Il filtre d'abord par
-                        ville, date et type, puis cherche par le sens avec FAISS. Il classe les
-                        résultats en expliquant pourquoi, et Mistral rédige la réponse. Je l'ai évalué
-                        avec RAGAS sur des questions claires, ambiguës et hors corpus.
+                        Un assistant qui recommande des événements culturels, avec une recherche par le sens dans FAISS. Il classe les résultats en expliquant pourquoi, et Mistral rédige la réponse.
                     </p>
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : collecte OpenAgenda, pipeline RAG, évaluation et conteneurisation.</dd></div>
                         <div><dt>Le défi</dt><dd>Comprendre une demande libre, parfois floue. Et ne répondre qu'avec les événements trouvés, sans en inventer.</dd></div>
+                    <div><dt>Comment</dt><dd>Je filtre d'abord par ville, date et type, avant toute recherche par le sens. Si rien ne correspond, l'assistant répond qu'il n'a rien trouvé, au lieu d'inventer. Je l'ai testé avec RAGAS sur trois sortes de questions : claires, ambiguës et hors sujet.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -639,6 +668,9 @@
                             <div><dt>Rappel du contexte</dt><dd>0,69</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Des réponses peu ciblées (pertinence de 0,20), évaluées sur 9 questions seulement. Je construirais un jeu de test plus large avant d'optimiser quoi que ce soit.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>LangChain</li><li>FAISS</li><li>Mistral</li><li>RAGAS</li><li>Docker</li>
                     </ul>
@@ -661,6 +693,7 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : base de données, API sécurisée, tests, CI/CD et mise en ligne.</dd></div>
                         <div><dt>Le défi</dt><dd>Rendre le modèle utilisable en production. L'API ne prépare aucune donnée elle-même, et chaque prédiction est enregistrée en base.</dd></div>
+                    <div><dt>Comment</dt><dd>J'ai choisi le F2-score, parce que rater un départ coûte plus qu'une fausse alerte, et cherché le seuil en validation croisée, sur l'entraînement seulement. La préparation des données tourne à part : des scripts remplissent des tables « clean », et l'API ne fait que lire, prédire et tracer.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -671,6 +704,9 @@
                             <div><dt>Précision des alertes</dt><dd>47,5&nbsp;%</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Une alerte sur deux est un faux positif, un choix assumé pour ne manquer presque aucun départ. La régression logistique était presque aussi bonne et plus simple : je la mettrais en face de XGBoost dès le départ, pour justifier le choix.</dd></div>
+                    </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>scikit-learn</li><li>FastAPI</li><li>PostgreSQL</li><li>Hugging Face Spaces</li>
                     </ul>
@@ -694,6 +730,7 @@
                     <dl class="facts">
                         <div><dt>Mon rôle</dt><dd>Seul : appels au modèle, mesure de sa qualité et analyse des tendances.</dd></div>
                         <div><dt>Le défi</dt><dd>Juger un modèle que je n'ai pas entraîné. En mesurant l'IoU et le Dice vêtement par vêtement, j'ai vu que les petits éléments, chaussures et bras, sont mal segmentés.</dd></div>
+                    <div><dt>Comment</dt><dd>J'ai comparé deux moyennes : sur les classes présentes, et pondérée par la surface. L'écart entre les deux montre que le modèle réussit les grandes zones mais rate les petites : chaussures, bras, accessoires.</dd></div>
                     </dl>
                     <section class="results compact" aria-label="Mes résultats évalués">
                         <h4>Mes résultats évalués</h4>
@@ -703,6 +740,9 @@
                             <div><dt>IoU sur les chaussures : le point faible</dt><dd>≈&nbsp;0,11 à 0,23</dd></div>
                         </dl>
                     </section>
+                    <dl class="facts facts-limit">
+                        <div class="limit"><dt>Limite et recul</dt><dd>Les petits éléments restent mal segmentés, et mon notebook livré n'a plus ses sorties. Je livrerais toujours un notebook exécuté, avec ses résultats visibles.</dd></div>
+                    </dl>
                     <figure class="project-media">
                         <img src="img/modetrends_iou_dice.png" alt="Graphique : IoU et Dice par vêtement, élevés pour robes et jupes, faibles pour chaussures et membres" width="1000" height="396" loading="lazy">
                         <figcaption>Qualité de la segmentation, vêtement par vêtement.</figcaption>
@@ -917,7 +957,7 @@
                             <thead><tr><th scope="col">Compétence du référentiel</th><th scope="col">Où je la prouve</th><th scope="col">Ce qui le montre</th></tr></thead>
                             <tbody>
                                 <tr><th scope="row">Suivre le cycle de vie du modèle et détecter les dérives</th><td><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Evidently ; PSI chaque nuit et Evidently chaque mois ; versions dans les registres MLflow</td></tr>
-                                <tr><th scope="row">Évaluer les performances de l'infrastructure</th><td><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Latence P95 de 15,7 ms, 1,13 s et 6,4 s ; coût par question</td></tr>
+                                <tr><th scope="row">Évaluer les performances de l'infrastructure</th><td><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Latence P95 de 9,2 ms, 1,13 s et 6,4 s ; coût par question</td></tr>
                                 <tr><th scope="row">Ajuster les paramètres d'entraînement, de test et de validation</th><td><a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener">LunarLander</a> · <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>Optuna ; QLoRA, SFT puis DPO</td></tr>
                                 <tr><th scope="row">Automatiser le déploiement : intégration et livraison continues</th><td><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a> · <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>GitHub Actions, déploiement à chaque push</td></tr>
                             </tbody>
@@ -997,11 +1037,11 @@
                 <div class="reflection-card">
                     <h3>Ce que je ferais différemment</h3>
                     <ul>
-                        <li>Figer plus tôt les jeux de données.</li>
-                        <li>Définir les critères de succès avant l'entraînement.</li>
-                        <li>Automatiser davantage les audits.</li>
-                        <li>Mieux cibler les expériences réellement informatives.</li>
-                        <li>Mettre en ligne et surveiller plus tôt, pour mesurer sur de vrais usages.</li>
+                        <li>Garder le jeu de test intact jusqu'au bout. Sur le triage, j'ai choisi un modèle en connaissant déjà ses scores de test.</li>
+                        <li>Choisir le modèle sur la métrique qui compte vraiment. Sur CurelyticsIA, je visais le rappel mais je sélectionnais sur la perte.</li>
+                        <li>Enregistrer le seuil avec le modèle. Sur le scoring crédit, l'API et le notebook n'utilisent pas le même.</li>
+                        <li>Évaluer sur assez de cas, et sur plusieurs seeds. 9 questions pour le RAG, une seule seed pour LunarLander, c'est trop peu.</li>
+                        <li>Faire tester par de vrais utilisateurs plus tôt. Sur SortirIA, ils ont révélé en quelques jours un manque que mes jeux de test ne montraient pas.</li>
                     </ul>
                 </div>
 
