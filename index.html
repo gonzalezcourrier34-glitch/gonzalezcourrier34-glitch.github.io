@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="css/style.css?v=2026-10-28e">
+    <link rel="stylesheet" href="css/style.css?v=2026-10-28g">
 </head>
 
 <body>
@@ -1035,36 +1035,33 @@
 
                 <div class="reflection-card">
                     <h3>Ce que j'ai appris</h3>
+                    <p class="reflection-intro">Les leçons qui m'ont le plus marqué sont venues de mes erreurs.</p>
                     <ul>
-                        <li>Un bon score peut cacher un mauvais modèle. Sur le triage, mon premier modèle prédisait 94,5&nbsp;% des mots justes, mais choisissait la priorité à peine mieux qu'au hasard.</li>
-                        <li>Une métrique seule ne suffit pas à juger un modèle : sur le triage, le sous-triage compte autant que le F1.</li>
-                        <li>Mesurer là où part vraiment le temps. Sur le scoring crédit, ONNX m'a fait gagner 2&nbsp;%, alléger les logs 18&nbsp;%.</li>
-                        <li>Garder la trace de chaque donnée. Sur le triage, chaque entraînement a son manifeste, avec l'empreinte de ses fichiers : je peux toujours dire sur quoi un modèle a appris.</li>
-                        <li>Un juge LLM se calibre sur un humain. À chaque version de SortirIA, je lui ai retiré ce que le code vérifie mieux que lui.</li>
+                        <li>Un bon score peut cacher un mauvais modèle. Sur le triage, mon premier modèle prédisait 94,5&nbsp;% des mots justes, mais choisissait la priorité à peine mieux qu'au hasard. Le sous-triage et le F1 m'en disent bien plus.</li>
+                        <li>Ne pas lâcher. La Base du triage ne finissait jamais ses réponses, et j'ai repris les données maintes et maintes fois. Quand elle a enfin terminé, j'ai surtout été soulagé.</li>
                         <li>L'usage réel corrige les jeux de test. Sur mes questions, 97,8&nbsp;% de pertinence. Sur celles des testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux.</li>
                     </ul>
                 </div>
 
                 <div class="reflection-card">
                     <h3>Ce que je ferais différemment</h3>
+                    <p class="reflection-intro">Avec le recul, voici ce que je corrigerais dès le départ.</p>
                     <ul>
-                        <li>Garder le jeu de test intact jusqu'au bout. Sur le triage, j'ai choisi un modèle en connaissant déjà ses scores de test.</li>
-                        <li>Choisir le modèle sur la métrique qui compte vraiment. Sur CurelyticsIA, je visais le rappel mais je sélectionnais sur la perte.</li>
-                        <li>Enregistrer le seuil avec le modèle. Sur le scoring crédit, l'API et le notebook n'utilisent pas le même.</li>
-                        <li>Évaluer sur assez de cas, et sur plusieurs seeds. 9 questions pour le RAG, une seule seed pour LunarLander, c'est trop peu.</li>
+                        <li>Garder le jeu de test intact jusqu'au bout. Sur le triage, j'ai compris que je m'en étais servi pour prendre mes décisions, et que c'est cette façon de faire qui m'avait mené à ce résultat. Si je devais recommencer, je ferais tout différemment.</li>
+                        <li>Choisir le modèle sur la métrique qui compte vraiment, et l'évaluer sur assez de cas. Sur CurelyticsIA, je visais le rappel mais je sélectionnais sur la perte. Pour le RAG, 9 questions, c'était trop peu.</li>
                         <li>Faire tester par de vrais utilisateurs plus tôt. Sur SortirIA, ils ont révélé en quelques jours un manque que mes jeux de test ne montraient pas.</li>
                     </ul>
                 </div>
 
                 <div class="reflection-card">
                     <h3>Les progrès que je constate</h3>
+                    <p class="reflection-intro">Quand je compare mes premiers projets et SortirIA…</p>
                     <ul>
-                        <li>Mes premiers projets s'arrêtaient au notebook. Les derniers sont livrés avec API, tests, CI/CD et documentation.</li>
-                        <li>Je sais diagnostiquer un échec d'entraînement et le corriger, au lieu de relancer au hasard.</li>
-                        <li>Je présente mes résultats avec leurs limites.</li>
+                        <li>Mon premier livrable était un notebook. Aujourd'hui, c'est un site que des inconnus ont utilisé.</li>
+                        <li>Face à un entraînement qui échoue, je cherche la cause avant de corriger, au lieu de relancer au hasard.</li>
                         <li>Je réutilise mon propre code : SortirIA assemble et adapte des briques de cinq projets précédents.</li>
-                        <li>J'ai un service en ligne, déployé à chaque push, avec évaluation en CI, tableaux de bord, alertes et budget.</li>
                     </ul>
+                    <p class="reflection-pride">Ce dont je suis le plus fier, c'est le parcours : des difficultés de plus en plus fortes, et aujourd'hui de nombreux outils en main. J'aime ce que je fais, ça me motive et ça me plaît. Je n'ai aucun mal à y passer du temps : je m'amuse.</p>
                 </div>
 
                 <div class="reflection-card">
