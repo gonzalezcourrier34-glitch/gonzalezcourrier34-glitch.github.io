@@ -272,7 +272,7 @@
                     </dl>
                 </section>
                 <dl class="facts facts-limit">
-                    <div class="limit"><dt>Limite et recul</dt><dd>Sur 93 questions de vrais testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux permanents. J'aurais dû faire tester plus tôt, pour voir ce manque de couverture avant de mettre en ligne.</dd></div>
+                    <div class="limit"><dt>Limite et ouverture</dt><dd>Sur 93 questions de vrais testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux permanents, que mes agendas ne contiennent pas. J'en ai fait ma priorité : élargir les sources. Je démarche des lieux partenaires (Sète, Frontignan), et chaque lundi, l'agent me propose les agendas à ajouter.</dd></div>
                 </dl>
 
                 <div class="axes">
@@ -330,7 +330,7 @@
                                 de DVC : mes jeux de test pèsent environ 1&nbsp;Mo, Git suffit.</dd>
                         </div>
                     </dl>
-                    <p class="mlops-limit"><strong>Ce qui manque encore :</strong> MLflow tourne sur mon poste, pas en production.</p>
+                    <p class="mlops-limit"><strong>Prochaine étape :</strong> MLflow tourne aujourd'hui sur mon poste. Je le déploierais à côté du service, pour suivre directement la production.</p>
                 </div>
 
                 <ul class="tags" aria-label="Technologies">
@@ -391,7 +391,7 @@
                     </dl>
                 </section>
                 <dl class="facts facts-limit">
-                    <div class="limit"><dt>Limite et recul</dt><dd>5,4&nbsp;% de sous-triage : c'est un prototype, pas un dispositif médical. Avec le recul, j'aurais dû partir de la Base dès le début, comme le demandait la mission, et ne regarder le jeu de test qu'à la toute fin.</dd></div>
+                    <div class="limit"><dt>Limite et ouverture</dt><dd>5,4&nbsp;% de sous-triage : c'est pourquoi je le présente comme un second avis, avec une grille go / no-go et un pilote en quatre phases. Pour aller plus loin : repartir de la Base dès le début et garder le test intact jusqu'au bout, pour une mesure encore plus fiable.</dd></div>
                 </dl>
 
                 <div class="axes">
@@ -447,7 +447,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Je teste le code et le routage, pas la qualité des explications du LLM. J'ajouterais un jeu de positions annotées pour la mesurer.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Je teste le code et le routage, pas encore la qualité des explications. Prochaine étape : un jeu de positions annotées pour la mesurer, avec un juge calibré sur l'humain, comme dans SortirIA.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>LangGraph</li><li>Milvus</li><li>Ollama</li><li>FastAPI</li><li>MongoDB</li><li>Angular</li>
@@ -486,7 +486,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Au premier lot, beaucoup d'articles n'avaient pas d'URL canonique, et le contenu des images n'est pas vérifié. Je transformerais ces mesures en règles de rejet.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Au premier lot, beaucoup d'articles n'avaient pas d'URL canonique, et les images sont vérifiées techniquement, pas dans leur contenu. Prochaine étape : transformer ces mesures en règles de rejet, puis analyser les images elles-mêmes, utile pour le fact-checking.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>Airflow</li><li>PostgreSQL</li><li>YAML</li><li>Docker</li><li>Streamlit</li>
@@ -524,7 +524,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Une seule seed et 10 essais Optuna : je ne peux pas affirmer que PPO bat DQN à tous les coups. Je relancerais sur plusieurs seeds.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Une seule seed et 10 essais Optuna : PPO gagne ici, mais il faut le confirmer. Prochaine étape : relancer sur plusieurs seeds, comme je l'avais fait sur CurelyticsIA avec 5 seeds.</dd></div>
                     </dl>
                     <figure class="project-media">
                         <img src="img/lunarlander.png" alt="Fin de simulation : l'agent entraîné a posé le module lunaire sur la zone d'atterrissage" width="600" height="400" loading="lazy">
@@ -569,7 +569,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Je choisis le meilleur modèle sur la perte de validation, alors que mon objectif est le rappel. Je le choisirais aujourd'hui sur le F2 de validation.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Je choisis aujourd'hui le meilleur modèle sur la perte de validation. Prochaine étape : le choisir directement sur le F2 de validation, pour coller encore mieux à l'objectif de rappel.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>PyTorch</li><li>ResNet</li><li>Clustering</li><li>Pseudo-labels</li>
@@ -609,7 +609,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Ce sont des estimations : le PoC n'a pas été réalisé. Et mon budget du PoC varie entre deux diapositives. Je ferais une relecture croisée des chiffres avant de présenter.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Ce sont des estimations : le PoC reste à réaliser. La suite logique : le lancer sur 3 semaines pour confronter ces chiffres à la réalité, après une relecture croisée du budget.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Compétences">
                         <li>Cadrage</li><li>Budget &amp; ROI</li><li>Architecture Azure</li><li>RGPD</li><li>CLIP</li>
@@ -645,7 +645,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Environ 6 alertes sur 7 sont des faux positifs : c'est le prix pour détecter 85&nbsp;% des défauts. Le seuil de l'API diffère de celui du notebook. Je l'enregistrerais avec le modèle, et j'optimiserais directement le coût métier.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Environ 6 alertes sur 7 sont des faux positifs : c'est le prix pour détecter 85&nbsp;% des défauts. Pour aller plus loin : optimiser directement le coût métier, et enregistrer le seuil avec le modèle pour que l'API et le notebook utilisent le même.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>XGBoost</li><li>LightGBM</li><li>MLflow</li><li>Evidently</li><li>ONNX</li><li>GitHub Actions</li>
@@ -680,7 +680,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Des réponses peu ciblées (pertinence de 0,20), évaluées sur 9 questions seulement. Je construirais un jeu de test plus large avant d'optimiser quoi que ce soit.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Des réponses encore peu ciblées (pertinence de 0,20), mesurées sur 9 questions. C'est ce qui m'a guidé pour SortirIA : des jeux d'évaluation plus larges, rejoués à chaque push, et un juge calibré sur l'humain.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>LangChain</li><li>FAISS</li><li>Mistral</li><li>RAGAS</li><li>Docker</li>
@@ -717,7 +717,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Une alerte sur deux est un faux positif, un choix assumé pour ne manquer presque aucun départ. La régression logistique était presque aussi bonne et plus simple : je la mettrais en face de XGBoost dès le départ, pour justifier le choix.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Une alerte sur deux est un faux positif, un choix assumé pour ne manquer presque aucun départ. Pour aller plus loin : présenter la régression logistique, presque aussi bonne et plus simple, à côté de XGBoost, pour que le métier choisisse en connaissance de cause.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
                         <li>scikit-learn</li><li>FastAPI</li><li>PostgreSQL</li><li>Hugging Face Spaces</li>
@@ -754,7 +754,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et recul</dt><dd>Les petits éléments restent mal segmentés, et mon notebook livré n'a plus ses sorties. Je livrerais toujours un notebook exécuté, avec ses résultats visibles.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Les petits éléments (chaussures, bras) restent mal segmentés. Pour aller plus loin : enrichir les données en accessoires et rééquilibrer les classes rares, comme je l'ai noté dans mon notebook. Et toujours livrer un notebook exécuté, avec ses résultats visibles.</dd></div>
                     </dl>
                     <figure class="project-media">
                         <img src="img/modetrends_iou_dice.png" alt="Graphique : IoU et Dice par vêtement, élevés pour robes et jupes, faibles pour chaussures et membres" width="1000" height="396" loading="lazy">
@@ -815,7 +815,7 @@
                         <li class="skill"><span class="skill-name">Vision : CNN, OpenCV, segmentation</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a><a href="https://github.com/gonzalezcourrier34-glitch/ModeTrends" target="_blank" rel="noopener">ModeTrends</a></span></li>
                         <li class="skill"><span class="skill-name">Reinforcement Learning : Stable-Baselines3</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener">LunarLander</a></span></li>
                         <li class="skill"><span class="skill-name">Anonymisation : Presidio</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
-                        <li class="skill"><span class="skill-name">TensorFlow</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">En cours d'acquisition</span></span></li>
+                        <li class="skill"><span class="skill-name">TensorFlow</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">Prochaine étape : je l'apprends pour reprendre des projets existants</span></span></li>
                     </ul>
                 </div>
                 <div class="skill-group">
@@ -839,8 +839,8 @@
                         <li class="skill"><span class="skill-name">Monitoring et dérive : Evidently, PSI, Prometheus, Grafana</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
                         <li class="skill"><span class="skill-name">ONNX Runtime</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a></span></li>
                         <li class="skill"><span class="skill-name">GPU cloud (RunPod), Hugging Face Spaces</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></span></li>
-                        <li class="skill"><span class="skill-name">Cloud IA managé : Azure ML, SageMaker, Vertex AI</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">En cours d'acquisition</span></span></li>
-                        <li class="skill"><span class="skill-name">DVC, Kubernetes</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">En cours d'acquisition</span></span></li>
+                        <li class="skill"><span class="skill-name">Cloud IA managé : Azure ML, SageMaker, Vertex AI</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">Prochaine étape : Azure ML, dans la continuité de SortirIA sur Azure</span></span></li>
+                        <li class="skill"><span class="skill-name">DVC, Kubernetes</span><span class="skill-level"><span class="meter" data-level="1" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Notions</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><span class="none">Prochaine étape : Kubernetes en priorité</span></span></li>
                         <li class="skill"><span class="skill-name">Cloud : Azure (Container Apps, PostgreSQL, Static Web Apps)</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a><span class="note">Fashion-Insta : architecture conçue</span></span></li>
                     </ul>
                 </div>
@@ -885,8 +885,8 @@
                             <tr><th scope="row">Recherche hybride (mots et vecteurs)</th><td>2 / 4</td><td>Opérationnel ; fusion des rangs dans SortirIA</td></tr>
                             <tr><th scope="row">Docker</th><td>2 / 4</td><td>Opérationnel ; 7 projets</td></tr>
                             <tr><th scope="row">Cloud (Azure, AWS, GCP)</th><td>2 / 4</td><td>Opérationnel ; SortirIA en production sur Azure</td></tr>
-                            <tr class="gap"><th scope="row">Kubernetes</th><td>2 / 4</td><td>Notions : en cours d'acquisition, en priorité</td></tr>
-                            <tr class="gap"><th scope="row">TensorFlow</th><td>2 / 4</td><td>Notions : en cours d'acquisition</td></tr>
+                            <tr class="gap"><th scope="row">Kubernetes</th><td>2 / 4</td><td>Notions : ma priorité, pour passer de Container Apps à un déploiement orchestré</td></tr>
+                            <tr class="gap"><th scope="row">TensorFlow</th><td>2 / 4</td><td>Notions : j'ai choisi PyTorch, j'apprends TensorFlow pour reprendre des projets existants</td></tr>
                             <tr><th scope="row">Sécurité : OIDC, RBAC, secrets</th><td>2 / 4</td><td>Opérationnel ; API sécurisée, OIDC vers Azure, compte en lecture seule</td></tr>
                         </tbody>
                     </table>
@@ -1047,9 +1047,9 @@
                     <h3>Ce que je ferais différemment</h3>
                     <p class="reflection-intro">Avec le recul, voici ce que je corrigerais dès le départ.</p>
                     <ul>
-                        <li>Garder le jeu de test intact jusqu'au bout. Sur le triage, j'ai compris que je m'en étais servi pour prendre mes décisions, et que c'est cette façon de faire qui m'avait mené à ce résultat. Si je devais recommencer, je ferais tout différemment.</li>
-                        <li>Choisir le modèle sur la métrique qui compte vraiment, et l'évaluer sur assez de cas. Sur CurelyticsIA, je visais le rappel mais je sélectionnais sur la perte. Pour le RAG, 9 questions, c'était trop peu.</li>
-                        <li>Faire tester par de vrais utilisateurs plus tôt. Sur SortirIA, ils ont révélé en quelques jours un manque que mes jeux de test ne montraient pas.</li>
+                        <li>Garder le jeu de test intact jusqu'au bout. Sur le triage, j'ai compris que je m'en étais servi pour prendre mes décisions, et que c'est cette façon de faire qui m'avait mené à ce résultat. Si je devais recommencer, je ferais tout différemment. C'est ce que j'ai appliqué ensuite : sur SortirIA, mes seuils étaient fixés avant de mesurer.</li>
+                        <li>Choisir le modèle sur la métrique qui compte vraiment, et l'évaluer sur assez de cas. Sur CurelyticsIA, je visais le rappel mais je sélectionnais sur la perte. Pour le RAG, 9 questions, c'était trop peu. Sur SortirIA, j'ai corrigé le tir : 10 jeux d'évaluation, rejoués à chaque push.</li>
+                        <li>Faire tester par de vrais utilisateurs plus tôt. Sur SortirIA, ils ont révélé en quelques jours un manque que mes jeux de test ne montraient pas. Pour mes prochains projets, je ferai tester dès le premier prototype.</li>
                     </ul>
                 </div>
 
@@ -1067,10 +1067,10 @@
                 <div class="reflection-card">
                     <h3>Les défis qui restent</h3>
                     <ul>
-                        <li>Tenir une charge réelle, au-delà d'un service à faible trafic.</li>
-                        <li>Orchestrer avec Kubernetes.</li>
-                        <li>Mesurer la qualité des réponses d'un LLM dans la durée, avec de vrais utilisateurs.</li>
-                        <li>Travailler en équipe sur un produit IA déjà en production.</li>
+                        <li>Tenir une charge réelle, au-delà d'un service à faible trafic. Prochaine étape : un test de charge sur SortirIA, pour voir où il plie.</li>
+                        <li>Orchestrer avec Kubernetes. C'est ma priorité d'apprentissage, pour passer de Container Apps à un déploiement orchestré.</li>
+                        <li>Mesurer la qualité des réponses d'un LLM dans la durée, avec de vrais utilisateurs. SortirIA en pose déjà les bases : avis des visiteurs, juge calibré et dérive suivie chaque nuit.</li>
+                        <li>Travailler en équipe sur un produit IA déjà en production. C'est exactement ce que je cherche aujourd'hui.</li>
                     </ul>
                 </div>
 
