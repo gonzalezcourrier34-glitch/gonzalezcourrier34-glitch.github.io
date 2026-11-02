@@ -237,7 +237,7 @@
                     Montpellier et le bassin de Thau. L'idée : écrire sa demande comme on la
                     dirait (« un concert gratuit ce week-end à Sète ») ; SortirIA répond avec
                     des sorties qui respectent la date, le lieu, le public et le budget. Chaque nuit, un agent LangGraph collecte et vérifie
-                    les agendas ouverts (OpenAgenda, DATAtourisme, programmes en PDF) ; la
+                    les agendas ouverts (OpenAgenda, DATAtourisme ; le programme PDF de Sète est lu depuis mon poste) ; la
                     recherche combine filtres SQL, mots et vecteurs (pgvector) et Mistral
                     rédige la réponse. Le service est en ligne sur Azure, déployé à chaque
                     push et surveillé.
@@ -269,7 +269,7 @@
                         <div><dt>Contraintes respectées</dt><dd>98,7&nbsp;%</dd></div>
                         <div><dt>Pertinence des 3 premières sorties</dt><dd>97,8&nbsp;%</dd></div>
                         <div><dt>Accord du juge LLM avec l'humain, sur 135 cartes nouvelles</dt><dd>91,9&nbsp;%</dd></div>
-                        <div><dt>Temps de réponse P95</dt><dd>6,4&nbsp;s</dd></div>
+                        <div><dt>Temps de réponse P95 (mesuré depuis un poste ; 4,1&nbsp;s en production le 2/11)</dt><dd>6,4&nbsp;s</dd></div>
                         <div><dt>Coût Mistral pour 1&nbsp;000 questions</dt><dd>0,12&nbsp;$</dd></div>
                     </dl>
                 </section>
@@ -284,7 +284,7 @@
                         <li><strong>Audit des données</strong> Seulement des sources ouvertes et autorisées. Chaque fiche est vérifiée, dédoublonnée et attribuée à sa source.</li>
                         <li><strong>Solution</strong> Un agent LangGraph la nuit, PostgreSQL et pgvector, FastAPI, Angular, Mistral. J'ai repris et adapté le code de mes projets précédents.</li>
                         <li><strong>Aide à la décision</strong> J'ai fixé les seuils avant de mesurer : 95&nbsp;% de contraintes respectées, 70&nbsp;% de pertinence. Le juge est calibré sur l'humain. Puis j'ai mesuré l'usage réel : 93 questions de testeurs, 47&nbsp;% de réponses exactes. La couverture des sources devient ma priorité.</li>
-                        <li><strong>Contrôle</strong> Environ 10&nbsp;$ par mois. L'évaluation est rejouée en CI, et le déploiement est bloqué sous 95&nbsp;%. Grafana, MLflow, dérive suivie chaque nuit (PSI) et chaque mois (Evidently), alertes et budget Azure.</li>
+                        <li><strong>Contrôle</strong> Environ 10&nbsp;$ par mois la première année. L'évaluation est rejouée en CI, et le déploiement est bloqué sous 95&nbsp;%. Grafana, MLflow, dérive suivie chaque nuit (PSI) et chaque mois (Evidently), alertes et budget Azure.</li>
                     </ol>
                 </div>
 
@@ -366,12 +366,12 @@
                 </p>
 
                 <dl class="facts">
-                    <div><dt>Mon rôle</dt><dd>Tout le projet, sur mon ordinateur portable : audit et anonymisation des données, entraînement, mise en service, tests et documentation.</dd></div>
+                    <div><dt>Mon rôle</dt><dd>Tout le projet, sur mon ordinateur portable (GPU de 6 Go) puis un GPU cloud (RunPod) : audit et anonymisation des données, entraînement, mise en service, tests et documentation.</dd></div>
                     <div><dt>Le défi</dt><dd>Tenir sur une carte de 6&nbsp;Go en gardant les urgences bien classées. Mon premier entraînement, sur Qwen3-Base, a échoué. J'ai cherché pourquoi, puis je l'ai corrigé.</dd></div>
                 </dl>
                 <dl class="facts facts-comment">
                     <div><dt>Comment</dt><dd>Je change une seule chose à la fois, depuis un essai à trois changements qui m'avait fait perdre le fil. J'ai donné plus de poids à la priorité P1/P2/P3 dans l'apprentissage : le modèle a ainsi appris la décision, et plus seulement le texte. Quand la Base a eu du mal à finir ses réponses, j'ai mesuré avant de corriger : il lui manquait l'apprentissage du jeton de fin.</dd></div>
-                    <div><dt>Pourquoi ce choix</dt><dd>J'ai entraîné les deux versions de Qwen3, la Base et l'instruct, avec le même pipeline. Au même niveau global, la Base sous-trie moins : 5,4&nbsp;% contre 7,2&nbsp;%. C'est elle que je livre.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>J'ai entraîné les deux versions de Qwen3, la Base et l'Instruct, avec le même pipeline. Au même niveau global, la Base sous-trie moins : 5,4&nbsp;% contre 7,2&nbsp;%. C'est elle que je livre.</dd></div>
                 </dl>
 
                 <figure class="project-media wide">
@@ -529,7 +529,7 @@
                         </dl>
                     </section>
                     <dl class="facts facts-limit">
-                        <div class="limit"><dt>Limite et ouverture</dt><dd>Une seule seed et 10 essais Optuna : PPO gagne ici, mais il faut le confirmer. Prochaine étape : relancer sur plusieurs seeds, comme je l'avais fait sur CurelyticsIA avec 5 seeds.</dd></div>
+                        <div class="limit"><dt>Limite et ouverture</dt><dd>Une seule seed et 10 essais Optuna : PPO gagne ici, mais il faut le confirmer. Prochaine étape : relancer sur plusieurs seeds, comme je l'avais fait sur CurelyticsIA avec 5 découpages des données.</dd></div>
                     </dl>
                     <figure class="project-media">
                         <img src="img/lunarlander.png" alt="Fin de simulation : l'agent entraîné a posé le module lunaire sur la zone d'atterrissage" width="600" height="400" loading="lazy">
@@ -592,7 +592,7 @@
                         <span class="project-type">Cadrage • Gestion de projet</span>
                         <span class="project-status">Mai 2026 · <span class="validated">✓ Validé</span></span>
                     </div>
-                    <h3>Cadrage du POC Fashion-Insta</h3>
+                    <h3>Cadrage du PoC Fashion-Insta</h3>
                     <p>
                         J'ai cadré un système de recommandation de vêtements à partir de photos, pour
                         une enseigne de mode. J'ai défini le besoin métier et choisi l'approche (CLIP
@@ -658,7 +658,7 @@
                         <div class="limit"><dt>Limite et ouverture</dt><dd>Environ 6 alertes sur 7 sont des faux positifs : c'est le prix pour détecter 85&nbsp;% des défauts. Pour aller plus loin : optimiser directement le coût métier, et enregistrer le seuil avec le modèle pour que l'API et le notebook utilisent le même.</dd></div>
                     </dl>
                     <ul class="tags" aria-label="Technologies">
-                        <li>XGBoost</li><li>LightGBM</li><li>MLflow</li><li>Evidently</li><li>ONNX</li><li>GitHub Actions</li>
+                        <li>XGBoost</li><li>CatBoost</li><li>MLflow</li><li>Evidently</li><li>ONNX</li><li>GitHub Actions</li>
                     </ul>
                     <div class="project-links">
                         <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser/blob/HEAD/notebook/pret_a_depenser.ipynb" target="_blank" rel="noopener" aria-label="Notebook : Scoring crédit Prêt à dépenser">Notebook →</a>
@@ -815,9 +815,9 @@
                     <ul class="skill-list">
                         <li class="skill"><span class="skill-name">Python</span><span class="skill-level"><span class="meter" data-level="4" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Autonome</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
                         <li class="skill"><span class="skill-name">pandas / NumPy</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a></span></li>
-                        <li class="skill"><span class="skill-name">scikit-learn, LightGBM, XGBoost</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a></span></li>
+                        <li class="skill"><span class="skill-name">scikit-learn, XGBoost, CatBoost</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a></span></li>
                         <li class="skill"><span class="skill-name">SQL, PostgreSQL, pgvector</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></span></li>
-                        <li class="skill"><span class="skill-name">Optuna, SHAP</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a></span></li>
+                        <li class="skill"><span class="skill-name">Optuna, SHAP</span><span class="skill-level"><span class="meter" data-level="3" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="level-text">Opérationnel</span></span><span class="proofs"><span class="sr-only">Mis en œuvre dans : </span><a href="https://github.com/gonzalezcourrier34-glitch/Projet_TechNova_Partners" target="_blank" rel="noopener">TechNova</a><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a><a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener">LunarLander</a></span></li>
                     </ul>
                 </div>
                 <div class="skill-group">
@@ -892,7 +892,7 @@
                             <tr><th scope="col">Compétence demandée</th><th scope="col">Offres</th><th scope="col">Mon niveau, ma preuve</th></tr>
                         </thead>
                         <tbody>
-                            <tr><th scope="row">Python, mise en production (FastAPI)</th><td>4 / 4</td><td>Autonome ; API dans 6 projets</td></tr>
+                            <tr><th scope="row">Python, mise en production (FastAPI)</th><td>4 / 4</td><td>Autonome ; API dans 7 projets</td></tr>
                             <tr><th scope="row">LLM et LangChain ou LangGraph</th><td>4 / 4</td><td>Opérationnel ; SortirIA, Chess Agent, RAG OpenAgenda</td></tr>
                             <tr><th scope="row">MLOps : CI/CD, MLflow, monitoring</th><td>4 / 4</td><td>Opérationnel ; évaluation bloquante en CI, MLflow, Grafana</td></tr>
                             <tr><th scope="row">RAG, embeddings, bases vectorielles</th><td>3 / 4</td><td>Opérationnel ; pgvector, FAISS, Milvus</td></tr>
@@ -943,7 +943,7 @@
                                 <tr><th scope="row">Auditer la solution data : historique, qualité, disponibilité</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Audit des sources (droit d'usage, volume, qualité, manques), script d'audit OpenAgenda</td></tr>
                                 <tr><th scope="row">Évaluer les risques : accessibilité, sécurité, développement durable</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/limites.html" target="_blank" rel="noopener">limites SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Tableau des risques et parades ; secrets hors du code, limite de débit ; services qui s'éteignent d'eux-mêmes au repos</td></tr>
                                 <tr><th scope="row">Identifier une solution technique adaptée</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a></td><td>Chaque choix mesuré contre son alternative : pgvector contre FAISS, règles contre LLM</td></tr>
-                                <tr><th scope="row">Réaliser un prototype si nécessaire</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <span class="note">Fashion-Insta</span></td><td>MVP en ligne en trois jours ; preuve de concept en quatre semaines ; POC cadré</td></tr>
+                                <tr><th scope="row">Réaliser un prototype si nécessaire</th><td><a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <span class="note">Fashion-Insta</span></td><td>MVP en ligne en trois jours ; preuve de concept en quatre semaines ; PoC cadré</td></tr>
                                 <tr><th scope="row">Présenter la solution et justifier ses choix</th><td><a href="https://gonzalezcourrier34-glitch.github.io/SortirIA/dossier/rapport.html" target="_blank" rel="noopener">rapport SortirIA</a> · <span class="note">Fashion-Insta</span></td><td>Dossier et rapport de conduite de projet ; présentation client de 52 diapositives</td></tr>
                             </tbody>
                         </table>
@@ -971,7 +971,7 @@
                             <tbody>
                                 <tr><th scope="row">Configurer l'environnement d'analyse</th><td><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a></td><td>Environnements reproductibles (uv, Docker), entraînement sur 6 Go de GPU</td></tr>
                                 <tr><th scope="row">Nettoyer les données, de façon automatisée ou non</th><td><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/checkit_ai" target="_blank" rel="noopener">CheckIt.AI</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>Préparation automatisée ; validation et dédoublonnage ; audit et anonymisation</td></tr>
-                                <tr><th scope="row">Identifier ou créer un modèle d'apprentissage adapté</th><td><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener">LunarLander</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>LightGBM, ResNet semi-supervisé, DQN et PPO, Qwen3 spécialisé</td></tr>
+                                <tr><th scope="row">Identifier ou créer un modèle d'apprentissage adapté</th><td><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener">LunarLander</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>XGBoost, ResNet semi-supervisé, DQN et PPO, Qwen3 spécialisé</td></tr>
                                 <tr><th scope="row">Préparer et transformer les données</th><td><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>Variables, pseudo-étiquettes, jeux SFT et DPO</td></tr>
                                 <tr><th scope="row">Entraîner le modèle</th><td><a href="https://github.com/gonzalezcourrier34-glitch/pret_a_depenser" target="_blank" rel="noopener">Scoring crédit</a> · <a href="https://github.com/gonzalezcourrier34-glitch/Projet_CurelyticsIA" target="_blank" rel="noopener">CurelyticsIA</a> · <a href="https://github.com/gonzalezcourrier34-glitch/Renforcement_learning" target="_blank" rel="noopener">LunarLander</a> · <a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a></td><td>Entraînements suivis (MLflow, W&B), échec diagnostiqué puis corrigé</td></tr>
                                 <tr><th scope="row">Créer et lancer les tests avant mise en production</th><td><a href="https://github.com/gonzalezcourrier34-glitch/medical_triage_agent" target="_blank" rel="noopener">Triage médical</a> · <a href="https://github.com/gonzalezcourrier34-glitch/chess_agent" target="_blank" rel="noopener">Chess Agent</a> · <a href="https://github.com/gonzalezcourrier34-glitch/SortirIA" target="_blank" rel="noopener">SortirIA</a></td><td>Jeu de test gelé de 500 cas ; 1 029 tests ; évaluation qui bloque le déploiement</td></tr>
@@ -1012,10 +1012,10 @@
                 <li class="timeline-item">
                     <span>1998 – 2006 · Développement</span>
                     <h3>Développeur, puis cadre</h3>
-                    <p>Conception d'applications de gestion en SQL, Visual Basic et WinDev chez Alternative Informatique, à Montpellier, puis chef de projet informatique chez Spiral Informatique en 2001. Ensuite une période d'activité indépendante à Tenerife, où j'ai continué à travailler pour Alternative Informatique, tout en travaillant pour des boutiques et des entreprises françaises installées sur place. De retour à Montpellier, analyste programmeur chez Store System Services, puis chez Helios.</p>
+                    <p>Conception d'applications de gestion en SQL, Visual Basic et WinDev chez Alternative Informatique, à Montpellier, puis chef de projet informatique chez Spiral Informatique en 2001. Ensuite une période d'activité indépendante à Tenerife, où j'ai continué à travailler pour Alternative Informatique, tout en travaillant pour des boutiques et des entreprises françaises installées sur place. De retour à Montpellier, analyste-programmeur chez Store System Services, puis chez Helios.</p>
                 </li>
                 <li class="timeline-item">
-                    <span>2006 – 2009, puis 2011-2012 · Pédagogie</span>
+                    <span>2006 – 2009, puis 2011 – 2012 · Pédagogie</span>
                     <h3>Éducation et transmission</h3>
                     <p>J'ai passé le concours et suivi la formation d'éducateur technique spécialisé. En 2011-2012, j'ai préparé et obtenu une licence en sciences de l'éducation, à distance, en parallèle de mon travail de conseiller de vente. Cette licence m'a prouvé que je pouvais apprendre seul, chez moi : c'est ce qui m'a conforté plus tard dans mon choix d'OpenClassrooms. Pédagogie, accompagnement : je me sers encore de ces compétences pour conduire, expliquer et documenter mes projets.</p>
                 </li>
@@ -1147,15 +1147,15 @@
                 </div>
                 <div>
                     <h3>Communication et vulgarisation</h3>
-                    <p>Une documentation publiée pour chaque projet. Pour le triage, un rapport technique de 20 pages qui commence par une synthèse pour les décideurs.</p>
+                    <p>Une documentation publiée pour mes principaux projets. Pour le triage, un rapport technique de 20 pages qui commence par une synthèse pour les décideurs.</p>
                 </div>
                 <div>
                     <h3>Gestion de projet et autonomie</h3>
-                    <p>Le POC de triage livré en 4 semaines, avec une grille go / no-go. SortirIA en ligne en trois jours, avec une feuille de route jusqu'au gel du code.</p>
+                    <p>Le PoC de triage livré en 4 semaines, avec une grille go / no-go. SortirIA en ligne en trois jours, avec une feuille de route jusqu'au gel du code.</p>
                 </div>
                 <div>
                     <h3>Relation client</h3>
-                    <p>Seize ans à traduire un besoin client en solution concrète. Pour SortirIA, j'ai demandé l'autorisation aux sources avant toute collecte, et je suis allé démarcher Sète et Frontignan pour trouver des lieux partenaires. J'attends encore leur réponse.</p>
+                    <p>Seize ans à traduire un besoin client en solution concrète. Pour SortirIA, j'ai demandé l'autorisation aux sites des lieux avant toute collecte (les agendas ouverts sont sous licence ouverte), et je suis allé démarcher Sète et Frontignan pour trouver des lieux partenaires. J'attends encore leur réponse.</p>
                 </div>
                 <div>
                     <h3>Créativité</h3>
