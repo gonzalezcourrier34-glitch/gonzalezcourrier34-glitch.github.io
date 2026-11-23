@@ -32,6 +32,12 @@ Stéphane Gonzalez – AI Engineer
 				Suivi de la dérive : couvert (questions, réponses, collecte ; PSI chaque nuit, Evidently chaque mois)
 				Réentraînement automatique : adapté (agent du lundi, pull requests validées)
 				Versionnage données et modèles : couvert (consignes et chaîne dans les registres MLflow, jeux d'évaluation avec empreinte, contrôle en CI)
+		Projet personnel – Couverture de sinistre (nov. 2026, en ligne sur Azure, accès sur demande)
+			Domaine : LLM, moteur de règles, assurance
+			Réalisation : dire si un sinistre est couvert par un contrat d'assurance habitation, en citant les clauses. Mistral lit la déclaration, un moteur Prolog décide, le code vérifie les citations. 4 contrats anonymisés. Décisions justes : 94 % (A), 96 % (D), 85 % (B, dont un « couvert » à tort) ; 567 citations sur 567 retrouvées mot pour mot
+			Stack : Mistral, SWI-Prolog, FastAPI, Angular, SQLite, Docker, GitHub Actions, Azure Container Apps
+			Limite : règles non relues par quelqu'un du métier ; chaque contrat demande une rédaction puis une relecture
+			Code (https://github.com/gonzalezcourrier34-glitch/couverture_sinistre)
 		Projets de formation
 			Tous validés par OpenClassrooms
 			P14 – Agent IA de triage médical (sept.-oct. 2026)
@@ -239,7 +245,7 @@ Stéphane Gonzalez – AI Engineer
 		Esprit d'analyse
 			Diagnostic et correction de l'échec Qwen3-Base (P14)
 		Curiosité et apprentissage continu
-			11 projets dans des domaines différents
+			12 projets dans des domaines différents
 		Communication et vulgarisation
 			Documentation publiée, rapport avec synthèse décideurs
 		Gestion de projet et autonomie

@@ -68,6 +68,18 @@
 </node>
 </node>
 </node>
+<node TEXT="Projet personnel – Couverture de sinistre (nov. 2026, en ligne sur Azure, accès sur demande)" COLOR="#1b7f6e">
+<node TEXT="Domaine : LLM, moteur de règles, assurance" COLOR="#1b7f6e">
+</node>
+<node TEXT="Réalisation : dire si un sinistre est couvert par un contrat d&#x27;assurance habitation, en citant les clauses. Mistral lit la déclaration, un moteur Prolog décide, le code vérifie les citations. 4 contrats anonymisés. Décisions justes : 94 % (A), 96 % (D), 85 % (B, dont un « couvert » à tort) ; 567 citations sur 567 retrouvées mot pour mot" COLOR="#1b7f6e">
+</node>
+<node TEXT="Stack : Mistral, SWI-Prolog, FastAPI, Angular, SQLite, Docker, GitHub Actions, Azure Container Apps" COLOR="#1b7f6e">
+</node>
+<node TEXT="Limite : règles non relues par quelqu&#x27;un du métier ; chaque contrat demande une rédaction puis une relecture" COLOR="#1b7f6e">
+</node>
+<node TEXT="Code" COLOR="#1b7f6e" LINK="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre">
+</node>
+</node>
 <node TEXT="Projets de formation" COLOR="#1b7f6e">
 <node TEXT="Tous validés par OpenClassrooms" COLOR="#1b7f6e">
 </node>
@@ -484,7 +496,7 @@
 </node>
 </node>
 <node TEXT="Curiosité et apprentissage continu" COLOR="#2a5d9f">
-<node TEXT="11 projets dans des domaines différents" COLOR="#2a5d9f">
+<node TEXT="12 projets dans des domaines différents" COLOR="#2a5d9f">
 </node>
 </node>
 <node TEXT="Communication et vulgarisation" COLOR="#2a5d9f">
