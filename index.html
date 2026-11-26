@@ -353,49 +353,67 @@
             <article class="project-card featured" aria-labelledby="couverture-title">
 
                 <div class="project-top">
-                    <span class="project-type">Projet personnel • LLM • Règles • Assurance</span>
+                    <span class="project-type">Projet personnel • LLM • Règles • Évaluation • Assurance</span>
                     <span class="project-status">Nov. 2026 · en ligne, accès sur demande</span>
                 </div>
 
                 <h3 id="couverture-title">Couverture de sinistre</h3>
 
                 <p>
-                    Dire si un sinistre est couvert par les conditions générales d'un contrat
-                    d'assurance habitation, pourquoi, et sur quelles clauses. On écrit sa
-                    déclaration comme on la dirait (« on m'a volé mon vélo dans le local commun,
-                    qui n'était pas fermé à clé ») ; le système répond couvert, non couvert ou
-                    à préciser, cite les passages exacts du contrat, et pose les questions qui
-                    manquent. Quatre contrats d'assureurs différents, anonymisés. La démonstration
-                    tourne sur Azure, derrière un code d'accès.
+                    Une petite recherche, menée comme une expérience. Ma question : un système peut-il dire
+                    si un sinistre est couvert par les conditions générales d'un contrat d'assurance
+                    habitation, en le prouvant par le contrat lui-même, sans jamais promettre à tort ?
+                    On écrit sa déclaration comme on la dirait ; il répond couvert, non couvert ou à
+                    préciser, cite la phrase exacte du contrat, et pose la question qui manque. Quatre
+                    contrats d'assureurs différents, anonymisés ; la démonstration tourne sur Azure.
+                </p>
+                <p>
+                    J'ai d'abord traduit chaque contrat en règles Prolog et laissé un moteur décider :
+                    excellent sur les cas qui m'avaient servi à le régler, bien moins sur des cas écrits par
+                    d'autres, où il lui arrivait de couvrir à tort. Cette découverte m'a conduit à une
+                    seconde hypothèse : faire juger par Mistral Large les clauses mêmes du contrat, une à une,
+                    vérifier chaque citation et calculer la décision dans le code. Je les ai comparées sur
+                    des déclarations jamais vues, code figé, une seule fois.
                 </p>
 
                 <dl class="facts">
-                    <div><dt>Mon rôle</dt><dd>Le cadrage, l'architecture, les mesures et les décisions, sur mon temps personnel. J'ai travaillé avec un assistant de code, dont la part est visible dans chaque commit ; les choix et les arbitrages sont consignés dans le journal du projet.</dd></div>
-                    <div><dt>Le défi</dt><dd>Ne jamais annoncer « couvert » à tort, citer ses sources, et savoir dire « je ne sais pas ». Je ne viens pas de l'assurance : il fallait un système dont chaque décision se relit, règle par règle.</dd></div>
+                    <div><dt>Mon rôle</dt><dd>Le cadrage, les hypothèses, l'architecture, la méthode d'évaluation et les décisions, sur mon temps personnel. J'ai travaillé avec un assistant de code, dont la part est visible dans chaque commit ; chaque choix, chaque essai et chaque échec sont consignés dans le journal du projet.</dd></div>
+                    <div><dt>Le défi</dt><dd>Ne jamais annoncer « couvert » à tort, citer ses sources, et savoir dire « je ne sais pas ». Je ne viens pas de l'assurance : j'ai appris à lire un contrat comme un gestionnaire en le traduisant, et il me fallait une évaluation qui ne me flatte pas.</dd></div>
                 </dl>
                 <dl class="facts facts-comment">
-                    <div><dt>Comment</dt><dd>Le modèle lit, la logique décide, le code vérifie. Mistral traduit la déclaration en faits, dans un vocabulaire fermé. Un moteur de règles en Prolog décide à partir des règles du contrat. Le code vérifie ensuite que chaque citation se retrouve mot pour mot dans le texte.</dd></div>
-                    <div><dt>Pourquoi ce choix</dt><dd>Un modèle de langage qui tranche seul ne se contrôle pas. C'est la répartition que j'avais retenue pour Chess Agent : le moteur calcule, le modèle explique. Ici, une décision fausse se corrige dans une règle lisible, pas dans une consigne.</dd></div>
+                    <div><dt>Comment</dt><dd>Le modèle juge chaque clause, la logique tranche, le code vérifie. Mistral Large désigne les chapitres en jeu ; le code compose le dossier et la liste des clauses attendues ; le modèle juge chacune avec deux citations, retrouvées mot pour mot ; une logique fixe décide ; les règles traduites contresignent chaque « couvert ». La première méthode reste au choix à l'écran.</dd></div>
+                    <div><dt>Pourquoi ce choix</dt><dd>Un modèle qui tranche seul ne se vérifie pas, et une règle peut mal traduire le contrat. En faisant juger au modèle des pièces vérifiables, une clause et deux citations, une clause oubliée par la traduction est encore vue, et la décision reste calculée par le code.</dd></div>
                 </dl>
 
                 <figure class="project-media wide">
-                    <img src="img/couverture_reponse.png" alt="L'écran de réponse : la décision, la raison, les clauses citées avec leur article, et les questions à préciser" width="1898" height="862" loading="lazy">
-                    <figcaption>La réponse : une décision, sa raison, et les clauses citées.</figcaption>
+                    <img src="img/couverture_clauses.png" alt="La réponse de la lecture des clauses à un vol dans un vestiaire de club de tennis : non couvert, l'exclusion du contrat citée mot pour mot, et le désaccord avec les règles affiché" width="1906" height="861" loading="lazy">
+                    <figcaption>Un vestiaire forcé au club de tennis : la lecture des clauses trouve l'exclusion et la cite ; les règles traduites répondaient « à préciser », et l'écran le dit.</figcaption>
                 </figure>
 
                 <section class="results" aria-label="Mes résultats évalués">
-                    <h4>Mes résultats évalués</h4>
+                    <h4>Mes résultats évalués, sur 60 déclarations jamais vues</h4>
                     <dl class="metrics">
-                        <div><dt>Décisions justes, contrat A (partie test)</dt><dd>94&nbsp;%</dd></div>
-                        <div><dt>Décisions justes, contrat D (jeu fermé)</dt><dd>96&nbsp;%</dd></div>
-                        <div><dt>Décisions justes, contrat B (jeu fermé), dont un « couvert » à tort</dt><dd>85&nbsp;%</dd></div>
-                        <div><dt>Citations des règles retrouvées mot pour mot dans les contrats</dt><dd>567 / 567</dd></div>
-                        <div><dt>Tests automatisés</dt><dd>plus de 220</dd></div>
+                        <div><dt>Réponses justes, lecture des clauses (règles seules : 40)</dt><dd>53 / 60</dd></div>
+                        <div><dt>« Couvert » à tort, lecture des clauses (règles seules : 4,7)</dt><dd>0</dd></div>
+                        <div><dt>Refus à tort, lecture des clauses (règles seules : 6)</dt><dd>1</dd></div>
+                        <div><dt>Accord des deux annotateurs à l'aveugle</dt><dd>59 / 60</dd></div>
+                        <div><dt>Durée d'une analyse, médiane (règles seules : 4 à 5&nbsp;s)</dt><dd>177&nbsp;s</dd></div>
                     </dl>
                 </section>
                 <dl class="facts facts-limit">
-                    <div class="limit"><dt>Limite et ouverture</dt><dd>Les règles n'ont pas été relues par un juriste ou un gestionnaire de sinistres, et les cas de test viennent de la même main que les règles. Chaque nouveau contrat demande une rédaction puis une relecture humaine : ce n'est pas un bouton. Prochaine étape : faire valider un contrat par quelqu'un du métier, et mesurer sur ses propres cas.</dd></div>
+                    <div class="limit"><dt>Limite et ouverture</dt><dd>Les réponses attendues viennent d'annotateurs automatiques qui s'accordent, pas d'un juriste ; vingt cas par contrat, c'est peu. La seconde méthode n'a pas encore été mesurée seule, sans la contresignature des règles : c'est elle qui dirait si un contrat nouveau peut se passer de traduction. Prochaine étape : un contrat jamais traduit, et un jeu relu par quelqu'un du métier.</dd></div>
                 </dl>
+
+                <div class="axes">
+                    <h4>Conduite de la recherche</h4>
+                    <ol>
+                        <li><strong>Question</strong> Dire si un sinistre est couvert, en le prouvant par le contrat, sans jamais promettre à tort. J'ai fixé avant de construire l'ordre des erreurs : un « couvert » à tort d'abord, un refus à tort ensuite, une question de trop en dernier.</li>
+                        <li><strong>Évaluation</strong> Cinq jeux de soixante déclarations, écrits par des agents qui n'avaient lu que les contrats, avec un second avis indépendant et un arbitrage sur le texte. Code figé, une mesure par jeu, chiffres écrits tels quels. Un critère écrit avant chaque essai.</li>
+                        <li><strong>Première hypothèse</strong> Le modèle lit la déclaration, un moteur Prolog décide sur des règles traduites. 90 à 100&nbsp;% sur les cas de réglage ; 38 sur 60 et 7 « couvert » à tort sur un jeu neuf. La preuve était celle de la règle.</li>
+                        <li><strong>Seconde hypothèse</strong> Le modèle juge chaque clause du texte même, le code tranche et vérifie. Sur le dernier jeu neuf : 53 sur 60 contre 40, aucun « couvert » à tort contre 4,7.</li>
+                        <li><strong>Contrôle</strong> Deux façons de relire les refus ont été essayées puis retirées : elles faisaient perdre plus de refus justes qu'elles n'en corrigeaient. En ligne : 50 analyses par jour, l'analyse suivie à l'écran, la méthode au choix.</li>
+                    </ol>
+                </div>
 
                 <ul class="tags" aria-label="Technologies">
                     <li>Mistral</li><li>SWI-Prolog</li><li>FastAPI</li><li>Angular</li><li>SQLite</li>
@@ -404,6 +422,7 @@
 
                 <div class="project-links">
                     <a href="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre" target="_blank" rel="noopener" aria-label="Code : Couverture de sinistre">Code →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre/blob/HEAD/docs/COMPRENDRE.md" target="_blank" rel="noopener" aria-label="L'enquête racontée : Couverture de sinistre">L'enquête racontée →</a>
                     <a href="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre/blob/HEAD/docs/DEMARCHE.md" target="_blank" rel="noopener" aria-label="Journal du projet : Couverture de sinistre">Journal du projet →</a>
                 </div>
 
@@ -1120,6 +1139,7 @@
                         <li>Un bon score peut cacher un mauvais modèle. Sur le triage, mon premier modèle prédisait 94,5&nbsp;% des mots justes, mais ne trouvait la bonne priorité qu'une fois sur deux (51,8&nbsp;%, pour trois priorités). Le sous-triage et le F1 m'en disent bien plus.</li>
                         <li>Persévérer. La Base du triage peinait à finir ses réponses, et j'ai repris les données maintes et maintes fois. Quand elle a enfin terminé, j'ai surtout été soulagé.</li>
                         <li>L'usage réel corrige les jeux de test. Sur mes questions, 97,8&nbsp;% de pertinence. Sur celles des testeurs, 47&nbsp;% de réponses exactes : ils cherchaient aussi des lieux.</li>
+                        <li>Un jeu de test qui a servi à corriger ment. Sur Couverture de sinistre, mes règles faisaient 90 à 100&nbsp;% sur les cas qui m'avaient servi à les régler, et 38 sur 60 sur des cas écrits par d'autres. C'est cette découverte qui m'a fait changer d'hypothèse, et mesurer chaque tour sur un jeu neuf.</li>
                     </ul>
                 </div>
 
