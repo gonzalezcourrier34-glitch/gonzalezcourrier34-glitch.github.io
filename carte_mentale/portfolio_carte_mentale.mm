@@ -68,14 +68,14 @@
 </node>
 </node>
 </node>
-<node TEXT="Projet personnel – Couverture de sinistre (nov. 2026, en ligne sur Azure, accès sur demande)" COLOR="#1b7f6e">
-<node TEXT="Domaine : LLM, moteur de règles, assurance" COLOR="#1b7f6e">
+<node TEXT="Projet de candidature – Couverture de sinistre (nov. 2026, en ligne sur Azure, accès sur demande)" COLOR="#1b7f6e">
+<node TEXT="Domaine : LLM, moteur de règles, évaluation, assurance" COLOR="#1b7f6e">
 </node>
-<node TEXT="Réalisation : dire si un sinistre est couvert par un contrat d&#x27;assurance habitation, en citant les clauses. Mistral lit la déclaration, un moteur Prolog décide, le code vérifie les citations. 4 contrats anonymisés. Décisions justes : 94 % (A), 96 % (D), 85 % (B, dont un « couvert » à tort) ; 567 citations sur 567 retrouvées mot pour mot" COLOR="#1b7f6e">
+<node TEXT="Réalisation : dire si un sinistre est couvert par un contrat d&#x27;assurance habitation, en citant les clauses. Une recherche en deux hypothèses : des règles Prolog traduites du contrat, puis Mistral Large qui juge chaque clause, le code qui vérifie les citations et décide. 4 contrats anonymisés. Sur 60 déclarations jamais vues : 53 réponses justes contre 40, aucun « couvert » à tort contre 4,7" COLOR="#1b7f6e">
 </node>
 <node TEXT="Stack : Mistral, SWI-Prolog, FastAPI, Angular, SQLite, Docker, GitHub Actions, Azure Container Apps" COLOR="#1b7f6e">
 </node>
-<node TEXT="Limite : règles non relues par quelqu&#x27;un du métier ; chaque contrat demande une rédaction puis une relecture" COLOR="#1b7f6e">
+<node TEXT="Limite : réponses attendues établies par des annotateurs automatiques, pas par un juriste ; la seconde méthode n&#x27;a pas encore été mesurée sans les règles" COLOR="#1b7f6e">
 </node>
 <node TEXT="Code" COLOR="#1b7f6e" LINK="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre">
 </node>
