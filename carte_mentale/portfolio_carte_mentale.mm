@@ -71,7 +71,7 @@
 <node TEXT="Projet de candidature – Couverture de sinistre (nov. 2026, en ligne sur Azure, accès sur demande)" COLOR="#1b7f6e">
 <node TEXT="Domaine : LLM, moteur de règles, évaluation, assurance" COLOR="#1b7f6e">
 </node>
-<node TEXT="Réalisation : dire si un sinistre est couvert par un contrat d&#x27;assurance habitation, en citant les clauses. Une recherche en deux hypothèses : des règles Prolog traduites du contrat, puis Mistral Large qui juge chaque clause, le code qui vérifie les citations et décide. 4 contrats anonymisés. Sur 60 déclarations jamais vues : 53 réponses justes contre 40, aucun « couvert » à tort contre 4,7" COLOR="#1b7f6e">
+<node TEXT="Réalisation : dire si un sinistre est couvert par un contrat d&#x27;assurance habitation, en citant les clauses. Une recherche en deux hypothèses : des règles Prolog traduites du contrat, puis Mistral Large qui juge chaque clause, le code qui vérifie les citations et décide. 4 contrats anonymisés. Sur 60 déclarations jamais vues : 53 réponses justes contre 40, aucun « couvert » à tort contre 4,7 ; sur un sixième jeu, plus difficile : 46 sur 60, un « couvert » à tort. Document de conception en 5 pages" COLOR="#1b7f6e">
 </node>
 <node TEXT="Stack : Mistral, SWI-Prolog, FastAPI, Angular, SQLite, Docker, GitHub Actions, Azure Container Apps" COLOR="#1b7f6e">
 </node>

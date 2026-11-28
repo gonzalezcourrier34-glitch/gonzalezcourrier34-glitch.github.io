@@ -402,20 +402,21 @@
                         <div><dt>Refus à tort, lecture des clauses (règles seules : 6)</dt><dd>1</dd></div>
                         <div><dt>Accord des deux annotateurs à l'aveugle</dt><dd>59 / 60</dd></div>
                         <div><dt>Durée d'une analyse, médiane (règles seules : 4 à 5&nbsp;s)</dt><dd>177&nbsp;s</dd></div>
+                        <div><dt>Sur un sixième jeu, plus difficile : réponses justes, et « couvert » à tort</dt><dd>46 / 60 · 1</dd></div>
                     </dl>
                 </section>
                 <dl class="facts facts-limit">
-                    <div class="limit"><dt>Limite et ouverture</dt><dd>Les réponses attendues viennent d'annotateurs automatiques qui s'accordent, pas d'un juriste ; vingt cas par contrat, c'est peu. La seconde méthode n'a pas encore été mesurée seule, sans la contresignature des règles : c'est elle qui dirait si un contrat nouveau peut se passer de traduction. Prochaine étape : un contrat jamais traduit, et un jeu relu par quelqu'un du métier.</dd></div>
+                    <div class="limit"><dt>Limite et ouverture</dt><dd>Les réponses attendues viennent d'annotateurs automatiques qui s'accordent, pas d'un juriste ; vingt cas par contrat, c'est peu : 53 sur 60, c'est entre 78 et 94&nbsp;% avec une confiance de 95&nbsp;%, et repassée trois fois la méthode tourne plutôt autour de 80&nbsp;%. Je ne l'ai pas comparée à une solution simple (un seul appel avec tout le contrat). La suite, dans l'ordre : faire relire les jeux par un gestionnaire, des jeux plus grands, cette comparaison, puis simplifier ce qu'elle ne justifie pas.</dd></div>
                 </dl>
 
                 <div class="axes">
                     <h4>Conduite de la recherche</h4>
                     <ol>
                         <li><strong>Question</strong> Dire si un sinistre est couvert, en le prouvant par le contrat, sans jamais promettre à tort. J'ai fixé avant de construire l'ordre des erreurs : un « couvert » à tort d'abord, un refus à tort ensuite, une question de trop en dernier.</li>
-                        <li><strong>Évaluation</strong> Cinq jeux de soixante déclarations, écrits par des agents qui n'avaient lu que les contrats, avec un second avis indépendant et un arbitrage sur le texte. Code figé, une mesure par jeu, chiffres écrits tels quels. Un critère écrit avant chaque essai.</li>
+                        <li><strong>Évaluation</strong> Six jeux de soixante déclarations, écrits par des agents qui n'avaient lu que les contrats, avec un second avis indépendant et un arbitrage sur le texte. Code figé, une mesure par jeu, chiffres écrits tels quels. Un critère écrit avant chaque essai.</li>
                         <li><strong>Première hypothèse</strong> Le modèle lit la déclaration, un moteur Prolog décide sur des règles traduites. 90 à 100&nbsp;% sur les cas de réglage ; 38 sur 60 et 7 « couvert » à tort sur un jeu neuf. La preuve était celle de la règle.</li>
                         <li><strong>Seconde hypothèse</strong> Le modèle juge chaque clause du texte même, le code tranche et vérifie. Sur le dernier jeu neuf : 53 sur 60 contre 40, aucun « couvert » à tort contre 4,7.</li>
-                        <li><strong>Contrôle</strong> Deux façons de relire les refus ont été essayées puis retirées : elles faisaient perdre plus de refus justes qu'elles n'en corrigeaient. En ligne : 50 analyses par jour, l'analyse suivie à l'écran, la méthode au choix.</li>
+                        <li><strong>Contrôle</strong> Deux façons de relire les refus ont été essayées puis retirées : elles faisaient perdre plus de refus justes qu'elles n'en corrigeaient. Deux règles de lecture contre les « couvert » trop rapides (une cause seulement probable, une condition non dite) ont été gardées : sur le sixième jeu, elles évitent trois « couvert » à tort pour deux réponses justes perdues. En ligne : 50 analyses par jour, l'analyse suivie à l'écran, la méthode au choix ; après une réponse du client, seules les clauses en doute sont rejugées.</li>
                     </ol>
                 </div>
 
@@ -426,6 +427,7 @@
 
                 <div class="project-links">
                     <a href="https://couverture-demo.lemonwater-996289d3.francecentral.azurecontainerapps.io" target="_blank" rel="noopener" aria-label="Démonstration en ligne : Couverture de sinistre, code d'accès sur demande">Démonstration en ligne (code d'accès sur demande) →</a>
+                    <a href="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre/blob/HEAD/docs/CONCEPTION.md" target="_blank" rel="noopener" aria-label="Document de conception : Couverture de sinistre">Document de conception (5 pages) →</a>
                     <a href="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre" target="_blank" rel="noopener" aria-label="Code : Couverture de sinistre">Code →</a>
                     <a href="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre/blob/HEAD/docs/COMPRENDRE.md" target="_blank" rel="noopener" aria-label="L'enquête racontée : Couverture de sinistre">L'enquête racontée →</a>
                     <a href="https://github.com/gonzalezcourrier34-glitch/couverture_sinistre/blob/HEAD/docs/DEMARCHE.md" target="_blank" rel="noopener" aria-label="Journal du projet : Couverture de sinistre">Journal du projet →</a>

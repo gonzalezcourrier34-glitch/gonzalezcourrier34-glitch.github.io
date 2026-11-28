@@ -34,7 +34,7 @@ Stéphane Gonzalez – AI Engineer
 				Versionnage données et modèles : couvert (consignes et chaîne dans les registres MLflow, jeux d'évaluation avec empreinte, contrôle en CI)
 		Projet de candidature – Couverture de sinistre (nov. 2026, en ligne sur Azure, accès sur demande)
 			Domaine : LLM, moteur de règles, évaluation, assurance
-			Réalisation : dire si un sinistre est couvert par un contrat d'assurance habitation, en citant les clauses. Une recherche en deux hypothèses : des règles Prolog traduites du contrat, puis Mistral Large qui juge chaque clause, le code qui vérifie les citations et décide. 4 contrats anonymisés. Sur 60 déclarations jamais vues : 53 réponses justes contre 40, aucun « couvert » à tort contre 4,7
+			Réalisation : dire si un sinistre est couvert par un contrat d'assurance habitation, en citant les clauses. Une recherche en deux hypothèses : des règles Prolog traduites du contrat, puis Mistral Large qui juge chaque clause, le code qui vérifie les citations et décide. 4 contrats anonymisés. Sur 60 déclarations jamais vues : 53 réponses justes contre 40, aucun « couvert » à tort contre 4,7 ; sur un sixième jeu, plus difficile : 46 sur 60, un « couvert » à tort. Document de conception en 5 pages
 			Stack : Mistral, SWI-Prolog, FastAPI, Angular, SQLite, Docker, GitHub Actions, Azure Container Apps
 			Limite : réponses attendues établies par des annotateurs automatiques, pas par un juriste ; la seconde méthode n'a pas encore été mesurée sans les règles
 			Code (https://github.com/gonzalezcourrier34-glitch/couverture_sinistre)
